@@ -8,6 +8,7 @@ window.onload = function(){
 
     var scene = e.createScene(canvas, engine);
 
+    console.log(scene);
 
     engine.runRenderLoop(function(){
         scene.render();
