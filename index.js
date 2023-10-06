@@ -2,7 +2,7 @@ var e = await import("/map/map1.js");
 
 console.log(e);
 
-window.onload = function(){
+function main(){
     var canvas = document.querySelector("#newCanva");
     var engine = new BABYLON.Engine(canvas, true);
 
@@ -18,3 +18,6 @@ window.onload = function(){
         engine.resize();
     });
 }
+
+
+window.addEventListener("load", main);
