@@ -6,7 +6,12 @@ window.onload = function(){
     var canvas = document.querySelector("#newCanva");
     var engine = new BABYLON.Engine(canvas, true);
 
-    e.createScene(canvas, engine);
+    var scene = e.createScene(canvas, engine);
+
+
+    engine.runRenderLoop(function(){
+        scene.render();
+    });
 
     window.addEventListener("resize", function () {
         engine.resize();
