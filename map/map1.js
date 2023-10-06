@@ -8,5 +8,7 @@ export const createScene = (canvas, engine) => {
 
     const box = BABYLON.MeshBuilder.CreateBox("box", {});
 
+    camera.setTarget(box.position);
+
     return scene;
 }
