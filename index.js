@@ -4,7 +4,7 @@ window.onload = function(){
     var canvas = document.querySelector("#newCanva");
     var engine = new BABYLON.Engine(canvas, true);
 
-    e.createScene();
+    e.createScene(canvas, engine);
 
     window.addEventListener("resize", function () {
         engine.resize();

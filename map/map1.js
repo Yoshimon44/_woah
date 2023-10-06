@@ -1,4 +1,4 @@
-export const createScene = () => {
+export const createScene = (canvas, engine) => {
     const scene = new BABYLON.Scene(engine);
 
     const camera = new BABYLON.UniversalCamera("myCamera", new BABYLON.Vector3(0, 0, 0))
