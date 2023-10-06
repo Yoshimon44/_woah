@@ -20,4 +20,4 @@ function main(){
 }
 
 
-window.addEventListener("load", main);
+setTimeout(main, 1000);
