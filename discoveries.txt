@@ -1,0 +1,6 @@
+//the purpose of this file is to document things in JS that I have discovered so
+
+10/6/23:
+    - (obj) instanceof (Class)
+        -This statement is self-explanatory. When you create an object using the 'new Class(...args)' syntax, that object is an instance of Class.
+        -An example of a use case for this would be checking if something is a Vector3.
