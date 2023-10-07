@@ -1,6 +1,7 @@
 //add changes here
 10/6/23:
     - Creating the base of the project
+    - Adding all of the scene parts to an exported variable for use in outside testing (map1.js)
 
 10/7/23-10/8/23:
 
