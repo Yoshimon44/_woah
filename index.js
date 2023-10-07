@@ -19,5 +19,9 @@ function main(){
     });
 }
 
+window.addEventListener("DOMContentLoaded", function(e){
+    console.log("loaded!!!")
+    main();
+});
 
-setTimeout(main, 1000);
+//setTimeout(main, 1000);

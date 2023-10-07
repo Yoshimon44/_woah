@@ -2,6 +2,7 @@ export var mapParts = {};
 
 export const createScene = (canvas, engine) => {
     const scene = new BABYLON.Scene(engine);
+    mapParts.scene = scene; //i cant always create a new scene everytime i want to reference scene
 
     const camera = new BABYLON.UniversalCamera("myCamera", new BABYLON.Vector3(0, -4, -10))
     camera.isMovingZ = false;

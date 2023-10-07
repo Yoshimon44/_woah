@@ -5,3 +5,5 @@
 
 10/7/23-10/8/23:
     - Created mouseCamera.js
+    - Attempted to find an alternative for window.onload
+        -Found event DOMContentLoaded (index.js)
