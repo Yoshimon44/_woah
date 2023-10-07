@@ -1,9 +1,12 @@
-export var mapParts = {}; //for testing purposes
+export var mapParts = {};
 
 export const createScene = (canvas, engine) => {
     const scene = new BABYLON.Scene(engine);
 
     const camera = new BABYLON.UniversalCamera("myCamera", new BABYLON.Vector3(0, -4, -10))
+    camera.isMovingZ = false;
+    camera.isMovingX = false;
+
     mapParts.camera = camera;
     camera.attachControl(canvas, true);
 

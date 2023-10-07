@@ -4,3 +4,5 @@
     - (obj) instanceof (Class)
         -This statement is self-explanatory. When you create an object using the 'new Class(...args)' syntax, that object is an instance of Class.
         -An example of a use case for this would be checking if something is a Vector3.
+    - importing module in html makes it so that you won't need to import it in your other scripts
+        -uhh, im not certain about this one, but at least we dont need to import babylon everywhere
