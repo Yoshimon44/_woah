@@ -14,8 +14,9 @@ export const createScene = (canvas, engine) => {
 
     const light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(0, 1, 0));
     mapParts.light = light;
+    light.intensity(1)
 
-    const box = BABYLON.MeshBuilder.CreateBox("box", {});
+    const box = BABYLON.MeshBuilder.CreateBox("box", {width: 100, height: 100});
     mapParts.box = box;
 
     camera.setTarget(box._position);
