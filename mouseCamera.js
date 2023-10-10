@@ -11,10 +11,10 @@ document.querySelector("#newCanva").addEventListener("mouseover", function(){
 })
 */
 
-setTimeout(function(){
+/*setTimeout(function(){
     console.log(map1.mapParts.engine);
     //map1.mapParts.engine.enterPointerlock();
-    //map1.mapParts.engine.isPointerLock = true;
+    map1.mapParts.engine.isPointerLock = true;
     console.log(document.querySelector("#newCanva"));
     document.querySelector("#newCanva").focus();
-}, 2000)
+}, 2000)*/

@@ -27,5 +27,14 @@ export const createScene = (canvas, engine) => {
 
     camera.setTarget(box._position);
 
+    // [mouseCamera.js]
+    setTimeout(function(){
+        console.log(engine);
+        //map1.mapParts.engine.enterPointerlock();
+        //map1.mapParts.engine.isPointerLock = true;
+        console.log(document.querySelector("#newCanva"));
+        document.querySelector("#newCanva").focus();
+    }, 2000)
+
     return scene;
 }
