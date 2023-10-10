@@ -17,12 +17,12 @@ export const createScene = (canvas, engine) => {
     const light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(0, 1, 0));
     mapParts.light = light;
     try {
-        light.intensity(1)
+        light.intensity = 1;
     } catch (err) {
         console.log(err);
     }
 
-    const box = BABYLON.MeshBuilder.CreateBox("box", {width: 100, height: 100});
+    const box = BABYLON.MeshBuilder.CreateBox("box", {width: 10, height: 10});
     mapParts.box = box;
 
     camera.setTarget(box._position);
