@@ -13,6 +13,14 @@ export const createScene = (canvas, engine) => {
     mapParts.camera = camera;
     camera.attachControl(canvas, true);
 
+    
+    // [mouseCamera.js]
+    console.log(engine);
+    engine.enterPointerlock();
+    //map1.mapParts.engine.isPointerLock = true;
+    console.log(document.querySelector("#newCanva"));
+    //document.querySelector("#newCanva").focus();
+
 
     const light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(0, 1, 0));
     mapParts.light = light;
@@ -27,14 +35,6 @@ export const createScene = (canvas, engine) => {
 
     camera.setTarget(box._position);
 
-    // [mouseCamera.js]
-    setTimeout(function(){
-        console.log(engine);
-        //map1.mapParts.engine.enterPointerlock();
-        //map1.mapParts.engine.isPointerLock = true;
-        console.log(document.querySelector("#newCanva"));
-        document.querySelector("#newCanva").focus();
-    }, 2000)
 
     return scene;
 }
