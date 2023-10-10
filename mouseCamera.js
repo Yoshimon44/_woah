@@ -14,5 +14,6 @@ document.querySelector("#newCanva").addEventListener("mouseover", function(){
 setTimeout(function(){
     console.log(map1.mapParts.engine);
     //map1.mapParts.engine.enterPointerlock();
-    map1.mapParts.engine.isPointerLock = true;
+    //map1.mapParts.engine.isPointerLock = true;
+    document.querySelector("#newCanva").focus();
 }, 1000)
