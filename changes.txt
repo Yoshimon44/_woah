@@ -17,4 +17,5 @@
     - Pointerlock FIX (was previously dysfunctional)
 
 10/11/23:
-    - WASD Controls
+    - Controls for W and S keys
+    - Changed the map (added ground, box2, and box3)
