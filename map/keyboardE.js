@@ -17,14 +17,20 @@ var listOfKeys = {
 
 function updateLabel(label, value) {
   if (value instanceof BABYLON.Vector3) {
-    value = `(${value.x}, ${value.y}, ${value.z})`;
+    value = `(${parseFloat(value.x.toFixed(2))}, ${parseFloat(value.y.toFixed(2))}, ${parseFloat(value.z.toFixed(2))})`;
   }
 
   if (typeof label == 'string') {
     label = document.querySelector(`#${label}`);
   }
 
-  label.innerText = value;
+  if (label == document.querySelector('#pos')) {
+    label.innerText = 'Camera position: ';
+  } else {
+    label.innerText = '';
+  }
+
+  label.innerText += value;
 }
 
 // [PROGRAM]
