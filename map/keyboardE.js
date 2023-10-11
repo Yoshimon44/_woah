@@ -15,6 +15,18 @@ var listOfKeys = {
 
 // [HELPER FUNCTIONS]
 
+function updateLabel(label, value) {
+  if (value instanceof BABYLON.Vector3) {
+    value = `(${value.x}, ${value.y}, ${value.z})`;
+  }
+
+  if (typeof label == 'string') {
+    label = document.querySelector(`#${label}`);
+  }
+
+  label.innerText = value;
+}
+
 // [PROGRAM]
 
 export function main(){
@@ -47,6 +59,7 @@ export function main(){
 
             camera.position.addInPlace(forwardsVector.normalize().scale(0.1));
             loop_count++;
+            updateLabel("pos", camera.position);
 
             if (listOfKeys.w == false) {
               clearInterval(loop);
