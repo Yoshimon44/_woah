@@ -16,7 +16,7 @@ export function main(){
 
   window.addEventListener("keydown", function(e){
       var forwardsVector = new BABYLON.Vector3(
-          Math.sin(camera.rotation.y),
+          -Math.sin(camera.rotation.y),
           Math.sin(camera.rotation.x),
           Math.cos(camera.rotation.y - Math.PI)
       ); //incorrect formula but eh, i aint take calculus yet
@@ -35,8 +35,6 @@ export function main(){
               var loop = setInterval(function(){
                 camera.position.addInPlace(forwardsVector.normalize().scaleInPlace(0.1));
                 loop_count++;
-                renderer.render(scene, camera);
-                updateLabels(door, camera);
       
                 if (loop_count > 50) {
                   loop_count = 0;
