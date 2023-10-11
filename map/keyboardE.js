@@ -15,7 +15,11 @@ var listOfKeys = {
 
 // [HELPER FUNCTIONS]
 
-function updateLabel(label, value) {
+function updateLabel(label, value) {  
+  if (typeof label == 'string') {
+    label = document.querySelector(`#${label}`);
+  }
+
   if (label == document.querySelector('#rot')) {
     label.innerText = `Camera rot.:(${parseFloat((value.x*180/Math.PI).toFixed(2))}, ${parseFloat((value.y * 180/Math.PI).toFixed(2))}, ${parseFloat((value.z*180/Math.PI).toFixed(2))})`;
     return;
@@ -23,10 +27,6 @@ function updateLabel(label, value) {
 
   if (value instanceof BABYLON.Vector3) {
     value = `(${parseFloat(value.x.toFixed(2))}, ${parseFloat(value.y.toFixed(2))}, ${parseFloat(value.z.toFixed(2))})`;
-  }
-
-  if (typeof label == 'string') {
-    label = document.querySelector(`#${label}`);
   }
 
   if (label == document.querySelector('#pos')) {
