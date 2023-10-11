@@ -1,7 +1,7 @@
 var e = await import("/map/map1.js");
 var p = await import("/map/keyboardE.js");
 
-console.log(e);
+console.log(p);
 
 function main(){
     var canvas = document.querySelector("#newCanva");
@@ -18,6 +18,9 @@ function main(){
     window.addEventListener("resize", function () {
         engine.resize();
     });
+
+    //[call ur modules here lel]
+    p.main();
 }
 
 setTimeout(main, 1000);
