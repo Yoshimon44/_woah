@@ -33,7 +33,7 @@ export function main(){
             {
               var loop_count = 0;
               var loop = setInterval(function(){
-                camera.position.addInPlace(doodoo.normalize().scaleInPlace(0.1));
+                camera.position.addInPlace(forwardsVector.normalize().scaleInPlace(0.1));
                 loop_count++;
                 renderer.render(scene, camera);
                 updateLabels(door, camera);
