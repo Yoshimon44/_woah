@@ -1,4 +1,5 @@
 // [IMPORTS]
+const map1 = await import("/map/map1.js");
 
 
 // [VARIABLES]
@@ -11,7 +12,6 @@ var [pressedDebounceZ, pressedDebounceX] = [false, false];
 // [PROGRAM]
 
 export function main(){
-  const map1 = await import("/map/map1.js");
   const camera = map1.mapParts.camera;
 
   window.addEventListener("keydown", function(e){
