@@ -16,9 +16,9 @@ export function main(){
 
   window.addEventListener("keydown", function(e){
       var forwardsVector = new BABYLON.Vector3(
-          -Math.sin(camera.rotation.y),
-          Math.sin(camera.rotation.x),
-          Math.cos(camera.rotation.y - Math.PI)
+          Math.sin(camera.rotation.y),
+          -Math.sin(camera.rotation.x),
+          -Math.cos(camera.rotation.y - Math.PI)
       ); //incorrect formula but eh, i aint take calculus yet
 
       if (e.key == 'w' && !pressedDebounceZ) {
