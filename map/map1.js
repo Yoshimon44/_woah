@@ -7,7 +7,7 @@ export const createScene = (canvas, engine) => {
     mapParts.engine = engine;
     mapParts.canvas = canvas;
 
-    const camera = new BABYLON.UniversalCamera("myCamera", new BABYLON.Vector3(0, -4, -10))
+    const camera = new BABYLON.UniversalCamera("myCamera", new BABYLON.Vector3(0, 1, -10))
     camera.isMovingZ = false;
     camera.isMovingX = false;
     
