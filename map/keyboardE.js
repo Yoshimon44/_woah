@@ -26,6 +26,9 @@ function updateLabel(label, value) {
 
   if (label == document.querySelector('#pos')) {
     label.innerText = 'Camera position: ';
+  } else if (label == document.querySelector('#rot')) {
+    label.innerText = `Camera rot.:(${parseFloat((value.x*180/Math.PI).toFixed(2))}, ${parseFloat((value.y * 180/Math.PI).toFixed(2))}, ${parseFloat((value.z*180/Math.PI).toFixed(2))})`;
+    return;
   } else {
     label.innerText = '';
   }
