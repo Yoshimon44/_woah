@@ -62,7 +62,7 @@ export function main(){
           {
             var loop_count = 0;
             var loop = setInterval(function(){
-              camera.position.addInPlace(forwardsVector.normalize().scaleInPlace(-0.1));
+              camera.position.subtractInPlace(forwardsVector.normalize().scaleInPlace(0.1));
               loop_count++;
     
               if (loop_count > 50) {

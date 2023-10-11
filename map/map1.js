@@ -41,7 +41,7 @@ export const createScene = (canvas, engine) => {
 
     camera.setTarget(box._position);
 
-    const ground = BABYLON.MeshBuilder.CreateGround("ground", {width: 50, width : 50});
+    const ground = BABYLON.MeshBuilder.CreateGround("ground", {width: 50, height: 50});
     mapPartsReal.ground = ground;
 
 
