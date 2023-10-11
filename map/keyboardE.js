@@ -1,6 +1,5 @@
 // [IMPORTS]
-const map1 = await import("/map/map1.js");
-const camera = map1.mapParts.camera;
+
 
 // [VARIABLES]
 
@@ -12,54 +11,57 @@ var [pressedDebounceZ, pressedDebounceX] = [false, false];
 // [PROGRAM]
 
 export function main(){
-    window.addEventListener("keydown", function(e){
-        var forwardsVector = new BABYLON.Vector3(
-            Math.sin(camera.rotation.y),
-            Math.sin(camera.rotation.x),
-            Math.cos(camera.rotation.y - Math.PI)
-        ); //incorrect formula but eh, i aint take calculus yet
+  const map1 = await import("/map/map1.js");
+  const camera = map1.mapParts.camera;
 
-        if (e.key == 'w' && !pressedDebounceZ) {
-            wPressed++;
-            pressedDebounceZ = true;
-            setTimeout(function(){
-              pressedDebounceZ = false;
-            }, 188)
+  window.addEventListener("keydown", function(e){
+      var forwardsVector = new BABYLON.Vector3(
+          Math.sin(camera.rotation.y),
+          Math.sin(camera.rotation.x),
+          Math.cos(camera.rotation.y - Math.PI)
+      ); //incorrect formula but eh, i aint take calculus yet
+
+      if (e.key == 'w' && !pressedDebounceZ) {
+          wPressed++;
+          pressedDebounceZ = true;
+          setTimeout(function(){
+            pressedDebounceZ = false;
+          }, 188)
+    
+          if (!camera.isMovingZ) {
+            camera.isMovingZ = true;
+            {
+              var loop_count = 0;
+              var loop = setInterval(function(){
+                camera.position.addInPlace(doodoo.normalize().scaleInPlace(0.1));
+                loop_count++;
+                renderer.render(scene, camera);
+                updateLabels(door, camera);
       
-            if (!camera.isMovingZ) {
-              camera.isMovingZ = true;
-              {
-                var loop_count = 0;
-                var loop = setInterval(function(){
-                  camera.position.addInPlace(doodoo.normalize().scaleInPlace(0.1));
-                  loop_count++;
-                  renderer.render(scene, camera);
-                  updateLabels(door, camera);
-        
-                  if (loop_count > 50) {
-                    loop_count = 0;
-                    wPressed--;
-      
-                    if (wPressed == 0) {
-                      clearInterval(loop);
-                      camera.isMovingZ = false;
-                    }
+                if (loop_count > 50) {
+                  loop_count = 0;
+                  wPressed--;
+    
+                  if (wPressed == 0) {
+                    clearInterval(loop);
+                    camera.isMovingZ = false;
                   }
-                }, 1)
-              }
+                }
+              }, 1)
             }
-        } 
+          }
+      } 
 
-        if (e.key == 's' && !pressedDebounceZ) {
+      if (e.key == 's' && !pressedDebounceZ) {
 
-        }
+      }
 
-        if (e.key == 'a' && !pressedDebounceX) {
+      if (e.key == 'a' && !pressedDebounceX) {
 
-        }
+      }
 
-        if (e.key == 'd' && !pressedDebounceX) {
+      if (e.key == 'd' && !pressedDebounceX) {
 
-        }
-    })
+      }
+  })
 }
