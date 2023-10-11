@@ -51,7 +51,32 @@ export function main(){
       } 
 
       if (e.key == 's' && !pressedDebounceZ) {
-
+        sPressed++;
+        pressedDebounceZ = true;
+        setTimeout(function(){
+          pressedDebounceZ = false;
+        }, 188)
+  
+        if (!camera.isMovingZ) {
+          camera.isMovingZ = true;
+          {
+            var loop_count = 0;
+            var loop = setInterval(function(){
+              camera.position.addInPlace(forwardsVector.normalize().scaleInPlace(-0.1));
+              loop_count++;
+    
+              if (loop_count > 50) {
+                loop_count = 0;
+                sPressed--;
+  
+                if (sPressed == 0) {
+                  clearInterval(loop);
+                  camera.isMovingZ = false;
+                }
+              }
+            }, 1)
+          }
+        }
       }
 
       if (e.key == 'a' && !pressedDebounceX) {
