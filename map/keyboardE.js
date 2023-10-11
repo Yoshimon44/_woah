@@ -21,7 +21,7 @@ function updateLabel(label, value) {
   }
 
   if (label == document.querySelector('#rot')) {
-    label.innerText = `Camera rot.:(${parseFloat((value.x*180/Math.PI).toFixed(2))}, ${parseFloat((value.y * 180/Math.PI).toFixed(2))}, ${parseFloat((value.z*180/Math.PI).toFixed(2))})`;
+    label.innerText = `Camera rot.:(${parseFloat(((value.x*180/Math.PI)%180).toFixed(2))}, ${parseFloat(((value.y * 180/Math.PI)%180).toFixed(2))}, ${parseFloat(((value.z*180/Math.PI)%180).toFixed(2))})`;
     return;
   }
 
@@ -42,6 +42,8 @@ function updateLabel(label, value) {
 
 export function main(){
   const camera = map1.mapParts.camera;
+
+  setInterval(updateLabel, 1, 'rot', camera.rotation);
 
   window.addEventListener("keyup", function(e){
     if (listOfKeys.hasOwnProperty(e.key)) {
