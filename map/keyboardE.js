@@ -45,7 +45,7 @@ export function main(){
         {
           var loop_count = 0;
           var loop = setInterval(function(){
-            camera.position.add(forwardsVector.normalize().scale(0.1));
+            camera.position.addInPlace(forwardsVector.normalize().scale(0.1));
             loop_count++;
 
             if (listOfKeys.w == false) {
