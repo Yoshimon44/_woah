@@ -1,4 +1,5 @@
 var e = await import("/map/map1.js");
+var p = await import("/map/keyboardE.js");
 
 console.log(e);
 

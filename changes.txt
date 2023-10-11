@@ -11,3 +11,10 @@
 
 10/9/23:
     - Modified mouseCamera.js to add an event listener for (#newCanva)'s mouseover event (mouseCamera.js)
+
+10/10/23:
+    - Camera ellipsoid
+    - Pointerlock FIX (was previously dysfunctional)
+
+10/11/23:
+    - WASD Controls

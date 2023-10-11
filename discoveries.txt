@@ -6,3 +6,9 @@
         -An example of a use case for this would be checking if something is a Vector3.
     - importing module in html makes it so that you won't need to import it in your other scripts
         -uhh, im not certain about this one, but at least we dont need to import babylon everywhere
+
+10/10/23:
+    - IN order to use element.focus, it needs to be called in a short-running event handler.
+        - In other words, element.focus will run if caused by a user action such as clicking, hovering, etc.
+
+    

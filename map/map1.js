@@ -10,8 +10,7 @@ export const createScene = (canvas, engine) => {
     camera.isMovingZ = false;
     camera.isMovingX = false;
     
-    camera.ellipsoid = new BABYLON.Vector3(1,1,1)
-
+    camera.ellipsoid = new BABYLON.Vector3(1,1,1);
     mapParts.camera = camera;
     camera.attachControl(canvas, true);
 
