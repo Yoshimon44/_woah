@@ -66,6 +66,7 @@ export function main(){
             camera.position.addInPlace(forwardsVector.normalize().scale(0.1));
             loop_count++;
             updateLabel("pos", camera.position);
+            updateLabel("rot", camera.rotation);
 
             if (listOfKeys.w == false) {
               clearInterval(loop);
