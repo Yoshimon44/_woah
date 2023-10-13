@@ -39,7 +39,7 @@ export const createScene = (canvas, engine) => {
     box3.position = new BABYLON.Vector3(7, 2, 7)
     mapPartsReal.box3 = box3;
 
-    camera.setTarget(box._position);
+    
 
     const ground = BABYLON.MeshBuilder.CreateGround("ground", {width: 50, height: 50});
     mapPartsReal.ground = ground;

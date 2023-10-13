@@ -17,5 +17,8 @@
     - Pointerlock FIX (was previously dysfunctional)
 
 10/11/23:
-    - Controls for W and S keys
+    - Controls for W
     - Changed the map (added ground, box2, and box3)
+
+10/13/23:
+    - Edited keyboard controls to remove vertical movement

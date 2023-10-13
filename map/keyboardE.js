@@ -65,9 +65,9 @@ export function main(){
           var loop_count = 0;
           var loop = setInterval(function(){
             var forwardsVector = new BABYLON.Vector3(
-              Math.sin(camera.rotation.y),
-              -Math.sin(camera.rotation.x),
-              -Math.cos(camera.rotation.y - Math.PI)
+              -Math.sin(camera.rotation.y),
+              0, //-Math.sin(camera.rotation.x)
+              Math.cos(camera.rotation.y - Math.PI)
             ); //incorrect formula but eh, i aint take calculus yet
 
             camera.position.addInPlace(forwardsVector.normalize().scale(0.1));
