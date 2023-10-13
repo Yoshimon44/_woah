@@ -21,4 +21,5 @@
     - Changed the map (added ground, box2, and box3)
 
 10/13/23:
+    - Controls for S
     - Edited keyboard controls to remove vertical movement

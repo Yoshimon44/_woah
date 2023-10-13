@@ -20,8 +20,8 @@ function updateLabel(label, value) {
     label = document.querySelector(`#${label}`);
   }
 
-  if (label == document.querySelector('#rot')) {
-    label.innerText = `Camera rot.:(${parseFloat(((value.x*180/Math.PI)%180).toFixed(2))}, ${parseFloat(((value.y * 180/Math.PI)%180).toFixed(2))}, ${parseFloat(((value.z*180/Math.PI)%180).toFixed(2))})`;
+  if (label == document.querySelector('#rot')) { //special exception to the rest of the function, hence the return statement
+    label.innerText = `Camera rot.:(${parseFloat(((value.x*180/Math.PI)%360).toFixed(2))}, ${parseFloat(((value.y * 180/Math.PI)%360).toFixed(2))}, ${parseFloat(((value.z*180/Math.PI)%360).toFixed(2))})`;
     return;
   }
 
@@ -86,7 +86,35 @@ export function main(){
 
 
     if (e.key == 's' && !pressedDebounceZ) {
+      listOfKeys.s = true;
+      pressedDebounceZ = true;
+      setTimeout(function(){
+        pressedDebounceZ = false;
+      }, 188)
 
+      if (!camera.isMovingZ) {
+        camera.isMovingZ = true;
+        {
+          var loop_count = 0;
+          var loop = setInterval(function(){
+            var forwardsVector = new BABYLON.Vector3(
+              Math.sin(camera.rotation.y),
+              0, //-Math.sin(camera.rotation.x)
+              -Math.cos(camera.rotation.y - Math.PI)
+            ); //incorrect formula but eh, i aint take calculus yet
+
+            camera.position.subtractInPlace(forwardsVector.normalize().scale(0.1));
+            loop_count++;
+            updateLabel("pos", camera.position);
+            updateLabel("rot", camera.rotation);
+
+            if (listOfKeys.s == false) {
+              clearInterval(loop);
+              camera.isMovingZ = false;
+            }
+          }, 1)
+        }
+      }
     }
 
     if (e.key == 'a' && !pressedDebounceX) {
