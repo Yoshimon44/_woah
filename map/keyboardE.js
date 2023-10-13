@@ -55,7 +55,7 @@ export function main(){
     if (e.key == "w" && !pressedDebounceZ) {
       listOfKeys.w = true;
       pressedDebounceZ = true;
-      setTimeout(function(){
+      var debounceFunc = setTimeout(function(){
         pressedDebounceZ = false;
       }, 188)
 
@@ -77,6 +77,7 @@ export function main(){
 
             if (listOfKeys.w == false) {
               clearInterval(loop);
+              clearTimeout(debounceFunc);
               camera.isMovingZ = false;
             }
           }, 1)
@@ -88,7 +89,7 @@ export function main(){
     if (e.key == 's' && !pressedDebounceZ) {
       listOfKeys.s = true;
       pressedDebounceZ = true;
-      setTimeout(function(){
+      var debounceFunc = setTimeout(function(){
         pressedDebounceZ = false;
       }, 188)
 
@@ -110,6 +111,7 @@ export function main(){
 
             if (listOfKeys.s == false) {
               clearInterval(loop);
+              clearTimeout(debounceFunc);
               camera.isMovingZ = false;
             }
           }, 1)
