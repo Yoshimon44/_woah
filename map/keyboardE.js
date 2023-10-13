@@ -78,6 +78,7 @@ export function main(){
             if (listOfKeys.w == false) {
               clearInterval(loop);
               clearTimeout(debounceFunc);
+              pressedDebounceZ = false;
               camera.isMovingZ = false;
             }
           }, 1)
@@ -112,6 +113,7 @@ export function main(){
             if (listOfKeys.s == false) {
               clearInterval(loop);
               clearTimeout(debounceFunc);
+              pressedDebounceZ = false;
               camera.isMovingZ = false;
             }
           }, 1)
