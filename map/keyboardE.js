@@ -70,7 +70,8 @@ export function main(){
               -Math.cos(camera.rotation.y - Math.PI)
             ); //incorrect formula but eh, i aint take calculus yet
 
-            camera.position.addInPlace(forwardsVector.normalize().scale(0.1));
+            //camera.position.addInPlace(forwardsVector.normalize().scale(0.1));
+            camera.moveWithCollisions(forwardsVector.normalize().scale(0.1));
             loop_count++;
             updateLabel("pos", camera.position);
             updateLabel("rot", camera.rotation);
@@ -105,7 +106,8 @@ export function main(){
               -Math.cos(camera.rotation.y - Math.PI)
             ); //incorrect formula but eh, i aint take calculus yet
 
-            camera.position.subtractInPlace(forwardsVector.normalize().scale(0.1));
+            //camera.position.subtractInPlace(forwardsVector.normalize().scale(0.1));
+            camera.moveWithCollisions(forwardsVector.negate().normalize().scale(0.1));
             loop_count++;
             updateLabel("pos", camera.position);
             updateLabel("rot", camera.rotation);

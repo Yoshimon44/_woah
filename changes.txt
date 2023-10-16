@@ -23,3 +23,6 @@
 10/13/23:
     - Controls for S
     - Edited keyboard controls to remove vertical movement
+
+10/16/23:
+    - Attempt to achieve camera collision

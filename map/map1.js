@@ -3,11 +3,13 @@ export var mapPartsReal = {};
 
 export const createScene = (canvas, engine) => {
     const scene = new BABYLON.Scene(engine);
+    scene.collisionsEnabled = true;
     mapParts.scene = scene; //i cant always create a new scene everytime i want to reference scene
     mapParts.engine = engine;
     mapParts.canvas = canvas;
 
-    const camera = new BABYLON.UniversalCamera("myCamera", new BABYLON.Vector3(0, 1, -10))
+    const camera = new BABYLON.UniversalCamera("myCamera", new BABYLON.Vector3(0, 1, -10));
+    camera.checkCollisions = true;
     camera.isMovingZ = false;
     camera.isMovingX = false;
     
@@ -29,19 +31,23 @@ export const createScene = (canvas, engine) => {
     // [MAP]
 
     const box = BABYLON.MeshBuilder.CreateBox("box", {width: 10, height: 10});
+    box.checkCollisions = true;
     mapPartsReal.box = box;
 
     const box2 = BABYLON.MeshBuilder.CreateBox("box2", {width: 10, height: 10});
     box2.position = new BABYLON.Vector3(-6, 5, -9)
+    box2.checkCollisions = true;
     mapPartsReal.box2 = box2;
 
     const box3 = BABYLON.MeshBuilder.CreateBox("box2", {width: 10, height: 10});
     box3.position = new BABYLON.Vector3(7, 2, 7)
+    box3.checkCollisions = true;
     mapPartsReal.box3 = box3;
 
     
 
     const ground = BABYLON.MeshBuilder.CreateGround("ground", {width: 50, height: 50});
+    ground.checkCollisions = true;
     mapPartsReal.ground = ground;
 
 
