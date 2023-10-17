@@ -122,7 +122,37 @@ export function main(){
     }
 
     if (e.key == 'a' && !pressedDebounceX) {
+      listOfKeys.a = true;
+      pressedDebounceZ = true;
+      var debounceFunc = setTimeout(function(){
+        pressedDebounceZ = false;
+      }, 188)
 
+      if (!camera.isMovingZ) {
+        camera.isMovingZ = true;
+        {
+          var loop_count = 0;
+          var loop = setInterval(function(){
+            var forwardsVector = new BABYLON.Vector3(
+              Math.sin(camera.rotation.y - (Math.PI/2)),
+              0, //-Math.sin(camera.rotation.x)
+              -Math.cos(camera.rotation.y - (Math.PI * 1.5))
+            ); 
+
+            camera.position.subtractInPlace(forwardsVector.normalize().scale(0.1));
+            loop_count++;
+            updateLabel("pos", camera.position);
+            updateLabel("rot", camera.rotation);
+
+            if (listOfKeys.a == false) {
+              clearInterval(loop);
+              clearTimeout(debounceFunc);
+              pressedDebounceZ = false;
+              camera.isMovingZ = false;
+            }
+          }, 1)
+        }
+      }
     }
 
     if (e.key == 'd' && !pressedDebounceX) {
