@@ -123,13 +123,13 @@ export function main(){
 
     if (e.key == 'a' && !pressedDebounceX) {
       listOfKeys.a = true;
-      pressedDebounceZ = true;
+      pressedDebounceX = true;
       var debounceFunc = setTimeout(function(){
-        pressedDebounceZ = false;
+        pressedDebounceX = false;
       }, 188)
 
-      if (!camera.isMovingZ) {
-        camera.isMovingZ = true;
+      if (!camera.isMovingX) {
+        camera.isMovingX = true;
         {
           var loop_count = 0;
           var loop = setInterval(function(){
@@ -147,8 +147,8 @@ export function main(){
             if (listOfKeys.a == false) {
               clearInterval(loop);
               clearTimeout(debounceFunc);
-              pressedDebounceZ = false;
-              camera.isMovingZ = false;
+              pressedDebounceX = false;
+              camera.isMovingX = false;
             }
           }, 1)
         }
@@ -157,13 +157,13 @@ export function main(){
 
     if (e.key == 'd' && !pressedDebounceX) {
       listOfKeys.d = true;
-      pressedDebounceZ = true;
+      pressedDebounceX = true;
       var debounceFunc = setTimeout(function(){
-        pressedDebounceZ = false;
+        pressedDebounceX = false;
       }, 188)
 
-      if (!camera.isMovingZ) {
-        camera.isMovingZ = true;
+      if (!camera.isMovingX) {
+        camera.isMovingX = true;
         {
           var loop_count = 0;
           var loop = setInterval(function(){
@@ -181,8 +181,8 @@ export function main(){
             if (listOfKeys.d == false) {
               clearInterval(loop);
               clearTimeout(debounceFunc);
-              pressedDebounceZ = false;
-              camera.isMovingZ = false;
+              pressedDebounceX = false;
+              camera.isMovingX = false;
             }
           }, 1)
         }
