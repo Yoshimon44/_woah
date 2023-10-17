@@ -22,3 +22,5 @@ function main(){
     //[call ur modules here lel]
     p.main();
 }
+
+setTimeout(main, 1000);
