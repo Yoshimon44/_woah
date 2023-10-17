@@ -3,7 +3,7 @@ var p = await import("/map/keyboardE.js");
 
 console.log(p);
 
-function main(){
+export function main(){
     var canvas = document.querySelector("#newCanva");
     var engine = new BABYLON.Engine(canvas, true);
 
@@ -23,4 +23,4 @@ function main(){
     p.main();
 }
 
-setTimeout(main, 1000);
+//setTimeout(main, 1000);
