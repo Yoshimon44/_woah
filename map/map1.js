@@ -13,7 +13,7 @@ export const createScene = (canvas, engine) => {
     camera.isMovingZ = false;
     camera.isMovingX = false;
     
-    camera.rectangle = new BABYLON.Vector3(2,2,2);
+    camera.rectangle = new BABYLON.Vector3(20,20,20);
     mapParts.camera = camera;
     camera.attachControl(canvas, true);
 
