@@ -26,3 +26,6 @@
 
 10/16/23:
     - Attempt to achieve camera collision
+
+10/17/23:
+    - Made the camera collision more consistent, as to not look through shapes as much.
