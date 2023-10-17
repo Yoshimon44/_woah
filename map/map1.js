@@ -2,6 +2,9 @@ export var mapParts = {}; //these are not 'map parts' 😭😭😭
 export var mapPartsReal = {};
 
 export const createScene = (canvas, engine) => {
+
+    var loadingScreenDiv = document.getElementById("loadingScreen");
+
     function customLoadingScreen() {
         console.log("customLoadingScreen creation")
     }
@@ -13,7 +16,7 @@ export const createScene = (canvas, engine) => {
         console.log("customLoadingScreen loaded")
         loadingScreenDiv.style.display = "none";
     };
-    
+
     var loadingScreen = new customLoadingScreen();
     engine.loadingScreen = loadingScreen;
 
