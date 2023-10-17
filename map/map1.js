@@ -2,19 +2,7 @@ export var mapParts = {}; //these are not 'map parts' 😭😭😭
 export var mapPartsReal = {};
 
 export const createScene = (canvas, engine) => {
-
-    function CustomLoadingScreen() {
-        //init the loader
-        this.loadingUIText = "amogus";
-      }
-      CustomLoadingScreen.prototype.displayLoadingUI = function() {
-        alert(this.loadingUIText);
-      };
-      CustomLoadingScreen.prototype.hideLoadingUI = function() {
-        alert("Loaded!");
-      };
-
-      engine.displayLoadingUI();
+    const loadingScreen = document.querySelector('#loadingScreen');
 
     const scene = new BABYLON.Scene(engine);
     scene.collisionsEnabled = true;
@@ -64,8 +52,15 @@ export const createScene = (canvas, engine) => {
     ground.checkCollisions = true;
     mapPartsReal.ground = ground;
 
+    // [HAVOK]
+
+    const havokInstance = await HavokPhysics();
+    const havokPlugin = new BABYLON.HavokPlugin(true, havokInstance);
+    mapPartsReal.havokPlugin = havokPlugin;
+
+    // [LOADIGN SCREENE]
+
+    loadingScreen.style.background = 'rgba(0,0,0,0)';
 
     return scene;
-
-    engine.hideLoadingUI();
 }
