@@ -21,6 +21,9 @@ export function main(){
 
     //[call ur modules here lel]
     p.main();
+
+    console.log('is runnings');
+    document.body.remove(document.querySelector("#loadingScreen"));
 }
 
 //setTimeout(main, 1000);
