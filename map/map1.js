@@ -2,6 +2,23 @@ export var mapParts = {}; //these are not 'map parts' 😭😭😭
 export var mapPartsReal = {};
 
 export const createScene = (canvas, engine) => {
+    function customLoadingScreen() {
+        console.log("customLoadingScreen creation")
+    }
+    customLoadingScreen.prototype.displayLoadingUI = function () {
+        console.log("customLoadingScreen loading")
+        loadingScreenDiv.innerHTML = "loading";
+    };
+    customLoadingScreen.prototype.hideLoadingUI = function () {
+        console.log("customLoadingScreen loaded")
+        loadingScreenDiv.style.display = "none";
+    };
+    
+    var loadingScreen = new customLoadingScreen();
+    engine.loadingScreen = loadingScreen;
+
+    engine.displayLoadingUI();
+
     const scene = new BABYLON.Scene(engine);
     scene.collisionsEnabled = true;
     mapParts.scene = scene; //i cant always create a new scene everytime i want to reference scene
@@ -52,4 +69,6 @@ export const createScene = (canvas, engine) => {
 
 
     return scene;
+
+    engine.hideLoadingUI();
 }

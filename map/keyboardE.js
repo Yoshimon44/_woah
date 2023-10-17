@@ -2,6 +2,7 @@
 const map1 = await import("/map/map1.js");
 
 
+
 // [VARIABLES]
 
 var [wPressed, aPressed, sPressed, dPressed] = [0, 0, 0, 0];
