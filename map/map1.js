@@ -3,24 +3,18 @@ export var mapPartsReal = {};
 
 export const createScene = (canvas, engine) => {
 
-    var loadingScreenDiv = document.getElementById("loadingScreen");
+    function CustomLoadingScreen() {
+        //init the loader
+        this.loadingUIText = "amogus";
+      }
+      CustomLoadingScreen.prototype.displayLoadingUI = function() {
+        alert(this.loadingUIText);
+      };
+      CustomLoadingScreen.prototype.hideLoadingUI = function() {
+        alert("Loaded!");
+      };
 
-    function customLoadingScreen() {
-        console.log("customLoadingScreen creation")
-    }
-    customLoadingScreen.prototype.displayLoadingUI = function () {
-        console.log("customLoadingScreen loading")
-        loadingScreenDiv.innerHTML = "loading";
-    };
-    customLoadingScreen.prototype.hideLoadingUI = function () {
-        console.log("customLoadingScreen loaded")
-        loadingScreenDiv.style.display = "none";
-    };
-
-    var loadingScreen = new customLoadingScreen();
-    engine.loadingScreen = loadingScreen;
-
-    engine.displayLoadingUI();
+      engine.displayLoadingUI();
 
     const scene = new BABYLON.Scene(engine);
     scene.collisionsEnabled = true;
