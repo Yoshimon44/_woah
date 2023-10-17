@@ -1,6 +1,8 @@
 export var mapParts = {}; //these are not 'map parts' 😭😭😭
 export var mapPartsReal = {};
 
+const havokInstance = await HavokPhysics();
+
 export const createScene = (canvas, engine) => {
     const loadingScreen = document.querySelector('#loadingScreen');
 
@@ -54,13 +56,13 @@ export const createScene = (canvas, engine) => {
 
     // [HAVOK]
 
-    const havokInstance = await HavokPhysics();
+    
     const havokPlugin = new BABYLON.HavokPlugin(true, havokInstance);
     mapPartsReal.havokPlugin = havokPlugin;
 
     // [LOADIGN SCREENE]
 
-    loadingScreen.style.background = 'rgba(0,0,0,0)';
+    loadingScreen.style.backgroundColor = 'rgba(0,0,0,0)';
 
     return scene;
 }
