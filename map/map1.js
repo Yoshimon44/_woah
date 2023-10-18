@@ -7,7 +7,7 @@ const havokInstance = await HavokPhysics();
 
 export const createScene = (canvas, engine) => {
 
-    const loadingScreen = document.querySelector('#loadingScreen');
+    const loadingScreen = window.document.querySelector('#loadingScreen');
 
     const scene = new BABYLON.Scene(engine);
     scene.collisionsEnabled = true;
