@@ -23,9 +23,19 @@ if (p instanceof Promise) {
     console.log('e');
 }
 
+var active = false;
+
 async function main(){ //i wanna try out promises
     if (e instanceof Promise || p instanceof Promise) {
-        main();
+        if (!active) {
+            active = true;
+            main();
+            {
+                setTimeout(function(){
+                    active = false;
+                }, 1000);
+            }
+        }
         return;
     }
 
