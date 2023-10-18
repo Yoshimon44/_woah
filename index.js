@@ -72,4 +72,7 @@ async function main(){ //i wanna try out promises
 
 console.log('errrrr!!!t');
 
+console.log(e instanceof Promise);
+console.log(p instanceof Promise);
+
 main();
