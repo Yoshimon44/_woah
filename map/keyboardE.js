@@ -190,4 +190,8 @@ export function main(){
       }
     }
   })
+  window.addEventListener('click', function(q){
+    console.log("Click!")
+    
+  })
 }
