@@ -37,6 +37,8 @@ async function main(){ //i wanna try out promises
             }
         }
         return;
+    } else {
+        console.log(e);
     }
 
     console.log('errrr!!');
