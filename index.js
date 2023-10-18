@@ -2,13 +2,13 @@ console.log('what issues?')
 
 //var e = await import("/map/map1.js");
 
-import * as e from "map/map1.js";
+import * as e from "/map/map1.js";
 
 console.log(e);
 
 //var p = await import("/map/keyboardE.js");
 
-import * as p from "map/keyboardE.js";
+import * as p from "/map/keyboardE.js";
 
 console.log(p);
 
