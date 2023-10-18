@@ -20,10 +20,15 @@ var p = import("/map/keyboardE.js").then(function(module1){
 })
 
 if (p instanceof Promise) {
-    p = await p;
+    console.log('e');
 }
 
 async function main(){ //i wanna try out promises
+    if (e instanceof Promise || p instanceof Promise) {
+        main();
+        return;
+    }
+
     console.log('errrr!!');
 
     var canvas = document.querySelector("#newCanva");
