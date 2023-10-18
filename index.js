@@ -22,7 +22,7 @@ async function main(){ //i wanna try out promises
     });
 
     //[call ur modules here lel]
-    var keyboardGood = await p.main();
+    p.main();
 
     console.log('is runnings');
 
