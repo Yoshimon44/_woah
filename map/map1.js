@@ -31,6 +31,13 @@ export const createScene = (canvas, engine) => {
         engine.enterPointerlock();
     })
 
+    const playerCharacter = BABYLON.MeshBuilder.CreateBox("player", {width: 10, height: 10, depth: 10});
+    const characterMaterial = new BABYLON.StandardMaterial("texture1");
+
+    playerCharacter.material = characterMaterial
+    characterMaterial.alpha = 0.1;
+    characterMaterial.emissiveColor = new BABYLON.Color3(100, 0, 255);
+
     const light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(0, 1, 0));
     mapParts.light = light;
     light.intensity = 1;
