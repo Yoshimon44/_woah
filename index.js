@@ -19,6 +19,8 @@ var p = import("/map/keyboardE.js").then(function(module1){
     console.log(err);
 })
 
+console.log(p);
+
 if (p instanceof Promise) {
     console.log('e');
 }
