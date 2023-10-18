@@ -27,7 +27,7 @@ export const createScene = (canvas, engine) => {
     
     document.querySelector("#newCanva").addEventListener("click", function(){
         // [mouseCamera.js]
-        console.log(engine);
+        //console.log(engine);
         engine.enterPointerlock();
     })
 
