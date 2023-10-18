@@ -21,28 +21,9 @@ Promise.resolve(import("/map/keyboardE.js")).then(function(e2){
 
 console.log(p);
 
-if (p instanceof Promise) {
-    console.log('e');
-}
-
 var active = false;
 
 async function main(){ //i wanna try out promises
-    if (e == null || p == null) {
-        if (!active) {
-            active = true;
-            main();
-            {
-                setTimeout(function(){
-                    active = false;
-                }, 1000);
-            }
-        }
-        return;
-    } else {
-        console.log(e);
-    }
-
     console.log('errrr!!');
 
     var canvas = document.querySelector("#newCanva");
@@ -77,4 +58,11 @@ console.log('errrrr!!!t');
 console.log(e);
 console.log(p);
 
-main();
+var x123 = setInterval(function(){
+    if (e) {
+        if (p) {
+            main();
+            clearInterval(x123);
+        }
+    }
+}, 1000);
