@@ -4,6 +4,7 @@
     - (obj) instanceof (Class)
         -This statement is self-explanatory. When you create an object using the 'new Class(...args)' syntax, that object is an instance of Class.
         -An example of a use case for this would be checking if something is a Vector3.
+            [camera.position instanceof BABYLON.Vector3]
     - importing module in html makes it so that you won't need to import it in your other scripts
         -uhh, im not certain about this one, but at least we dont need to import babylon everywhere
 
@@ -12,3 +13,7 @@
         - In other words, element.focus will run if caused by a user action such as clicking, hovering, etc.
 
     
+10/18/23:
+    - Unfortunately the multiple-input problem is indeed a laptop issue.
+        - On my computer and mouse, I have no issues moving the mouse (and the camera) while pressing on the keyboard.
+        - On my laptop (only the laptop; no mouse), trackpad input sometimes does not work while pressing on the keyboard; it works once keyboard input stops.

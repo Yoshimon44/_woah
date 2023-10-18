@@ -31,7 +31,8 @@ export const createScene = (canvas, engine) => {
         engine.enterPointerlock();
     })
 
-    const playerCharacter = BABYLON.MeshBuilder.CreateBox("player", {width: 10, height: 10, depth: 10});
+    const playerCharacter = BABYLON.MeshBuilder.CreateBox("player", {width: 1, height: 1, depth: 1});
+    mapPartsReal.playerCharacter = playerCharacter;
     const characterMaterial = new BABYLON.StandardMaterial("texture1");
 
     playerCharacter.material = characterMaterial

@@ -14,6 +14,8 @@ var listOfKeys = {
   'd': false
 };
 
+var moveSpeed = 1; //percentage of the walkSpeed.
+
 // [HELPER FUNCTIONS]
 
 function updateLabel(label, value) {  
@@ -23,6 +25,13 @@ function updateLabel(label, value) {
 
   if (label == document.querySelector('#rot')) { //special exception to the rest of the function, hence the return statement
     label.innerText = `Camera rot.:(${parseFloat(((value.x*180/Math.PI)%360).toFixed(2))}, ${parseFloat(((value.y * 180/Math.PI)%360).toFixed(2))}, ${parseFloat(((value.z*180/Math.PI)%360).toFixed(2))})`;
+    /*
+    Breakdown:
+      For each axis in the camera rotation position (Vector3, so 3 axes)...
+        - It gets converted to degrees from radians (via multiplying the axis value by 180/PI).
+        - It gets rounded to 2 decimal places (this makes the number a string unfortunately).
+        - parseFloat changes the string back into a number.
+    */
     return;
   }
 
@@ -43,6 +52,7 @@ function updateLabel(label, value) {
 
 export function main(){
   const camera = map1.mapParts.camera;
+  const character = map1.mapPartsReal.playerCharacter;
 
   setInterval(updateLabel, 1, 'rot', camera.rotation);
 
@@ -71,7 +81,8 @@ export function main(){
               -Math.cos(camera.rotation.y - Math.PI)
             ); //incorrect formula but eh, i aint take calculus yet
 
-            camera.position.addInPlace(forwardsVector.normalize().scale(0.1));
+            //camera.position.addInPlace(forwardsVector.normalize().scale(0.1 * moveSpeed));
+            character.position.addInPlace(forwardsVector.normalize().scale(0.1 * moveSpeed));
             loop_count++;
             updateLabel("pos", camera.position);
             updateLabel("rot", camera.rotation);
@@ -106,7 +117,7 @@ export function main(){
               -Math.cos(camera.rotation.y - Math.PI)
             ); //incorrect formula but eh, i aint take calculus yet
 
-            camera.position.subtractInPlace(forwardsVector.normalize().scale(0.1));
+            character.position.subtractInPlace(forwardsVector.normalize().scale(0.1 * moveSpeed));
             loop_count++;
             updateLabel("pos", camera.position);
             updateLabel("rot", camera.rotation);
@@ -140,7 +151,7 @@ export function main(){
               -Math.cos(camera.rotation.y - (Math.PI/2))
             ); 
 
-            camera.position.subtractInPlace(forwardsVector.normalize().scale(0.1));
+            character.position.subtractInPlace(forwardsVector.normalize().scale(0.1 * moveSpeed));
             loop_count++;
             updateLabel("pos", camera.position);
             updateLabel("rot", camera.rotation);
@@ -174,7 +185,7 @@ export function main(){
               -Math.cos(camera.rotation.y - (Math.PI * 1.5))
             ); 
 
-            camera.position.subtractInPlace(forwardsVector.normalize().scale(0.1));
+            character.position.subtractInPlace(forwardsVector.normalize().scale(0.1 * moveSpeed));
             loop_count++;
             updateLabel("pos", camera.position);
             updateLabel("rot", camera.rotation);
@@ -190,9 +201,12 @@ export function main(){
       }
     }
   })
+
+  camera.position = character.position;
+
   window.addEventListener('click', function(q){
     console.log("Click!")
-    var posi = camera.position
+    var posi = camera.position;
     
-  })
+  });
 }

@@ -30,3 +30,7 @@
 10/17/23:
     - Made the camera collision more consistent, as to not look through shapes as much.
     - Added "a" + "d" controls.
+
+10/18/23:
+    - Loading screen fixed
+    - Player character box
