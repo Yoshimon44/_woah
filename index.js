@@ -1,11 +1,21 @@
 console.log('what issues?')
 
-var e = await import("/map/map1.js")
+var e = import("/map/map1.js").then(function(module1){
+    console.log(module1);
+    return module1;
+}).catch(function(err){
+    console.log(err);
+})
 
 
 console.log(e);
 
-var p = await import("/map/keyboardE.js")
+var p = import("/map/keyboardE.js").then(function(module1){
+    console.log(module1);
+    return module1;
+}).catch(function(err){
+    console.log(err);
+})
 
 console.log(p);
 
