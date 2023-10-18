@@ -3,7 +3,9 @@ var p = await import("/map/keyboardE.js");
 
 console.log(p);
 
-export async function main(){ //i wanna try out promises
+async function main(){ //i wanna try out promises
+    console.log('errrr!!');
+
     var canvas = document.querySelector("#newCanva");
     var engine = new BABYLON.Engine(canvas, true);
 
@@ -30,6 +32,9 @@ export async function main(){ //i wanna try out promises
 //setTimeout(main, 1000);
 
 // [PROGRAM]
+
+console.log('errrrr!!!t');
+
 const loadingScreen = document.querySelector('#loadingScreen');
 
 main();
