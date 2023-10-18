@@ -65,7 +65,7 @@ export const createScene = (canvas, engine) => {
 
     // [LOADIGN SCREENE]
     
-    document.body.remove(document.querySelector("#loadingScreen"));
+    document.querySelector("#loadingScreen").setAttribute('hidden', true);
 
     return scene;
 }
