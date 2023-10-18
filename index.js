@@ -2,7 +2,6 @@ console.log('what issues?')
 
 var e = import("/map/map1.js").then(function(module1){
     console.log("IM GOOD");
-    e = module1;
     return module1;
 }).catch(function(err){
     console.log(err);
@@ -13,7 +12,6 @@ console.log(e);
 
 var p = import("/map/keyboardE.js").then(function(module1){
     console.log("IM GOOD");
-    p = module1;
     return module1;
 }).catch(function(err){
     console.log(err);
