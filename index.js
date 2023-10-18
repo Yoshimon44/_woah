@@ -18,7 +18,9 @@ var p = import("/map/keyboardE.js").then(function(module){
 })
 
 
-console.log(p instanceof Promise);
+if (p instanceof Promise) {
+    p = await p;
+}
 
 async function main(){ //i wanna try out promises
     console.log('errrr!!');
