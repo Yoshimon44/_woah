@@ -5,6 +5,7 @@ var e;
 Promise.resolve(import("/map/map1.js")).then(function(e2){
     e = e2;
     console.log(e2);
+    console.log(e);
 });
 
 
@@ -15,6 +16,7 @@ var p;
 Promise.resolve(import("/map/keyboardE.js")).then(function(e2){
     p = e2;
     console.log(e2);
+    console.log(p);
 })
 
 console.log(p);
