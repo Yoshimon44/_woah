@@ -1,11 +1,19 @@
 console.log('what issues?')
 
-var e = Promise.resolve(import("/map/map1.js"));
+var e;
+
+Promise.resolve(import("/map/map1.js")).then(function(e2){
+    e = e2;
+});
 
 
 console.log(e);
 
-var p = Promise.resolve(import("/map/keyboardE.js"));
+var p;
+
+Promise.resolve(import("/map/keyboardE.js")).then(function(e2){
+    p = e2;
+})
 
 console.log(p);
 
@@ -16,7 +24,7 @@ if (p instanceof Promise) {
 var active = false;
 
 async function main(){ //i wanna try out promises
-    if (e instanceof Promise || p instanceof Promise) {
+    if (e == null || p == null) {
         if (!active) {
             active = true;
             main();
