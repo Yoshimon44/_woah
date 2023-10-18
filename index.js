@@ -1,21 +1,11 @@
 console.log('what issues?')
 
-var e = import("/map/map1.js").then(function(module1){
-    console.log("IM GOOD");
-    return module1;
-}).catch(function(err){
-    console.log(err);
-})
+var e = await import("/map/map1.js")
 
 
 console.log(e);
 
-var p = import("/map/keyboardE.js").then(function(module1){
-    console.log("IM GOOD");
-    return module1;
-}).catch(function(err){
-    console.log(err);
-})
+var p = await import("/map/keyboardE.js")
 
 console.log(p);
 
@@ -72,7 +62,7 @@ async function main(){ //i wanna try out promises
 
 console.log('errrrr!!!t');
 
-console.log(e instanceof Promise);
-console.log(p instanceof Promise);
+console.log(e);
+console.log(p);
 
 main();
