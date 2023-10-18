@@ -3,11 +3,11 @@ var p = await import("/map/keyboardE.js");
 
 console.log(p);
 
-export function main(){
+export async function main(){ //i wanna try out promises
     var canvas = document.querySelector("#newCanva");
     var engine = new BABYLON.Engine(canvas, true);
 
-    var scene = e.createScene(canvas, engine);
+    var scene = await e.createScene(canvas, engine);
 
     console.log(scene);
 
@@ -20,10 +20,16 @@ export function main(){
     });
 
     //[call ur modules here lel]
-    p.main();
+    var keyboardGood = await p.main();
 
     console.log('is runnings');
+
     document.body.remove(document.querySelector("#loadingScreen"));
 }
 
 //setTimeout(main, 1000);
+
+// [PROGRAM]
+const loadingScreen = document.querySelector('#loadingScreen');
+
+main();

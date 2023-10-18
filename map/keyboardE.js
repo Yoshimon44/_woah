@@ -190,4 +190,8 @@ export function main(){
       }
     }
   })
+
+  return new Promise((yes, no)=>{
+    yes("Finished.")
+  });
 }

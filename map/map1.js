@@ -6,9 +6,6 @@ const index = await import("/index.js");
 const havokInstance = await HavokPhysics();
 
 export const createScene = (canvas, engine) => {
-
-    const loadingScreen = document.querySelector('#loadingScreen');
-
     const scene = new BABYLON.Scene(engine);
     scene.collisionsEnabled = true;
     mapParts.scene = scene; //i cant always create a new scene everytime i want to reference scene
@@ -64,9 +61,8 @@ export const createScene = (canvas, engine) => {
     mapPartsReal.havokPlugin = havokPlugin;
 
     // [LOADIGN SCREENE]
-    loadingScreen.style.backgroundColor = 'rgba(0,0,0,0)';
-
-    index.main();
-
-    return scene;
+    
+    return new Promise(function(resolve, reject){
+        resolve(scene);
+    })
 }
