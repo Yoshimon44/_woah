@@ -26,4 +26,4 @@ export function main(){
     document.body.remove(document.querySelector("#loadingScreen"));
 }
 
-//setTimeout(main, 1000);
+setTimeout(main, 1000);
