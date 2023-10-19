@@ -217,8 +217,18 @@ export function main(){
     console.log("Click!")
     var ray = camera.getForwardRay(999);
 
-    var hit = scene.pickWithRay(ray);
+    function predicate(mesh) {
+      if (mesh != character) {
+        return false;
+      }
+      return true;
+    }
+
+
+    var hit = scene.pickWithRay(ray, predicate);
     console.log(hit)
+
+    
 
         
   });
