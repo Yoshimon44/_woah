@@ -210,10 +210,10 @@ export function main(){
     therefore, it does not work for our intended purposes. need to find another way of detecting camera direction. maybe assign
     a square in front of the camera, which moves with the camera somehow?????*/
 
-      camera.position.x = camera.position.x + Math.sin(camera.rotation.y)
-      camera.position.y = camera.position.y
-      camera.position.z = camera.position.z + Math.cos(camera.rotation.y)
-      console.log(camera.position.x, camera.position.y, camera.position.z)
+      var x = camera.rotation.x
+      var y = camera.rotation.y
+      var z = caerma.rotation.z
+      console.log(x,y,z)
 
         
   });
