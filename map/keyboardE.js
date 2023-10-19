@@ -214,7 +214,19 @@ export function main(){
       var x = camera.rotation.x*(deg)
       var y = camera.rotation.y*(deg)
       var z = camera.rotation.z*(deg)
+      var forwardsVector = new BABYLON.Vector3(
+        Math.sin(camera.rotation.y),
+        0, //-Math.sin(camera.rotation.x)
+        -Math.cos(camera.rotation.y - Math.PI)
+      );
       console.log(x,y,z)
+      var raycastResult = new BABYLON.PhysicsRaycastResult();
+      var start = new BABYLON.Vector3(x, y, z);
+      var end = start.add(x,y+100,z)
+      physicsEngine.raycastToRef(start, end, raycastResult);
+      if (raycastResult.hasHit) {
+        console.log("Collision at ", raycastResult.hitPointWorld);
+      }
 
         
   });
