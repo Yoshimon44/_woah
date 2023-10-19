@@ -56,8 +56,21 @@ function updateLabel(label, value) {
 
 
 function getNearestPart(position){
-  nearestPartMagnitude = 0;
+  nearestPartMagnitude = 10**10**10**10**10;
+  var nearestPart;
 
+
+  map1.mapPartsReal.forEach(function(mapPart) {
+    if ("position" in mapPart) {
+      if (position.subtract(mapPart.position).length() < nearestPartMagnitude){
+        nearestPart = mapPart;
+        nearestPartMagnitude = position.subtract(mapPart.position).length();
+      }
+    }
+  });
+
+  return {part: nearestPart, magnitude: nearestPartMagnitude};
+  
 }
 
 // [PROGRAM]
@@ -81,6 +94,8 @@ export function main(){
 
   window.addEventListener("keydown", function(e){
     if (e.key == "w" && !pressedDebounceZ) {
+
+    console.log(getNearestPart(camera.position));
       listOfKeys.w = true;
       pressedDebounceZ = true;
       var debounceFunc = setTimeout(function(){
@@ -114,7 +129,6 @@ export function main(){
         }
       }
     }
-
 
     if (e.key == 's' && !pressedDebounceZ) {
       listOfKeys.s = true;
@@ -241,5 +255,6 @@ export function main(){
     if(hit.pickedMesh.hitBox == true && hit.pickedMesh != null){
       console.log("Hit!")
     }
+    var spread = Math.random()*5
   });
 }
