@@ -1,6 +1,6 @@
 // [IMPORTS]
 const map1 = await import("/map/map1.js");
-const havokPlugin = map1.mapPartsReal.havokPlugin;
+
 
 
 
@@ -57,6 +57,7 @@ function updateLabel(label, value) {
 export function main(){
   const camera = map1.mapParts.camera;
   const character = map1.mapPartsReal.playerCharacter;
+  const havokPlugin = map1.mapPartsReal.havokPlugin;
   const scene = map1.mapParts.scene;
 
   scene.enablePhysics(new BABYLON.Vector3(0, -9.81, 0), havokPlugin);
