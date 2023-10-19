@@ -230,7 +230,7 @@ export function main(){
     var hit = scene.pickWithRay(ray, predicate);
     console.log(hit)
 
-    if(hitBox == true){
+    if(hit.hitBox == true){
       console.log("Hit!")
     }
     
