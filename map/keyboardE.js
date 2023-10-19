@@ -210,17 +210,11 @@ export function main(){
     therefore, it does not work for our intended purposes. need to find another way of detecting camera direction. maybe assign
     a square in front of the camera, which moves with the camera somehow?????*/
 
-    /*
-      dont ask me why im using sin and cos. but i am.
-
-      circle based off a plane made from the X and Z axes.
-
       camera.position.x = camera.position.x + Math.sin(camera.rotation.y)
-      camera.position.y = 0
+      camera.position.y = camera.position.y
       camera.position.z = camera.position.z + Math.cos(camera.rotation.y)
-    */
+      console.log(camera.position.x, camera.position.y, camera.position.z)
 
-      
         
   });
 }
