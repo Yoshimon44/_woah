@@ -36,7 +36,7 @@ export const createScene = (canvas, engine) => {
     playerCharacter.position = camera.position;
     mapPartsReal.playerCharacter = playerCharacter;
     
-    playerCharacter.applyImpulse(new BABYLON.Vector3(0, 10, 0),
+    camera.applyImpulse(new BABYLON.Vector3(0, 10, 0),
                                 new BABYLON.Vector3(camera.Position) 
     );
 
