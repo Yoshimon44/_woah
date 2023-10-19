@@ -1,5 +1,6 @@
 export var mapParts = {}; //these are not 'map parts' 😭😭😭
 export var mapPartsReal = {};
+export var hitBox;
 
 const index = await import("/index.js");
 
@@ -20,7 +21,7 @@ export const createScene = (canvas, engine) => {
     camera.isMovingZ = false;
     camera.isMovingX = false;
     
-    camera.ellipsoid = new BABYLON.Vector3(1.4,1.4,1.4);
+    /*camera.ellipsoid = new BABYLON.Vector3(1.4,1.4,1.4);*/
     mapParts.camera = camera;
     camera.attachControl(canvas, true);
 
@@ -50,16 +51,19 @@ export const createScene = (canvas, engine) => {
     const box = BABYLON.MeshBuilder.CreateBox("box", {width: 10, height: 10});
     box.checkCollisions = true;
     mapPartsReal.box = box;
+    box.hitBox = true
 
     const box2 = BABYLON.MeshBuilder.CreateBox("box2", {width: 10, height: 10});
     box2.position = new BABYLON.Vector3(-6, 5, -9)
     box2.checkCollisions = true;
     mapPartsReal.box2 = box2;
+    box.hitBox = true;
 
     const box3 = BABYLON.MeshBuilder.CreateBox("box2", {width: 10, height: 10});
     box3.position = new BABYLON.Vector3(7, 2, 7)
     box3.checkCollisions = true;
     mapPartsReal.box3 = box3;
+    box.hitBox = true;
 
     
 
