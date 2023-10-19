@@ -230,8 +230,10 @@ export function main(){
     var hit = scene.pickWithRay(ray, predicate);
     console.log(hit)
 
-    if(hit.pickedMesh.hitBox == true){
+    if(hit.pickedMesh.hitBox == true && hit.pickedMesh != null){
       console.log("Hit!")
+    } else {
+      console.log("No target!")
     }
     
   });
