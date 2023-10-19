@@ -232,9 +232,5 @@ export function main(){
 
     if(hit.pickedMesh.hitBox == true && hit.pickedMesh != null){
       console.log("Hit!")
-    } else {
-      console.log("No target!")
-    }
-    
   });
 }
