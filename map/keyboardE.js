@@ -209,10 +209,11 @@ export function main(){
     /*var posi = camera.position; this prints the position of the camera object, not depending on which direction it's facing,
     therefore, it does not work for our intended purposes. need to find another way of detecting camera direction. maybe assign
     a square in front of the camera, which moves with the camera somehow?????*/
+      var deg = 180/Math.PI
 
-      var x = camera.rotation.x
-      var y = camera.rotation.y
-      var z = camera.rotation.z
+      var x = camera.rotation.x*(deg)
+      var y = camera.rotation.y*(deg)
+      var z = camera.rotation.z*(deg)
       console.log(x,y,z)
 
         
