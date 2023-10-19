@@ -218,7 +218,7 @@ export function main(){
     var ray = camera.getForwardRay(999);
 
     function predicate(mesh) {
-      if (mesh != character) {
+      if (mesh.id != 'player') {
         return false;
       }
       return true;
