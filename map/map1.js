@@ -3,7 +3,7 @@ export var mapPartsReal = {};
 
 const index = await import("/index.js");
 
-const havokInstance = await HavokPhysics();
+//const havokInstance = await HavokPhysics();
 
 export const createScene = (canvas, engine) => {
 
@@ -70,8 +70,8 @@ export const createScene = (canvas, engine) => {
     // [HAVOK]
 
     
-    const havokPlugin = new BABYLON.HavokPlugin(true, havokInstance);
-    mapPartsReal.havokPlugin = havokPlugin;
+    //const havokPlugin = new BABYLON.HavokPlugin(true, havokInstance);
+    //mapPartsReal.havokPlugin = havokPlugin;
 
     // [LOADIGN SCREENE]
     

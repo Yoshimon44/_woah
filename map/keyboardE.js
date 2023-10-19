@@ -57,11 +57,11 @@ function updateLabel(label, value) {
 export function main(){
   const camera = map1.mapParts.camera;
   const character = map1.mapPartsReal.playerCharacter;
-  const havokPlugin = map1.mapPartsReal.havokPlugin;
+  //const havokPlugin = map1.mapPartsReal.havokPlugin;
   const scene = map1.mapParts.scene;
 
-  scene.enablePhysics(new BABYLON.Vector3(0, -9.81, 0), havokPlugin);
-  var physicsEngine = scene.getPhysicsEngine();
+  //scene.enablePhysics(new BABYLON.Vector3(0, -9.81, 0), havokPlugin);
+ // var physicsEngine = scene.getPhysicsEngine();
 
   setInterval(updateLabel, 1, 'rot', camera.rotation);
 
@@ -235,18 +235,14 @@ export function main(){
 
 
 
-      var raycastResult = new BABYLON.PhysicsRaycastResult();
+      //var raycastResult = new BABYLON.PhysicsRaycastResult();
       //var start = new BABYLON.Vector3(x, y, z);
 
       var start = camera.position;
       var end = start.add(forwardsVector.scale(900));
-      physicsEngine.raycastToRef(start, end, raycastResult);
+      //physicsEngine.raycastToRef(start, end, raycastResult);
 
-      console.log(raycastResult);
-
-      if (raycastResult.hasHit) {
-        console.log("Collision at ", raycastResult.hitPointWorld);
-      }
+      //console.log(raycastResult);
 
         
   });
