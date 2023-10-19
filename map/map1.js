@@ -43,7 +43,7 @@ export const createScene = (canvas, engine) => {
 
     const light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(0, 1, 0));
     mapParts.light = light;
-    light.intensity = 1;
+    light.intensity = 0.7;
 
     // [MAP]
 
