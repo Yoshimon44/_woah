@@ -35,10 +35,6 @@ export const createScene = (canvas, engine) => {
     const playerCharacter = BABYLON.MeshBuilder.CreateBox("player", {width: 1, height: 1, depth: 1});
     playerCharacter.position = camera.position;
     mapPartsReal.playerCharacter = playerCharacter;
-    
-    camera.applyImpulse(new BABYLON.Vector3(0, 10, 0),
-                                new BABYLON.Vector3(camera.Position) 
-    );
 
     const characterMaterial = new BABYLON.StandardMaterial("texture1");
 
