@@ -206,8 +206,9 @@ export function main(){
 
   window.addEventListener('click', function(q){
     console.log("Click!")
-    var posi = camera.position;
-    console.log(posi)
-    
+    /*var posi = camera.position; this prints the position of the camera object, not depending on which direction it's facing,
+    therefore, it does not work for our intended purposes. need to find another way of detecting camera direction. maybe assign
+    a square in front of the camera, which moves with the camera somehow?????*/
+        
   });
 }
