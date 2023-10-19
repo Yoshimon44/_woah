@@ -233,6 +233,9 @@ export function main(){
       var start = new BABYLON.Vector3(x, y, z);
       var end = start.add(forwardsVector.scale(900));
       physicsEngine.raycastToRef(start, end, raycastResult);
+
+      console.log(raycastResult);
+
       if (raycastResult.hasHit) {
         console.log("Collision at ", raycastResult.hitPointWorld);
       }
