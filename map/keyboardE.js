@@ -212,7 +212,7 @@ export function main(){
 
       var x = camera.rotation.x
       var y = camera.rotation.y
-      var z = caerma.rotation.z
+      var z = camera.rotation.z
       console.log(x,y,z)
 
         
