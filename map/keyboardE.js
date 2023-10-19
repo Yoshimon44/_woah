@@ -20,6 +20,8 @@ var listOfKeys = {
 
 var moveSpeed = 1; //percentage of the walkSpeed.
 
+var nearestPartMagnitude; //used in getNearestPart.
+
 // [HELPER FUNCTIONS]
 
 function updateLabel(label, value) {  
@@ -50,6 +52,12 @@ function updateLabel(label, value) {
   }
 
   label.innerText += value;
+}
+
+
+function getNearestPart(position){
+  nearestPartMagnitude = 0;
+
 }
 
 // [PROGRAM]
