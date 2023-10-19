@@ -57,8 +57,9 @@ function updateLabel(label, value) {
 export function main(){
   const camera = map1.mapParts.camera;
   const character = map1.mapPartsReal.playerCharacter;
+  const scene = map1.mapParts.scene;
 
-  map1.mapParts.scene.enablePhysics(new BABYLON.Vector3(0, -9.81, 0), havokPlugin);
+  scene.enablePhysics(new BABYLON.Vector3(0, -9.81, 0), havokPlugin);
   var physicsEngine = scene.getPhysicsEngine();
 
   setInterval(updateLabel, 1, 'rot', camera.rotation);
