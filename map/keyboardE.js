@@ -230,7 +230,7 @@ export function main(){
     var hit = scene.pickWithRay(ray, predicate);
     console.log(hit)
 
-    if(hit.hitBox == true){
+    if(hit.pickedMesh.hitBox == true){
       console.log("Hit!")
     }
     
