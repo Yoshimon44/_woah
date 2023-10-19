@@ -207,6 +207,7 @@ export function main(){
   window.addEventListener('click', function(q){
     console.log("Click!")
     var posi = camera.position;
+    console.log(posi)
     
   });
 }
