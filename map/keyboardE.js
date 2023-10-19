@@ -221,7 +221,7 @@ export function main(){
 
       console.log(mesh);
 
-      if (mesh.id != 'player') {
+      if (mesh.id == 'player') {
         return false;
       }
       return true;
