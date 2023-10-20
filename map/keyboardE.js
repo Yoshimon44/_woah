@@ -114,7 +114,7 @@ export function main(){
   camera.keysLeft = [65];
   camera.keysRight = [68];
 
-  camera.needMoveForGravity(true);
+  camera.needMoveForGravity = true;
 
   window.addEventListener("keydown", function(e){
 
