@@ -107,7 +107,7 @@ export function main(){
     };
   })
 
-  scene.gravity = -1.6;
+  scene.gravity = new BABYLON.Vector3(0, -1.6, 0);
 
   camera.keysUp = [87];
   camera.keysDown = [83];
