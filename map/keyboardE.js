@@ -72,6 +72,10 @@ function getNearestPart(position){
   */
 
   for (var [key, value] of Object.entries(map1.mapPartsReal)) {
+    if (value.id == 'player') {
+      continue; //skip to the next cycle
+    }
+
     if ("position" in value) {
       if (position.subtract(value.position).length() < nearestPartMagnitude) {
         nearestPart = value;
