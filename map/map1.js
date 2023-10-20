@@ -20,7 +20,9 @@ export const createScene = (canvas, engine) => {
     camera.checkCollisions = true;
     camera.isMovingZ = false;
     camera.isMovingX = false; 
-    //scene.gravity = new BABYLON.Vector3(0, -0.6, 0); possible gravity, needs further testing
+    scene.gravity = new BABYLON.Vector3(0, -0.6, 0); //possible gravity, needs further testing
+
+    camera.applyGravity = true;
     
     /*camera.ellipsoid = new BABYLON.Vector3(1.4,1.4,1.4);*/
     mapParts.camera = camera;
@@ -36,6 +38,8 @@ export const createScene = (canvas, engine) => {
     const playerCharacter = BABYLON.MeshBuilder.CreateBox("player", {width: 1, height: 1, depth: 1});
     playerCharacter.position = camera.position;
     mapPartsReal.playerCharacter = playerCharacter;
+
+    hitBox = playerCharacter;
 
     const characterMaterial = new BABYLON.StandardMaterial("texture1");
 
