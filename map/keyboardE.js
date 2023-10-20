@@ -128,7 +128,7 @@ export function main(){
   camera.keysUp = [87];
   camera.keysDown = [83];
   camera.keysLeft = [65];
-  camera.keysRight = [68];
+  camera.keysRight = [68]; //not the plan, will change later
 
   camera.needMoveForGravity = true;
 
