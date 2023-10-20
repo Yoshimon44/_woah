@@ -19,8 +19,8 @@ export const createScene = (canvas, engine) => {
     const camera = new BABYLON.UniversalCamera("myCamera", new BABYLON.Vector3(0, 1, -10));
     camera.checkCollisions = true;
     camera.isMovingZ = false;
-    camera.isMovingX = false;
-    scene.gravity = new BABYLON.Vector3(0, -0.6, 0);
+    camera.isMovingX = false; 
+    //scene.gravity = new BABYLON.Vector3(0, -0.6, 0); possible gravity, needs further testing
     
     /*camera.ellipsoid = new BABYLON.Vector3(1.4,1.4,1.4);*/
     mapParts.camera = camera;
