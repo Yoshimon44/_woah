@@ -60,7 +60,8 @@ function getNearestPart(position){
   var nearestPart;
 
 
-  map1.mapPartsReal.forEach(function(mapPart) {
+  /*
+    map1.mapPartsReal.forEach(function(mapPart) {
     if ("position" in mapPart) {
       if (position.subtract(mapPart.position).length() < nearestPartMagnitude){
         nearestPart = mapPart;
@@ -68,6 +69,16 @@ function getNearestPart(position){
       }
     }
   });
+  */
+
+  for (var [key, value] of Object.entries(map1.mapPartsReal)) {
+    if ("position" in value) {
+      if (position.subtract(value.position).length() < nearestPartMagnitude) {
+        nearestPart = mapPart;
+        nearestPartMagnitude = position.subtract(value.position).length();
+      }
+    }
+  }
 
   return {part: nearestPart, magnitude: nearestPartMagnitude};
   
