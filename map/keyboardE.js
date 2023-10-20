@@ -93,10 +93,10 @@ function jump(scene){ //look, i jsut wanted to make a quadratic function thats i
 
   var elapsedTime = 0;
   var animation = setInterval(function(){
-    elapsedTime++;
-    scene.gravity.y = jumpFunction(elapsedTime * 0.006);
+    elapsedTime += 6;
+    scene.gravity.y = jumpFunction(elapsedTime * 0.001);
 
-    if (elapsedTime == 1001) {
+    if (elapsedTime >= 6001) {
       clearInterval(animation);
       return;
     }
