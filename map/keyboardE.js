@@ -110,7 +110,7 @@ export function main(){
   window.addEventListener("keydown", function(e){
     if (e.key == "w" && !pressedDebounceZ) {
 
-    console.log(getNearestPart(camera.position));
+      console.log(getNearestPart(camera.position));
       listOfKeys.w = true;
       pressedDebounceZ = true;
       var debounceFunc = setTimeout(function(){
@@ -246,6 +246,18 @@ export function main(){
         }
       }
     }
+  
+    if (e.key == ' ') {
+      setTimeout(function(){
+        scene.gravity.y = -0.6;
+
+        setTimeout(function(){
+          scene.gravity.y = 0.6;
+        }, 500);
+
+      }, 500);
+    }
+  
   })
 
   camera.position = character.position;
