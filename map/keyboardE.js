@@ -247,7 +247,10 @@ export function main(){
       }
     }
   
-    if (e.key == ' ') {
+
+    console.log(e);
+
+    if (e.code == 'Space') {
       setTimeout(function(){
         scene.gravity.y = -0.6;
 
