@@ -107,7 +107,7 @@ export function main(){
     };
   })
 
-  scene.gravity = 100;
+  scene.gravity = -1.6;
 
   camera.keysUp = [87];
   camera.keysDown = [83];
@@ -261,11 +261,11 @@ export function main(){
 
     if (e.code == 'Space') {
       console.log('space pressed.');
-      scene.gravity.y = -0.6;
+      scene.gravity.y = 5;
       console.log(scene.gravity);
 
       setTimeout(function(){
-        scene.gravity.y = 100;
+        scene.gravity.y = -1.6;
         console.log(scene.gravity);
       }, 500)
     }
