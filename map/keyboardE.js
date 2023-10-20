@@ -246,13 +246,12 @@ export function main(){
         }
       }
     }
-  
-
-    console.log(e);
 
     if (e.code == 'Space') {
+      console.log('space pressed.');
+
       setTimeout(function(){
-        scene.gravity.y = -0.6;
+        scene.gravity.y = -23;
 
         setTimeout(function(){
           scene.gravity.y = 0.6;
@@ -270,9 +269,6 @@ export function main(){
     var ray = camera.getForwardRay(999);
 
     function predicate(mesh) {
-
-      console.log(mesh);
-
       if (mesh.id == 'player') {
         return false;
       }
@@ -280,10 +276,9 @@ export function main(){
     }
 
     var hit = scene.pickWithRay(ray, predicate);
-    console.log(hit)
 
     if(hit.pickedMesh.hitBox == true && hit.pickedMesh != null){
-      console.log("Hit!")
+      console.log("Hit!");
     }
     var spread = Math.random()*5
   });
