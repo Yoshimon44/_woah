@@ -100,6 +100,7 @@ export function main(){
  // var physicsEngine = scene.getPhysicsEngine();
 
   setInterval(updateLabel, 1, 'rot', camera.rotation);
+  setInterval(updateLabel, 1, 'pos', camera.position);
 
   window.addEventListener("keyup", function(e){
     if (listOfKeys.hasOwnProperty(e.key)) {
@@ -261,7 +262,7 @@ export function main(){
 
     if (e.code == 'Space') {
       console.log('space pressed.');
-      scene.gravity.y = 5;
+      scene.gravity.y = 1.6;
       console.log(scene.gravity);
 
       setTimeout(function(){
