@@ -88,6 +88,21 @@ function getNearestPart(position){
   
 }
 
+function jump(){ //look, i jsut wanted to make a quadratic function thats it!!!
+  var jumpFunction = (x) => (-1.2/9) * (x - 3) ** 2 + 0.6;
+
+  var elapsedTime = 0;
+  var animation = setInterval(function(){
+    elapsedTime++;
+    scene.gravity.y = jumpFunction(elapsedTime * 0.006);
+
+    if (elapsedTime == 1001) {
+      clearInterval(animation);
+      return;
+    }
+  }, 1)
+}
+
 // [PROGRAM]
 
 export function main(){
@@ -262,13 +277,7 @@ export function main(){
 
     if (e.code == 'Space') {
       console.log('space pressed.');
-      scene.gravity.y = 0.6;
-      console.log(scene.gravity);
-
-      setTimeout(function(){
-        scene.gravity.y = -0.6;
-        console.log(scene.gravity);
-      }, 500)
+      jump();
     }
   
   })
