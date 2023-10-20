@@ -88,7 +88,7 @@ function getNearestPart(position){
   
 }
 
-function jump(){ //look, i jsut wanted to make a quadratic function thats it!!!
+function jump(scene){ //look, i jsut wanted to make a quadratic function thats it!!!
   var jumpFunction = (x) => (-1.2/9) * (x - 3) ** 2 + 0.6;
 
   var elapsedTime = 0;
@@ -277,7 +277,7 @@ export function main(){
 
     if (e.code == 'Space') {
       console.log('space pressed.');
-      jump();
+      jump(scene);
     }
   
   })
