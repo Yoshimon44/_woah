@@ -108,7 +108,7 @@ export function main(){
     };
   })
 
-  scene.gravity = new BABYLON.Vector3(0, -1.6, 0);
+  scene.gravity = new BABYLON.Vector3(0, -0.6, 0);
 
   camera.keysUp = [87];
   camera.keysDown = [83];
@@ -262,11 +262,11 @@ export function main(){
 
     if (e.code == 'Space') {
       console.log('space pressed.');
-      scene.gravity.y = 1.6;
+      scene.gravity.y = 0.6;
       console.log(scene.gravity);
 
       setTimeout(function(){
-        scene.gravity.y = -1.6;
+        scene.gravity.y = -0.6;
         console.log(scene.gravity);
       }, 500)
     }
