@@ -88,12 +88,12 @@ function getNearestPart(position){
   
 }
 
-function jump(scene){ //look, i jsut wanted to make a quadratic function thats it!!!
+export function jump(scene){ //look, i jsut wanted to make a quadratic function thats it!!!
   var jumpFunction = (x) => (-1.2/9) * (x - 3) ** 2 + 0.6;
 
   var elapsedTime = 0;
   var animation = setInterval(function(){
-    elapsedTime += 36;
+    elapsedTime += 50;
     scene.gravity.y = jumpFunction(elapsedTime * 0.001);
 
     if (elapsedTime >= 6001) {
