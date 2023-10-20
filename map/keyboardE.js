@@ -18,6 +18,18 @@ var listOfKeys = {
   'd': false
 };
 
+//WEAPON EQUIP VARIABLES
+var fists = false
+var pistol = true
+var shotgun = false
+var chaingun = false
+var launcher = false
+var plasmaGun = false
+var bfg = false
+
+//WEAPON OWNED VARIABLES
+
+
 var moveSpeed = 1; //percentage of the walkSpeed.
 
 var nearestPartMagnitude; //used in getNearestPart.
@@ -133,157 +145,21 @@ export function main(){
   camera.needMoveForGravity = true;
 
   window.addEventListener("keydown", function(e){
-
-    /*
-        if (e.key == "w" && !pressedDebounceZ) {
-
-      console.log(getNearestPart(camera.position));
-      listOfKeys.w = true;
-      pressedDebounceZ = true;
-      var debounceFunc = setTimeout(function(){
-        pressedDebounceZ = false;
-      }, 188)
-
-      if (!camera.isMovingZ) {
-        camera.isMovingZ = true;
-        {
-          var loop_count = 0;
-          var loop = setInterval(function(){
-            var forwardsVector = new BABYLON.Vector3(
-              Math.sin(camera.rotation.y),
-              0, //-Math.sin(camera.rotation.x)
-              -Math.cos(camera.rotation.y - Math.PI)
-            ); //incorrect formula but eh, i aint take calculus yet
-
-            //camera.position.addInPlace(forwardsVector.normalize().scale(0.1 * moveSpeed));
-            character.position.addInPlace(forwardsVector.normalize().scale(0.1 * moveSpeed));
-            loop_count++;
-            updateLabel("pos", camera.position);
-            updateLabel("rot", camera.rotation);
-
-            if (listOfKeys.w == false) {
-              clearInterval(loop);
-              clearTimeout(debounceFunc);
-              pressedDebounceZ = false;
-              camera.isMovingZ = false;
-            }
-          }, 1)
-        }
-      }
-    }
-
-    if (e.key == 's' && !pressedDebounceZ) {
-      listOfKeys.s = true;
-      pressedDebounceZ = true;
-      var debounceFunc = setTimeout(function(){
-        pressedDebounceZ = false;
-      }, 188)
-
-      if (!camera.isMovingZ) {
-        camera.isMovingZ = true;
-        {
-          var loop_count = 0;
-          var loop = setInterval(function(){
-            var forwardsVector = new BABYLON.Vector3(
-              Math.sin(camera.rotation.y),
-              0, //-Math.sin(camera.rotation.x)
-              -Math.cos(camera.rotation.y - Math.PI)
-            ); //incorrect formula but eh, i aint take calculus yet
-
-            character.position.subtractInPlace(forwardsVector.normalize().scale(0.1 * moveSpeed));
-            loop_count++;
-            updateLabel("pos", camera.position);
-            updateLabel("rot", camera.rotation);
-
-            if (listOfKeys.s == false) {
-              clearInterval(loop);
-              clearTimeout(debounceFunc);
-              pressedDebounceZ = false;
-              camera.isMovingZ = false;
-            }
-          }, 1)
-        }
-      }
-    }
-
-    if (e.key == 'a' && !pressedDebounceX) {
-      listOfKeys.a = true;
-      pressedDebounceX = true;
-      var debounceFunc = setTimeout(function(){
-        pressedDebounceX = false;
-      }, 188)
-
-      if (!camera.isMovingX) {
-        camera.isMovingX = true;
-        {
-          var loop_count = 0;
-          var loop = setInterval(function(){
-            var forwardsVector = new BABYLON.Vector3(
-              Math.sin(camera.rotation.y + (Math.PI/2)),
-              0, //-Math.sin(camera.rotation.x)
-              -Math.cos(camera.rotation.y - (Math.PI/2))
-            ); 
-
-            character.position.subtractInPlace(forwardsVector.normalize().scale(0.1 * moveSpeed));
-            loop_count++;
-            updateLabel("pos", camera.position);
-            updateLabel("rot", camera.rotation);
-
-            if (listOfKeys.a == false) {
-              clearInterval(loop);
-              clearTimeout(debounceFunc);
-              pressedDebounceX = false;
-              camera.isMovingX = false;
-            }
-          }, 1)
-        }
-      }
-    }
-
-    if (e.key == 'd' && !pressedDebounceX) {
-      listOfKeys.d = true;
-      pressedDebounceX = true;
-      var debounceFunc = setTimeout(function(){
-        pressedDebounceX = false;
-      }, 188)
-
-      if (!camera.isMovingX) {
-        camera.isMovingX = true;
-        {
-          var loop_count = 0;
-          var loop = setInterval(function(){
-            var forwardsVector = new BABYLON.Vector3(
-              Math.sin(camera.rotation.y - (Math.PI/2)),
-              0, //-Math.sin(camera.rotation.x)
-              -Math.cos(camera.rotation.y - (Math.PI * 1.5))
-            ); 
-
-            character.position.subtractInPlace(forwardsVector.normalize().scale(0.1 * moveSpeed));
-            loop_count++;
-            updateLabel("pos", camera.position);
-            updateLabel("rot", camera.rotation);
-
-            if (listOfKeys.d == false) {
-              clearInterval(loop);
-              clearTimeout(debounceFunc);
-              pressedDebounceX = false;
-              camera.isMovingX = false;
-            }
-          }, 1)
-        }
-      }
-    }
-    */
-
     if (e.code == 'Space') {
       console.log('space pressed.');
       jump(scene);
     }
   
+    //[I NEED MORE BOOLETS]
+    if(e.key == '1'){
+      fists = true
+      
+    }
   })
 
-  camera.position = character.position;
+  camera.position = character.position;  
 
+  //[CLICKS]
   window.addEventListener('click', function(q){
     console.log("Click!")
     var ray = camera.getForwardRay(999);
