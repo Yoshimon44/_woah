@@ -74,7 +74,7 @@ function getNearestPart(position){
   for (var [key, value] of Object.entries(map1.mapPartsReal)) {
     if ("position" in value) {
       if (position.subtract(value.position).length() < nearestPartMagnitude) {
-        nearestPart = mapPart;
+        nearestPart = value;
         nearestPartMagnitude = position.subtract(value.position).length();
       }
     }
