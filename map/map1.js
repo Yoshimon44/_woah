@@ -82,23 +82,6 @@ export const createScene = (canvas, engine) => {
     //const havokPlugin = new BABYLON.HavokPlugin(true, havokInstance);
     //mapPartsReal.havokPlugin = havokPlugin;
 
-    //[GRAVITY]
-    /*var physicsHelper = new BABYLON.PhysicsHelper(scene);
-
-    var origin = BABYLON.Vector3(0, 0, 0);
-    var radius = 1000;
-    var strength = 20;
-    var falloff = BABYLON.PhysicsRadialImpulseFalloff.Linear; // or BABYLON.PhysicsRadialImpulseFalloff.Constant
-
-    var gravitationalFieldEvent = physicsHelper.gravitationalField(
-        origin,
-        radius,
-        strength,
-        falloff
-    );
-    gravitationalFieldEvent.enable();*/
-    //MAY NEED TO MODIFY, NEEDS PHYSICS ENGINE
-
     // [LOADIGN SCREENE]
     
     document.querySelector("#loadingScreen").setAttribute('hidden', true);

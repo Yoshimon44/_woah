@@ -107,8 +107,15 @@ export function main(){
     };
   })
 
+  camera.keysUp = [87];
+  camera.keysDown = [83];
+  camera.keysLeft = [65];
+  camera.keysRight = [68];
+
   window.addEventListener("keydown", function(e){
-    if (e.key == "w" && !pressedDebounceZ) {
+
+    /*
+        if (e.key == "w" && !pressedDebounceZ) {
 
       console.log(getNearestPart(camera.position));
       listOfKeys.w = true;
@@ -246,6 +253,7 @@ export function main(){
         }
       }
     }
+    */
 
     if (e.code == 'Space') {
       console.log('space pressed.');
@@ -276,6 +284,8 @@ export function main(){
     }
 
     var hit = scene.pickWithRay(ray, predicate);
+
+
 
     if(hit.pickedMesh.hitBox == true && hit.pickedMesh != null){
       console.log("Hit!");
