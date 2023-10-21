@@ -34,3 +34,8 @@
 10/18/23:
     - Loading screen fixed
     - Player character box
+
+10/20/23:
+    - Added gravity
+    - Added jumps
+    - Revolutionized the movement system

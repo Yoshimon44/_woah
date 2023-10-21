@@ -1,12 +1,6 @@
 // [IMPORTS]
 const map1 = await import("/map/map1.js");
 
-
-
-
-
-
-
 // [VARIABLES]
 
 var [wPressed, aPressed, sPressed, dPressed] = [0, 0, 0, 0];
@@ -26,6 +20,103 @@ var chaingun = false
 var launcher = false
 var plasmaGun = false
 var bfg = false
+
+/*
+im not sure having separate variables for each of the several weapons is a good idea
+
+in a case where you need to switch from weapon to weapon:
+
+if (e.key == '1') {
+  var fists = true
+  var pistol = false
+  var shotgun = false
+  var chaingun = false
+  var launcher = false
+  var plasmaGun = false
+  var bfg = false
+} else if (e.key == '2') {
+  var fists = false
+  var pistol = true
+  var shotgun = false
+  var chaingun = false
+  var launcher = false
+  var plasmaGun = false
+  var bfg = false
+} else if (e.key == '3') {
+  var fists = false
+  var pistol = false
+  var shotgun = true
+  var chaingun = false
+  var launcher = false
+  var plasmaGun = false
+  var bfg = false
+} else if (e.key == '4') {
+  var fists = false
+  var pistol = false
+  var shotgun = false
+  var chaingun = true
+  var launcher = false
+  var plasmaGun = false
+  var bfg = false
+} else if (e.key == '5') {
+  var fists = false
+  var pistol = false
+  var shotgun = false
+  var chaingun = false
+  var launcher = true
+  var plasmaGun = false
+  var bfg = false
+} else if (e.key == '6') {
+  var fists = false
+  var pistol = false
+  var shotgun = false
+  var chaingun = false
+  var launcher = false
+  var plasmaGun = true
+  var bfg = false
+} else if (e.key == '7') {
+  var fists = false
+  var pistol = false
+  var shotgun = false
+  var chaingun = false
+  var launcher = false
+  var plasmaGun = false
+  var bfg = true
+}
+
+thats a lot of words
+
+a solution to this would be using less variables
+
+e.g.
+
+var weaponList = ['fists', 'pistol', 'shotgun', 'chaingun', 'launcher', 'plasmaGun', 'bfg']
+var currentWeapon = 'pistol'
+
+then the weapon changing thing could be shortened to become something like
+
+if (['1', '2', '3', '4', '5', '6', '7'].includes(e.key)) { //did the user press the valid weapon keys?
+  currentWeapon = weaponList[parseInt(e.key) - 1];
+}
+
+breakdown:
+
+to get an item from an array, you would type something like 'array[n]', and n would be an integer.
+this will get the (n + 1)th item from the array. (basically, 0 gets the first item, 1 gets the second item, 2 gets the third, etc...)
+
+e.key is a string. to grab from an array, you need an integer. thats what parseInt does: transforms its input into its integer counterpart
+so now e.key is an integer. but in order to properly use the array, we need to subtract 1 from e.key
+
+thats because array indices start from 0, not 1. this results in 0 being the first item, 1 being the 2nd, 2 being the 3rd, and 7 being the non-existent 8th.
+this offset causes several issues:
+  -pressing 1 will not get you 'fists', it will get you 'pistol'
+  -pressing 7 will either result in an error or the user would end up not having a weapon.
+  -basically all the keys get you the wrong weapon
+  -'fists' is unusable
+
+to fix this, we have to remove the offset, hence why I would subtract 1 from e.key.
+this way, pressing 1 gets you the first weapon, pressing 2 gets you the second weapon, and pressing 7 won't mess everything up.
+*/
 
 //WEAPON OWNED VARIABLES
 
@@ -71,18 +162,6 @@ function getNearestPart(position){
   nearestPartMagnitude = 10**10**10**10**10;
   var nearestPart;
 
-
-  /*
-    map1.mapPartsReal.forEach(function(mapPart) {
-    if ("position" in mapPart) {
-      if (position.subtract(mapPart.position).length() < nearestPartMagnitude){
-        nearestPart = mapPart;
-        nearestPartMagnitude = position.subtract(mapPart.position).length();
-      }
-    }
-  });
-  */
-
   for (var [key, value] of Object.entries(map1.mapPartsReal)) {
     if (value.id == 'player') {
       continue; //skip to the next cycle
@@ -120,11 +199,7 @@ export function jump(scene){ //look, i jsut wanted to make a quadratic function 
 export function main(){
   const camera = map1.mapParts.camera;
   const character = map1.mapPartsReal.playerCharacter;
-  //const havokPlugin = map1.mapPartsReal.havokPlugin;
   const scene = map1.mapParts.scene;
-
-  //scene.enablePhysics(new BABYLON.Vector3(0, -9.81, 0), havokPlugin);
- // var physicsEngine = scene.getPhysicsEngine();
 
   setInterval(updateLabel, 1, 'rot', camera.rotation);
   setInterval(updateLabel, 1, 'pos', camera.position);
