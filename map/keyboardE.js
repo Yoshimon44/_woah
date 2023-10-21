@@ -230,9 +230,12 @@ export function main(){
       fists = true
       
     }
+
+    character.position = camera.position;
   })
 
-  camera.position = character.position;  
+  camera.position = character.position;
+  
 
   //[CLICKS]
   window.addEventListener('click', function(q){
