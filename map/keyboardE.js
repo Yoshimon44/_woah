@@ -4,7 +4,7 @@ const map1 = await import("/map/map1.js");
 // [VARIABLES]
 
 var [wPressed, aPressed, sPressed, dPressed] = [0, 0, 0, 0];
-var [pressedDebounceZ, pressedDebounceX] = [false, false];
+var [pressedDebounceZ, pressedDebounceX, pressedDebounceY] = [false, false, false];
 var listOfKeys = {
   'w': false,
   'a': false,
@@ -189,6 +189,7 @@ export function jump(scene){ //look, i jsut wanted to make a quadratic function 
 
     if (elapsedTime >= 6001) {
       clearInterval(animation);
+      pressedDebounceY = false;
       return;
     }
   }, 1)
@@ -220,8 +221,9 @@ export function main(){
   camera.needMoveForGravity = true;
 
   window.addEventListener("keydown", function(e){
-    if (e.code == 'Space') {
+    if (e.code == 'Space' && !pressedDebounceY) {
       console.log('space pressed.');
+      pressedDebounceY = true;
       jump(scene);
     }
   
