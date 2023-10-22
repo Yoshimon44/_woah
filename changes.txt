@@ -39,3 +39,7 @@
     - Added gravity
     - Added jumps
     - Revolutionized the movement system
+
+10/22/23:
+    - Added jump debounce
+    - Pressing "q" opens up the debug menus
