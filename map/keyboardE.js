@@ -189,7 +189,9 @@ export function jump(scene){ //look, i jsut wanted to make a quadratic function 
 
     if (elapsedTime >= 6001) {
       clearInterval(animation);
-      pressedDebounceY = false;
+      setTimeout(function(){
+        pressedDebounceY = false;
+      }, 1000);
       return;
     }
   }, 1)
@@ -231,6 +233,10 @@ export function main(){
     if(e.key == '1'){
       fists = true
       
+    }
+
+    if(e.key=='q') {
+      scene.debugLayer.show();
     }
 
     character.position = camera.position;
