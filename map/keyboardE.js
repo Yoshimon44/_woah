@@ -191,7 +191,7 @@ export function jump(scene){ //look, i jsut wanted to make a quadratic function 
       clearInterval(animation);
       setTimeout(function(){
         pressedDebounceY = false;
-      }, 100);
+      }, 200);
       return;
     }
   }, 1)
