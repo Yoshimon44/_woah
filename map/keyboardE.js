@@ -92,8 +92,8 @@ export function jump(scene){ //look, i jsut wanted to make a quadratic function 
 
   var elapsedTime = 0;
   var animation = setInterval(function(){
-    elapsedTime += 50;
-    scene.gravity.y = jumpFunction(elapsedTime * 0.002);
+    elapsedTime += 1;
+    scene.gravity.y = jumpFunction(elapsedTime * 0.075);
 
     if (elapsedTime >= 6001) {
       clearInterval(animation);
@@ -144,7 +144,7 @@ export function main(){
     if (e.code == 'Space' && !pressedDebounceY) {
       console.log('space pressed.');
       pressedDebounceY = true;
-      jump(scene);
+      //jump(scene);
     }
   
     //[I NEED MORE BOOLETS]
