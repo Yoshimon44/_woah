@@ -1,6 +1,7 @@
 export var mapParts = {}; //these are not 'map parts' 😭😭😭
 export var mapPartsReal = {};
 export var hitBox;
+export var health;
 
 const index = await import("/index.js");
 
@@ -57,19 +58,22 @@ export const createScene = (canvas, engine) => {
     box.checkCollisions = true;
     mapPartsReal.box = box;
     box.hitBox = true
+    box.health = 100;
+
 
     const box2 = BABYLON.MeshBuilder.CreateBox("box2", {width: 10, height: 10});
     box2.position = new BABYLON.Vector3(-6, 5, -9)
     box2.checkCollisions = true;
     mapPartsReal.box2 = box2;
     box2.hitBox = true;
+    box2.health = 100;
 
     const box3 = BABYLON.MeshBuilder.CreateBox("box2", {width: 10, height: 10});
     box3.position = new BABYLON.Vector3(7, 2, 7)
     box3.checkCollisions = true;
     mapPartsReal.box3 = box3;
     box3.hitBox = true;
-
+    box3.health = 100;
     
 
     const ground = BABYLON.MeshBuilder.CreateGround("ground", {width: 50, height: 50});

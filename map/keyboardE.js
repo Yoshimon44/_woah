@@ -158,27 +158,27 @@ export function main(){
       pistol = true
     }
 
-    if(e.key = '3'){
+    if(e.key == '3'){
       allFalse();
       shotgun = true
     }
 
-    if(e.key = '4'){
+    if(e.key == '4'){
       allFalse();
       chaingun = true
     }
 
-    if(e.key = '5'){
+    if(e.key == '5'){
       allFalse();
       launcher = true
     }
 
-    if(e.key = '6'){
+    if(e.key == '6'){
       allFalse();
       plasmaGun = true
     }
 
-    if(e.key = '7'){
+    if(e.key == '7'){
       allFalse();
       bfg = true
     }
