@@ -211,6 +211,10 @@ export function main(){
 
     if(hit.pickedMesh.hitBox == true && hit.pickedMesh != null){
       console.log("Hit!");
+      if(pistol==true){
+        hit.pickedMesh.health-=50
+        console.log(hit.pickedMesh.health)
+      }
     }
     var spread = Math.random()*5
   });
