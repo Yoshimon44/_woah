@@ -59,7 +59,7 @@ export const createScene = (canvas, engine) => {
     mapPartsReal.box = box;
     box.hitBox = true
     box.health = 100;
-
+    
 
     const box2 = BABYLON.MeshBuilder.CreateBox("box2", {width: 10, height: 10});
     box2.position = new BABYLON.Vector3(-6, 5, -9)
