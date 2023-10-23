@@ -211,9 +211,9 @@ export function main(){
       console.log("Hit!");
       if(pistol==true){
         hit.pickedMesh.health-=50
+        }
         if(hit.pickedMesh.health<=0){
           hit.pickedMesh.dispose()
-        }
       }
     }
     var spread = Math.random()*5
