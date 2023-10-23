@@ -15,8 +15,6 @@ var p;
 
 Promise.resolve(import("/map/keyboardE.js")).then(function(e2){
     p = e2;
-    console.log(e2);
-    console.log(p);
 })
 
 console.log(p);
