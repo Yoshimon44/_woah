@@ -93,13 +93,13 @@ export function jump(scene){ //look, i jsut wanted to make a quadratic function 
   var elapsedTime = 0;
   var animation = setInterval(function(){
     elapsedTime += 50;
-    scene.gravity.y = jumpFunction(elapsedTime * 0.005);
+    scene.gravity.y = jumpFunction(elapsedTime * 0.002);
 
     if (elapsedTime >= 6001) {
       clearInterval(animation);
       setTimeout(function(){
         pressedDebounceY = false;
-      }, 200);
+      }, 135);
       return;
     }
   }, 1)
