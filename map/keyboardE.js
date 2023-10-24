@@ -216,7 +216,7 @@ export function main(){
   
 
   //[CLICKS]
-  window.addEventListener('click', function(q){
+  window.addEventListener('mousedown', function(q){
     var ray = camera.getForwardRay(999);
 
     function predicate(mesh) {
