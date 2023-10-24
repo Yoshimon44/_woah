@@ -34,6 +34,9 @@ var moveSpeed = 1; //percentage of the walkSpeed.
 var nearestPartMagnitude; //used in getNearestPart.
 
 // [HELPER FUNCTIONS]
+function randomInt(min, max){
+  return Math.floor(Math.random()) * (max-min+1) + min;
+}
 
 function updateLabel(label, value) {  
   if (typeof label == 'string') {
@@ -209,14 +212,12 @@ export function main(){
 
     if(hit.pickedMesh.hitBox == true && hit.pickedMesh != null){
       console.log("Hit!");
+      
       if(pistol==true){
-        var damage = Math.random()*3;
-
-        hit.pickedMesh.health-=5*(damage > 1 ? damage : 1) //The presence of math.random will allow for a damage spread.
-        // CONDIITON ? TRUE : FALSE
-
+        hit.pickedMesh.health-=randomInt(5,15)
         console.log(hit.pickedMesh.health)
         }
+
         if(hit.pickedMesh.health<=0){
           hit.pickedMesh.dispose()
       }
