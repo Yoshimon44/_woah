@@ -211,6 +211,7 @@ export function main(){
       console.log("Hit!");
       if(pistol==true){
         hit.pickedMesh.health-=5*(Math.random()*3) //The presence of math.random will allow for a damage spread.
+        console.log(hit.pickedMesh.health)
         }
         if(hit.pickedMesh.health<=0){
           hit.pickedMesh.dispose()
