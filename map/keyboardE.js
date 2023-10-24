@@ -127,6 +127,7 @@ export function createProjectile(camera){ //jus testing
 
     let spitBall = BABYLON.MeshBuilder.CreateBox('spitBall' + Date.now().toString());
     spitBall.position = projectileRay.origin;
+    spitBall.lookAt(spitBall.position.add(projectileRay.direction.scale(20)));
 
     let loopCount = 0;
     let fly = setInterval(function(){
