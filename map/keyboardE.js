@@ -210,7 +210,11 @@ export function main(){
     if(hit.pickedMesh.hitBox == true && hit.pickedMesh != null){
       console.log("Hit!");
       if(pistol==true){
-        hit.pickedMesh.health-=5*(Math.random()*3) //The presence of math.random will allow for a damage spread.
+        var damage = Math.random()*3;
+
+        hit.pickedMesh.health-=5*(damage > 1 ? damage : 1) //The presence of math.random will allow for a damage spread.
+        // CONDIITON ? TRUE : FALSE
+
         console.log(hit.pickedMesh.health)
         }
         if(hit.pickedMesh.health<=0){
