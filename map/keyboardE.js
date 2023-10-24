@@ -121,9 +121,23 @@ export function jump(scene){ //look, i jsut wanted to make a quadratic function 
   }, 1)
 }
 
-export function createProjectile(){ //jus testing
+export function createProjectile(camera){ //jus testing
   try {
+    let projectileRay = camera.getForwardRay();
 
+    let spitBall = BABYLON.MeshBuilder.CreateBox('spitBall' + Date.now().toString());
+    spitBall.position = projectileRay.origin;
+
+    let loopCount = 0;
+    let fly = setInterval(function(){
+      spitBall.position.addInPlace(projectileRay.direction.scale(0.01));
+      loopCount++;
+
+      if (loopCount > 1500) {
+        clearInterval(fly);
+      }
+    }, 1);
+    
   } catch (err) {
 
   }
@@ -240,6 +254,8 @@ export function main(){
           if(pistol==true){
             hit.pickedMesh.health -= randomInt(5,15);
             weaponDebounce(150);
+
+            createProjectile(camera);
           }
           
           if(shotgun == true && shotgunOwned == true){
