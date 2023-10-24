@@ -119,6 +119,14 @@ export function jump(scene){ //look, i jsut wanted to make a quadratic function 
   }, 1)
 }
 
+export function createProjectile(){ //jus testing
+  try {
+
+  } catch (err) {
+
+  }
+}
+
 // [PROGRAM]
 
 export function main(){
@@ -220,10 +228,10 @@ export function main(){
 
     var hit = scene.pickWithRay(ray, predicate);
 
-    if(hit.pickedMesh.hitBox == true && weaponDebounce2 == false){  
+    if(hit.pickedMesh.hitBox == true && weaponDebounce2 == false){
         if(pistol==true){
           weaponDebounce(150);
-          hit.pickedMesh.health -= randomInt(5,15)
+          hit.pickedMesh.health -= randomInt(5,15);
         }
         
         if(shotgun == true && shotgunOwned == true){
@@ -233,7 +241,7 @@ export function main(){
         if(chaingun == true && chaingunOwned == true){
           hit.pickedMesh.health -= randomInt(5,15)
         }
-        
+        console.log(hit.pickedMesh.health);
         if(hit.pickedMesh.health<=0){
           hit.pickedMesh.dispose()
       }
