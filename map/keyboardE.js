@@ -28,12 +28,23 @@ var launcherOwned = false
 var plasmaGunOwned = false
 var bfgOwned = false
 
+//WEAPON MISC. VARIABLES
+
 
 var moveSpeed = 1; //percentage of the walkSpeed.
 
 var nearestPartMagnitude; //used in getNearestPart.
 
 // [HELPER FUNCTIONS]
+var weaponDebounce2 = false;
+
+function weaponDebounce(rpm){
+  weaponDebounce2 = true;
+  setTimeout(function(){
+    weaponDebounce2 = false;
+  }, 60000/rpm)
+}
+
 function randomInt(min, max){
   return Math.floor(Math.random() * (max-min+1))  + min;
 }
@@ -198,7 +209,6 @@ export function main(){
 
   //[CLICKS]
   window.addEventListener('click', function(q){
-    console.log("Click!")
     var ray = camera.getForwardRay(999);
 
     function predicate(mesh) {
@@ -210,14 +220,20 @@ export function main(){
 
     var hit = scene.pickWithRay(ray, predicate);
 
-    if(hit.pickedMesh.hitBox == true && hit.pickedMesh != null){
-      console.log("Hit!");
-      
-      if(pistol==true){
-        hit.pickedMesh.health-=randomInt(5,15)
-        console.log(hit.pickedMesh.health)
+    if(hit.pickedMesh.hitBox == true && weaponDebounce2 == false){  
+        if(pistol==true){
+          weaponDebounce(150);
+          hit.pickedMesh.health -= randomInt(5,15)
+        }
+        
+        if(shotgun == true && shotgunOwned == true){
+          //okay so this one is gonna be last so yea
         }
 
+        if(chaingun == true && chaingunOwned == true){
+          hit.pickedMesh.health -= randomInt(5,15)
+        }
+        
         if(hit.pickedMesh.health<=0){
           hit.pickedMesh.dispose()
       }
