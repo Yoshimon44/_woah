@@ -12,6 +12,8 @@ var listOfKeys = {
   'd': false
 };
 
+var mouseIsDown = false;
+
 //WEAPON EQUIP VARIABLES
 var fists = false
 var pistol = true
@@ -230,17 +232,20 @@ export function main(){
 
     if(hit.pickedMesh.hitBox == true && weaponDebounce2 == false){
         if(pistol==true){
-          weaponDebounce(150);
           hit.pickedMesh.health -= randomInt(5,15);
+          weaponDebounce(150);
         }
         
         if(shotgun == true && shotgunOwned == true){
+          weaponDebounce(56.8)
           //okay so this one is gonna be last so yea
         }
 
         if(chaingun == true && chaingunOwned == true){
           hit.pickedMesh.health -= randomInt(5,15)
+          weaponDebounce(525.0)
         }
+
         console.log(hit.pickedMesh.health);
         if(hit.pickedMesh.health<=0){
           hit.pickedMesh.dispose()
