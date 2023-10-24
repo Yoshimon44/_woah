@@ -224,7 +224,7 @@ export function main(){
 
   window.addEventListener('mousedown', function(q){
     mouseIsDown = true;
-    while (mouseIsDown) {
+    setInterval(function(){
       var ray = camera.getForwardRay(999);
 
       function predicate(mesh) {
@@ -257,6 +257,6 @@ export function main(){
             hit.pickedMesh.dispose()
         }
       }
-    }
+    }, 1);
   });
 }
