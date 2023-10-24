@@ -210,12 +210,11 @@ export function main(){
     if(hit.pickedMesh.hitBox == true && hit.pickedMesh != null){
       console.log("Hit!");
       if(pistol==true){
-        hit.pickedMesh.health-=50
+        hit.pickedMesh.health-=5*(Math.random()*3) //The presence of math.random will allow for a damage spread.
         }
         if(hit.pickedMesh.health<=0){
           hit.pickedMesh.dispose()
       }
     }
-    var spread = Math.random()*5
   });
 }
