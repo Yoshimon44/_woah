@@ -122,26 +122,22 @@ export function jump(scene){ //look, i jsut wanted to make a quadratic function 
 }
 
 export function createProjectile(camera){ //jus testing
-  try {
-    let projectileRay = camera.getForwardRay();
+  let projectileRay = camera.getForwardRay();
 
-    let spitBall = BABYLON.MeshBuilder.CreateBox('spitBall' + Date.now().toString());
-    spitBall.position = projectileRay.origin;
-    spitBall.lookAt(spitBall.position.add(projectileRay.direction.scale(20)));
+  let spitBall = BABYLON.MeshBuilder.CreateBox('spitBall' + Date.now().toString());
+  spitBall.position = projectileRay.origin;
+  spitBall.lookAt(spitBall.position.add(projectileRay.direction.scale(20)));
 
-    let loopCount = 0;
-    let fly = setInterval(function(){
-      spitBall.position.addInPlace(projectileRay.direction.scale(0.01));
-      loopCount++;
+  let loopCount = 0;
+  let fly = setInterval(function(){
+    spitBall.position.addInPlace(projectileRay.direction.scale(0.1));
+    loopCount++;
 
-      if (loopCount > 1500) {
-        clearInterval(fly);
-      }
-    }, 1);
-    
-  } catch (err) {
-
-  }
+    if (loopCount > 1500) {
+      clearInterval(fly);
+      spitBall.dispose()
+    }
+  }, 1);
 }
 
 // [PROGRAM]
