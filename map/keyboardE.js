@@ -130,7 +130,7 @@ export function createProjectile(camera){ //jus testing
 
   let loopCount = 0;
   let fly = setInterval(function(){
-    spitBall.position.addInPlace(projectileRay.direction.scale(0.1));
+    spitBall.position.addInPlace(projectileRay.direction.scale(0.5));
     loopCount++;
 
     if (loopCount > 1500) {
@@ -235,7 +235,7 @@ export function main(){
 
   window.addEventListener('mousedown', function(q){
     mouseIsDown = true;
-    setInterval(function(){
+    var mouseLoopity = setInterval(function(){
       var ray = camera.getForwardRay(999);
 
       function predicate(mesh) {
@@ -269,6 +269,11 @@ export function main(){
           if(hit.pickedMesh.health<=0){
             hit.pickedMesh.dispose()
         }
+      }
+
+      if (!mouseIsDown) {
+        clearInterval(mouseLoopity);
+        return;
       }
     }, 1);
   });
