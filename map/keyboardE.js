@@ -255,12 +255,12 @@ export function main(){
             createProjectile(camera);
           }
           
-          if(shotgun == true && shotgunOwned == true){
+          if(shotgun == true && weaponDebounce2 == false && shotgunOwned == true){
             weaponDebounce(56.8)
             //okay so this one is gonna be last so yea
           }
   
-          if(chaingun == true /*&& chaingunOwned == true*/){
+          if(chaingun == true && weaponDebounce2 == false /*&& chaingunOwned == true*/){
             hit.pickedMesh.health -= randomInt(5,15)
             weaponDebounce(525.0)
           }
