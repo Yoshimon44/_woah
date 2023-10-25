@@ -251,8 +251,6 @@ export function main(){
           if(pistol==true){
             hit.pickedMesh.health -= randomInt(5,15);
             weaponDebounce(150);
-
-            createProjectile(camera);
           }
           
           if(shotgun == true && weaponDebounce2 == false && shotgunOwned == true){
@@ -263,6 +261,13 @@ export function main(){
           if(chaingun == true && weaponDebounce2 == false /*&& chaingunOwned == true*/){
             hit.pickedMesh.health -= randomInt(5,15)
             weaponDebounce(525.0)
+          }
+
+          if(plasmaGun == true && weaponDebounce2 == false /*&& plasmaGunOwned == true*/){
+            hit.pickedMesh.health -= randomInt(5,40)
+            weaponDebounce(700)
+
+            createProjectile(camera);
           }
   
           console.log(hit.pickedMesh.health);
