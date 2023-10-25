@@ -179,7 +179,7 @@ export function main(){
     if (e.code == 'Space' && !pressedDebounceY) {
       console.log('space pressed.');
       pressedDebounceY = true;
-      //jump(scene);
+      jump(scene);
     }
   
     //[I NEED MORE BOOLETS]
