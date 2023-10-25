@@ -66,14 +66,14 @@ export const createScene = (canvas, engine) => {
     box2.checkCollisions = true;
     mapPartsReal.box2 = box2;
     box2.hitBox = true;
-    box2.health = 100;
+    box2.health = 203829;
 
     const box3 = BABYLON.MeshBuilder.CreateBox("box2", {width: 10, height: 10});
     box3.position = new BABYLON.Vector3(7, 2, 7)
     box3.checkCollisions = true;
     mapPartsReal.box3 = box3;
     box3.hitBox = true;
-    box3.health = 100;
+    box3.health = 8000000;
     
 
     const ground = BABYLON.MeshBuilder.CreateGround("ground", {width: 50, height: 50});
