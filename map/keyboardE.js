@@ -260,7 +260,7 @@ export function main(){
             //okay so this one is gonna be last so yea
           }
   
-          if(chaingun == true && chaingunOwned == true){
+          if(chaingun == true /*&& chaingunOwned == true*/){
             hit.pickedMesh.health -= randomInt(5,15)
             weaponDebounce(525.0)
           }
