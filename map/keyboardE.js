@@ -263,6 +263,11 @@ export function main(){
             weaponDebounce(525.0)
           }
 
+          if(launcher == true && weaponDebounce2 == false /*&& launcherOwned == true*/){
+            console.log(hit.pickedMesh.health)
+            //this is gonna need splash somehow, i believe
+          }
+
           if(plasmaGun == true && weaponDebounce2 == false /*&& plasmaGunOwned == true*/){
             hit.pickedMesh.health -= randomInt(5,40)
             weaponDebounce(700)
