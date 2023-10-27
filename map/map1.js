@@ -54,21 +54,21 @@ export const createScene = (canvas, engine) => {
 
     // [MAP]
 
-    const box = BABYLON.MeshBuilder.CreateBox("box", {width: 10, height: 10});
+    const box = BABYLON.MeshBuilder.CreateBox("box", {width: 5, height: 10});
     box.checkCollisions = true;
     mapPartsReal.box = box;
     box.hitBox = true
     box.health = 100;
     
 
-    const box2 = BABYLON.MeshBuilder.CreateBox("box2", {width: 10, height: 10});
+    const box2 = BABYLON.MeshBuilder.CreateBox("box2", {width: 5, height: 10});
     box2.position = new BABYLON.Vector3(-6, 5, -9)
     box2.checkCollisions = true;
     mapPartsReal.box2 = box2;
     box2.hitBox = true;
     box2.health = 203829;
 
-    const box3 = BABYLON.MeshBuilder.CreateBox("box2", {width: 10, height: 10});
+    const box3 = BABYLON.MeshBuilder.CreateBox("box2", {width: 5, height: 10});
     box3.position = new BABYLON.Vector3(7, 2, 7)
     box3.checkCollisions = true;
     mapPartsReal.box3 = box3;
