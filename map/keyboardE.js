@@ -275,7 +275,9 @@ export function main(){
             createProjectile(camera);
           }
 
-          if(bfg == true && weaponDebounce2 == false /*&& bfgOwned == true*/)
+          if(bfg == true && weaponDebounce2 == false /*&& bfgOwned == true*/){
+            console.log("unfinished")
+          }
   
           console.log(hit.pickedMesh.health);
           if(hit.pickedMesh.health<=0){

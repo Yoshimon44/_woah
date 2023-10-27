@@ -76,7 +76,7 @@ export const createScene = (canvas, engine) => {
     box3.health = 8000000;
     
 
-    const ground = BABYLON.MeshBuilder.CreateGround("ground", {width: 500, height: 50});
+    const ground = BABYLON.MeshBuilder.CreateGround("ground", {width: 500, length: 500, height: 50});
     ground.checkCollisions = true;
     mapPartsReal.ground = ground;
 
