@@ -144,7 +144,7 @@ export function jump(scene) {
       clearInterval(animation);
       setTimeout(function(){
         pressedDebounceY = false;
-      }, 150);
+      }, 50);
       return;
     }
   }, 1);
