@@ -108,13 +108,14 @@ export function jump(scene){ //look, i jsut wanted to make a quadratic function 
 
   var elapsedTime = 0;
   var scaleFactor = 5;
+  var scaleFactor2 = 5;
   var animation = setInterval(function(){
     elapsedTime += 1;
-    scene.gravity.y = jumpFunction(elapsedTime * scaleFactor);
+    scene.gravity.y = jumpFunction(elapsedTime * scaleFactor) * scaleFactor2;
 
     console.log(elapsedTime);
 
-    if (elapsedTime >= (6001)) {
+    if (elapsedTime >= (6001/scaleFactor)) {
       clearInterval(animation);
       pressedDebounceY = false;
       console.log('i been fighting my demons huh')
