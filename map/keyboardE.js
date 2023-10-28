@@ -104,7 +104,7 @@ function getNearestPart(position){
 }
 
 export function jump(scene){ //look, i jsut wanted to make a quadratic function thats it!!!
-  var jumpFunction = (x) => (-1.2/9) * ((x - 3) ** 2) + 0.6;
+  var jumpFunction = (x) => (-1.2/9) * (((x * 0.001) - 3) ** 2) + 0.6;
 
   var elapsedTime = 0;
   var scaleFactor = 5;
