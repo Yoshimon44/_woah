@@ -144,7 +144,7 @@ export function jump(scene) {
       }, 150);
       return;
     }
-  })
+  }, 1);
 }
 
 export function createProjectile(camera){ //jus testing
