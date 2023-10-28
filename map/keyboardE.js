@@ -114,6 +114,7 @@ export function jump(scene){ //look, i jsut wanted to make a quadratic function 
     scene.gravity.y = jumpFunction(elapsedTime * scaleFactor) * scaleFactor2;
 
     console.log(elapsedTime);
+    console.log(`gravity:${scene.gravity.y}`)
 
     if (elapsedTime >= (6001/scaleFactor)) {
       clearInterval(animation);
