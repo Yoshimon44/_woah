@@ -137,9 +137,9 @@ export function jump(scene) {
     console.log(elapsedTime);
 
     if (elapsedTime > 45 && elapsedTime < 91) {
-      scene.gravity.y = 0.6;
-    } else if (elapsedTime <= 45) {
       scene.gravity.y = -0.6;
+    } else if (elapsedTime <= 45) {
+      scene.gravity.y = 0.6;
     } else if (elapsedTime > 90) {
       clearInterval(animation);
       setTimeout(function(){
