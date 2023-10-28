@@ -133,7 +133,10 @@ export function jump(scene) {
 
   var animation = setInterval(function(){
     elapsedTime++;
-    if (elapsedTime > 45) {
+
+    console.log(elapsedTime);
+
+    if (elapsedTime > 45 && elapsedTime < 91) {
       scene.gravity.y = 0.6;
     } else if (elapsedTime <= 45) {
       scene.gravity.y = -0.6;
