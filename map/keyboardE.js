@@ -1,5 +1,6 @@
 // [IMPORTS]
 const map1 = await import("/map/map1.js");
+const enemy_AI = await import("/map/enemy_AI.js");
 
 // [VARIABLES]
 
@@ -164,6 +165,8 @@ export function main(){
   camera.keysRight = [68]; //not the plan, will change later
 
   camera.needMoveForGravity = true;
+
+  var localEnemy = new enemy_AI.TestDummy();
 
   function allFalse(){
     fists = false
