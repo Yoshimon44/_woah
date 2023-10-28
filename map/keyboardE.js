@@ -114,7 +114,7 @@ export function jump(scene){ //look, i jsut wanted to make a quadratic function 
 
     console.log(elapsedTime);
 
-    if (elapsedTime >= (6001 * scaleFactor)) {
+    if (elapsedTime >= (6001)) {
       clearInterval(animation);
       pressedDebounceY = false;
       console.log('i been fighting my demons huh')
