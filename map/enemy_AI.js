@@ -10,6 +10,7 @@ export class TestDummy {
     constructor(){
         this.material = new BABYLON.StandardMaterial('enemy' + Date.now().toString() + '_material');
         this.material.diffuseTexture = new BABYLON.Texture('/sprites/10-28-23_TestSprite.png');
+        this.material.diffuseTexture.hasAlpha = true;
         this.material.useAlphaFromDiffuseTexture = true;
 
         let faceMap = [];
