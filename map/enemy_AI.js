@@ -28,6 +28,10 @@ export class TestDummy {
         this.character.billboardMode = 2;
         this.character.material = this.material;
 
+        this.character.checkCollisions = true;
+        this.character.hitBox = true;
+        this.character.health = 190000;
+
         return this;
     }
 }
