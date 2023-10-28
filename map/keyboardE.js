@@ -107,7 +107,7 @@ export function jump(scene){ //look, i jsut wanted to make a quadratic function 
   var jumpFunction = (x) => (-1.2/9) * (((x * 0.001) - 3) ** 2) + 0.6;
 
   var elapsedTime = 0;
-  var scaleFactor = 5;
+  var scaleFactor = 50;
   var scaleFactor2 = 5;
   var animation = setInterval(function(){
     elapsedTime += 1;
