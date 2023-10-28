@@ -108,7 +108,7 @@ export function jump(scene){ //look, i jsut wanted to make a quadratic function 
 
   var elapsedTime = 0;
   var scaleFactor = 50;
-  var scaleFactor2 = 5;
+  var scaleFactor2 = 1.5;
   var animation = setInterval(function(){
     elapsedTime += 1;
     scene.gravity.y = jumpFunction(elapsedTime * scaleFactor) * scaleFactor2;
