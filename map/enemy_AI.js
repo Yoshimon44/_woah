@@ -7,6 +7,12 @@ export class Enemy { //may not be the system we will use in the deliverable
 }
 
 export class TestDummy {
+    switchAlphaTexture(texture) {
+        this.material.diffuseTexture = texture;
+        this.material.diffuseTexture.hasAlpha = true;
+        this.material.useAlphaFromDiffuseTexture = true;
+    }
+
     constructor(){
         this.material = new BABYLON.StandardMaterial('enemy' + Date.now().toString() + '_material');
         this.material.diffuseTexture = new BABYLON.Texture('/sprites/10-28-23_TestSprite.png');
@@ -43,9 +49,9 @@ export class TestDummy {
 
     set health(health){
         if (this.character.health > health) {
-            this.material.diffuseTexture = new BABYLON.Texture('/sprites/10-28-23_TestSprite-Pain.png');
+            this.switchAlphaTexture(new BABYLON.Texture('/sprites/10-28-23_TestSprite-Pain.png'));
             setTimeout(()=>{
-                this.material.diffuseTexture = new BABYLON.Texture('/sprites/10-28-23_TestSprite.png');
+                this.switchAlphaTexture(new BABYLON.Texture('/sprites/10-28-23_TestSprite.png'));
             }, 500)
         }
 
