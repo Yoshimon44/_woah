@@ -11,13 +11,13 @@ export class TestDummy {
         this.material.diffuseTexture = texture;
         this.material.diffuseTexture.hasAlpha = true;
         this.material.useAlphaFromDiffuseTexture = true;
+
+        this.material.emissiveColor = new BABYLON.Color3(1, 1, 1);
     }
 
     constructor(){
         this.material = new BABYLON.StandardMaterial('enemy' + Date.now().toString() + '_material');
-        this.material.diffuseTexture = new BABYLON.Texture('/sprites/10-28-23_TestSprite.png');
-        this.material.diffuseTexture.hasAlpha = true;
-        this.material.useAlphaFromDiffuseTexture = true;
+        this.switchAlphaTexture('/sprites/10-28-23_TestSprite.png')
 
         let faceMap = [];
 
