@@ -32,6 +32,25 @@ export class TestDummy {
         this.character.hitBox = true;
         this.character.health = 190000;
 
+        this.character.enemySpecialObject = this; //this way i can properly interact with the enemy and stuff
+
         return this;
     }
+
+    get health(){
+        return this.character.health;
+    }
+
+    set health(health){
+        if (this.character.health > health) {
+            this.material.diffuseTexture = new BABYLON.Texture('/sprites/10-28-23_TestSprite-Pain.png');
+            setTimeout(()=>{
+                this.material.diffuseTexture = new BABYLON.Texture('/sprites/10-28-23_TestSprite.png');
+            }, 500)
+        }
+
+        this.character.health = health;
+    }
+
+
 }

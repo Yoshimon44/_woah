@@ -252,7 +252,11 @@ export function main(){
   
       if(hit.pickedMesh.hitBox == true && weaponDebounce2 == false){
           if(pistol==true){
-            hit.pickedMesh.health -= randomInt(5,15);
+            if ("enemySpecialObject" in hit.pickedMesh) {
+              hit.pickedMesh.enemySpecialObject.health -= randomInt(5, 15);
+            } else {
+              hit.pickedMesh.health -= randomInt(5,15);
+            }
             weaponDebounce(150);
           }
           
@@ -272,7 +276,12 @@ export function main(){
           }
 
           if(plasmaGun == true && weaponDebounce2 == false /*&& plasmaGunOwned == true*/){
-            hit.pickedMesh.health -= randomInt(5,40)
+            if ("enemySpecialObject" in hit.pickedMesh) {
+              hit.pickedMesh.enemySpecialObject.health -= randomInt(5, 40);
+            } else {
+              hit.pickedMesh.health -= randomInt(5,40);
+            }
+
             weaponDebounce(700)
 
             createProjectile(camera);
