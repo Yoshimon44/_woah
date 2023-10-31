@@ -39,7 +39,7 @@ export class TestDummy {
 
         var walkLoop = setInterval(function(){
             walkingCharacter.position.addInPlace(
-                point.subtract(startPosition).scale(walkingCharacter.walkSpeed/1000);
+                point.subtract(startPosition).scale(walkingCharacter.walkSpeed/1000)
             );
 
             if (BABYLON.Vector3.Distance(startPosition, walkingCharacter.position) >= BABYLON.Vector3.Distance(startPosition, point)) {
