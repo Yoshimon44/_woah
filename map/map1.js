@@ -17,6 +17,8 @@ export class TestDummy {
     }
 
     walkTo(point) {
+        let walkingCharacter = this.character;
+        
         if (this.character == null) {
             return;
         } else {
@@ -36,11 +38,11 @@ export class TestDummy {
         */
 
         var walkLoop = setInterval(function(){
-            this.character.position.addInPlace(
-                point.subtract(startPosition.scale(this.character.walkSpeed/1000))
+            walkingCharacter.position.addInPlace(
+                point.subtract(startPosition.scale(walkingCharacter.walkSpeed/1000))
             );
 
-            if (BABYLON.Vector3.Distance(startPosition, this.character.position) > BABYLON.Vector3.Distance(startPosition, point)) {
+            if (BABYLON.Vector3.Distance(startPosition, walkingCharacter.position) > BABYLON.Vector3.Distance(startPosition, point)) {
                 clearInterval(walkLoop);
                 return;
             }
