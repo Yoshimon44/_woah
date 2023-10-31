@@ -173,11 +173,11 @@ export const createScene = (canvas, engine) => {
     box3.health = 8000000;
     
 
-    const ground = BABYLON.MeshBuilder.CreateGround("ground", {width: 500, length: 500, height: 50});
+    const ground = BABYLON.MeshBuilder.CreateGround("ground", {width: 500, height: 50});
     ground.checkCollisions = true;
     mapPartsReal.ground = ground;
 
-    const wall1 = BABYLON.MeshBuilder.CreateBox("wall1", {width: 500, height:10})
+    const wall1 = BABYLON.MeshBuilder.CreateBox("wall1", {width: 50, height:10})
     wall1.setposition = new BABYLON.Vector3(500, 5, 500)
     wall1.checkCollisions = true;
     mapPartsReal.wall1 = wall1;

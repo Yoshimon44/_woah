@@ -295,7 +295,7 @@ export function main(){
           }
   
           console.log(hit.pickedMesh.health);
-          if(hit.pickedMesh.health<=0){
+          if(hit.pickedMesh.health<=0 /*&& enemy != true*/){
             hit.pickedMesh.dispose()
         }
       }
