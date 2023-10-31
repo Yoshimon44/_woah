@@ -32,7 +32,7 @@ export class TestDummy {
         }
         */
 
-        walkLoop = setInterval(function(){
+        var walkLoop = setInterval(function(){
             this.character.position.addInPlace(
                 point.subtract(startPosition.scale(this.character.walkSpeed/1000))
             );
