@@ -26,7 +26,7 @@ export class TestDummy {
         this.playAnimation('run');
         while (BABYLON.Vector3.Distance(startPosition, this.character.position) < BABYLON.Vector3.Distance(startPosition, point)) {
             this.character.position.addInPlace(
-                startPosition.subtract(point)
+                Math.abs(startPosition.subtract(point))
             );
         }
         
