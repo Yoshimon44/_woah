@@ -12,30 +12,57 @@ export class TestDummy {
         this.material.emissiveColor = new BABYLON.Color3(1, 1, 1);
     }
 
-    constructor(){
-        this.material = new BABYLON.StandardMaterial('enemy' + Date.now().toString() + '_material');
-        this.switchAlphaTexture(new BABYLON.Texture('/sprites/10-28-23_TestSprite.png'));
+    playAnimation(animName) {
+        console.log(animName); //not doing this yet
+    }
 
-        let faceMap = [];
-
-        for (var i = 1; i <= 6; i++) {
-            if (i == 1) {
-                faceMap[1] = new BABYLON.Vector4(0, 0, 1, 1);
-            } else {
-                faceMap[i] = new BABYLON.Vector4(0, 0, 0.01, 0.01);
-            }
+    walkTo(point) {
+        if (this.character == null) {
+            return;
         }
 
-        this.character = BABYLON.MeshBuilder.CreateBox('enemy' + Date.now().toString(), {width: 5, height: 5, depth: 2, faceUV: faceMap, wrap: true});
-        this.character.position = new BABYLON.Vector3(-20, 1, -10);
-        this.character.billboardMode = 2;
-        this.character.material = this.material;
+        const startPosition = this.character.position;
 
-        this.character.checkCollisions = true;
-        this.character.hitBox = true;
-        this.character.health = 190000;
+        this.playAnimation('run');
+        while (BABYLON.Vector3.Distance(startPosition, this.character.position) < BABYLON.Vector3.Distance(startPosition, point)) {
+            this.character.position.addInPlace(
+                startPosition.subtract(point)
+            );
+        }
+        
+    }
 
-        this.character.enemySpecialObject = this; //this way i can properly interact with the enemy and stuff
+    constructor(){
+        // [CHARACTER MODEL]
+        {
+            this.material = new BABYLON.StandardMaterial('enemy' + Date.now().toString() + '_material');
+            this.switchAlphaTexture(new BABYLON.Texture('/sprites/10-28-23_TestSprite.png'));
+    
+            let faceMap = [];
+    
+            for (var i = 1; i <= 6; i++) {
+                if (i == 1) {
+                    faceMap[1] = new BABYLON.Vector4(0, 0, 1, 1);
+                } else {
+                    faceMap[i] = new BABYLON.Vector4(0, 0, 0.01, 0.01);
+                }
+            }
+    
+            this.character = BABYLON.MeshBuilder.CreateBox('enemy' + Date.now().toString(), {width: 5, height: 5, depth: 2, faceUV: faceMap, wrap: true});
+            this.character.position = new BABYLON.Vector3(-20, 1, -10);
+            this.character.billboardMode = 2;
+            this.character.material = this.material;
+    
+            this.character.checkCollisions = true;
+            this.character.hitBox = true;
+            this.character.health = 190000;
+    
+            this.character.enemySpecialObject = this; //this way i can properly interact with the enemy and stuff
+        }
+        // [CHARACTER PROPERTIES]
+        {
+            this.character.walkSpeed = 16;
+        }
 
         return this;
     }

@@ -224,6 +224,10 @@ export function main(){
       scene.debugLayer.show();
     }
 
+    if (e.key=='l') {
+      map1.mapPartsReal.localEnemy.walkTo(character.position);
+    }
+
     character.position = camera.position;
   })
 
