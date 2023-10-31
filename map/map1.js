@@ -123,7 +123,8 @@ export const createScene = (canvas, engine) => {
 
     camera.applyGravity = true;
     
-    camera.ellipsoid = new BABYLON.Vector3(1.5,0.5,1); //jus to fit the playerCharacter
+    camera.ellipsoid = new BABYLON.Vector3(1.35, 1, 1.35); //jus to fit the playerCharacter
+    camera.ellipsoidOffset = new BABYLON.Vector3(0, -camera.ellipsoid.y, 0);
     mapParts.camera = camera;
     camera.attachControl(canvas, true);
 
@@ -134,7 +135,7 @@ export const createScene = (canvas, engine) => {
         engine.enterPointerlock();
     })
 
-    const playerCharacter = BABYLON.MeshBuilder.CreateBox("player", {width: 1, height: 1, depth: 1});
+    const playerCharacter = BABYLON.MeshBuilder.CreateBox("player", {width: 4, height: 1, depth: 4});
     playerCharacter.position = camera.position;
     mapPartsReal.playerCharacter = playerCharacter;
 
@@ -143,7 +144,7 @@ export const createScene = (canvas, engine) => {
     const characterMaterial = new BABYLON.StandardMaterial("texture1");
 
     playerCharacter.material = characterMaterial
-    characterMaterial.alpha = 0.1;
+    characterMaterial.alpha = 0;
     characterMaterial.emissiveColor = new BABYLON.Color3(100, 0, 255);
 
     const light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(0, 1, 0));
