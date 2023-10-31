@@ -24,11 +24,24 @@ export class TestDummy {
         const startPosition = this.character.position;
 
         this.playAnimation('run');
+        /*
         while (BABYLON.Vector3.Distance(startPosition, this.character.position) < BABYLON.Vector3.Distance(startPosition, point)) {
             this.character.position.addInPlace(
                 point.subtract(startPosition)
             );
         }
+        */
+
+        walkLoop = setInterval(function(){
+            this.character.position.addInPlace(
+                point.subtract(startPosition.scale(this.character.walkSpeed/1000))
+            );
+
+            if (BABYLON.Vector3.Distance(startPosition, this.character.position) > BABYLON.Vector3.Distance(startPosition, point)) {
+                clearInterval(walkLoop);
+                return;
+            }
+        }, 1)
         
     }
 
