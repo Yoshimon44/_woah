@@ -124,7 +124,7 @@ export const createScene = (canvas, engine) => {
     camera.applyGravity = true;
     
     camera.ellipsoid = new BABYLON.Vector3(1.35, 1, 1.35); //jus to fit the playerCharacter
-    camera.ellipsoidOffset = new BABYLON.Vector3(0, -camera.ellipsoid.y, 0);
+    camera.ellipsoidOffset = new BABYLON.Vector3(0, camera.ellipsoid.y, 0);
     mapParts.camera = camera;
     camera.attachControl(canvas, true);
 
