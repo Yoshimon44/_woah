@@ -47,35 +47,31 @@ export class TestDummy {
 
     constructor(){
         // [CHARACTER MODEL]
-        {
-            this.material = new BABYLON.StandardMaterial('enemy' + Date.now().toString() + '_material');
-            this.switchAlphaTexture(new BABYLON.Texture('/sprites/10-28-23_TestSprite.png'));
-    
-            let faceMap = [];
-    
-            for (var i = 1; i <= 6; i++) {
-                if (i == 1) {
-                    faceMap[1] = new BABYLON.Vector4(0, 0, 1, 1);
-                } else {
-                    faceMap[i] = new BABYLON.Vector4(0, 0, 0.01, 0.01);
-                }
+        this.material = new BABYLON.StandardMaterial('enemy' + Date.now().toString() + '_material');
+        this.switchAlphaTexture(new BABYLON.Texture('/sprites/10-28-23_TestSprite.png'));
+
+        let faceMap = [];
+
+        for (var i = 1; i <= 6; i++) {
+            if (i == 1) {
+                faceMap[1] = new BABYLON.Vector4(0, 0, 1, 1);
+            } else {
+                faceMap[i] = new BABYLON.Vector4(0, 0, 0.01, 0.01);
             }
-    
-            this.character = BABYLON.MeshBuilder.CreateBox('enemy' + Date.now().toString(), {width: 5, height: 5, depth: 2, faceUV: faceMap, wrap: true});
-            this.character.position = new BABYLON.Vector3(-20, 1, -10);
-            this.character.billboardMode = 2;
-            this.character.material = this.material;
-    
-            this.character.checkCollisions = true;
-            this.character.hitBox = true;
-            this.character.health = 190000;
-    
-            this.character.enemySpecialObject = this; //this way i can properly interact with the enemy and stuff
         }
+
+        this.character = BABYLON.MeshBuilder.CreateBox('enemy' + Date.now().toString(), {width: 5, height: 5, depth: 2, faceUV: faceMap, wrap: true});
+        this.character.position = new BABYLON.Vector3(-20, 1, -10);
+        this.character.billboardMode = 2;
+        this.character.material = this.material;
+
+        this.character.checkCollisions = true;
+        this.character.hitBox = true;
+        this.character.health = 190000;
+
+        this.character.enemySpecialObject = this; //this way i can properly interact with the enemy and stuff
         // [CHARACTER PROPERTIES]
-        {
-            this.character.walkSpeed = 16;
-        }
+        this.character.walkSpeed = 16;
 
         return this;
     }
