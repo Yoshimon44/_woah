@@ -19,6 +19,9 @@ export class TestDummy {
     walkTo(point) {
         if (this.character == null) {
             return;
+        } else {
+            console.log(this);
+            console.log(this.character);
         }
 
         const startPosition = this.character.position;
