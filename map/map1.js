@@ -41,7 +41,7 @@ export class TestDummy {
             walkingCharacter.position.addInPlace(
                 point.subtract(startPosition).scale(walkingCharacter.walkSpeed/1000)
             );
-            console.log('x23')
+            console.log(point.subtract(startPosition).scale(walkingCharacter.walkSpeed/1000))
             console.log(BABYLON.Vector3.Distance(startPosition, walkingCharacter.position))
             console.log(BABYLON.Vector3.Distance(startPosition, point))
 
