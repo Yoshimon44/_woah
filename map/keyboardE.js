@@ -317,7 +317,7 @@ export function main(){
             console.log("unfinished")
           }
   
-          console.log(hit.pickedMesh.health);
+          console.log(hit.pickedMesh.enemySpecialObject.health);
           if(hit.pickedMesh.health<=0 /*&& enemy != true*/){
             hit.pickedMesh.dispose()
         }
