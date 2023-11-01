@@ -38,12 +38,9 @@ export class TestDummy extends enemy_AI.Enemy {
 
         return this;
     }
-
-    get health(){
-        return this.character.health;
-    }
-
+    
     set health(health){
+        console.log('mb lol')
         if (this.character.health > health) {
             this.switchAlphaTexture(new BABYLON.Texture('/sprites/10-28-23_TestSprite-Pain.png'));
             setTimeout(()=>{

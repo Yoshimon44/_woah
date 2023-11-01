@@ -53,6 +53,7 @@ export class Enemy { //may not be the system we will use in the deliverable
     }
 
     get health(){
+        console.log('testing the inheritance');
         return this.character.health;
     }
 
