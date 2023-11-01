@@ -57,6 +57,7 @@ export class Enemy { //may not be the system we will use in the deliverable
     }
 
     set health(health){
+        console.log(this.character);
         if (this.character.health > health) {
             this.switchAlphaTexture(new BABYLON.Texture('/sprites/10-28-23_TestSprite-Pain.png'));
             setTimeout(()=>{
