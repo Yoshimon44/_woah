@@ -6,3 +6,4 @@ export class Enemy { //may not be the system we will use in the deliverable
     }
 }
 
+//oh yeah i could make the parent class here and separate enemy types can inherit from this one... stupid me...
