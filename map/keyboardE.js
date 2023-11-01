@@ -122,12 +122,17 @@ export function jump(scene){ //look, i jsut wanted to make a quadratic function 
   }, 1)
 }
 
-export function createProjectile(camera){ //jus testing
+export function createProjectile(camera, collidableObjects = []){ //jus farding
   let projectileRay = camera.getForwardRay();
 
   let spitBall = BABYLON.MeshBuilder.CreateBox('spitBall' + Date.now().toString());
   spitBall.position = projectileRay.origin;
   spitBall.lookAt(spitBall.position.add(projectileRay.direction.scale(20)));
+
+  function onCollision(){
+    clearInterval(fly);
+    spitBall.dispose();
+  }
 
   let loopCount = 0;
   let fly = setInterval(function(){
@@ -137,9 +142,14 @@ export function createProjectile(camera){ //jus testing
     spitBall.position.addInPlace(projectileRay.direction.scale(0.5));
     loopCount++;
 
-    if (loopCount > 1500) {
-      clearInterval(fly);
-      spitBall.dispose()
+    collidableObjects.forEach(function(e){
+      if (spitBall.intersectsMesh(e)) {
+        onCollision();
+      }
+    });
+
+    if (loopCount > 1500) { //still needs to be thrown away if it goes too far without hitting nobody
+      onCollision();
     }
   }, 1);
 }

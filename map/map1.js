@@ -1,61 +1,14 @@
+const enemy_AI = await import("/map/enemy_AI.js");
+
 export var mapParts = {}; //these are not 'map parts' 😭😭😭
 export var mapPartsReal = {};
 export var hitBox;
 export var health;
 
-export class TestDummy {
-    switchAlphaTexture(texture) {
-        this.material.diffuseTexture = texture;
-        this.material.diffuseTexture.hasAlpha = true;
-        this.material.useAlphaFromDiffuseTexture = true;
-
-        this.material.emissiveColor = new BABYLON.Color3(1, 1, 1);
-    }
-
-    playAnimation(animName) {
-        console.log(animName); //not doing this yet
-    }
-
-    walkTo(point) {
-        let walkingCharacter = this.character;
-        
-        if (this.character == null) {
-            return;
-        } else {
-            console.log(this);
-            console.log(this.character);
-        }
-
-        const startPosition = this.character.position.clone();
-
-        this.playAnimation('run');
-        /*
-        while (BABYLON.Vector3.Distance(startPosition, this.character.position) < BABYLON.Vector3.Distance(startPosition, point)) {
-            this.character.position.addInPlace(
-                point.subtract(startPosition)
-            );
-        }
-        */
-
-        
-
-        var walkLoop = setInterval(function(){
-            walkingCharacter.position.addInPlace(
-                point.subtract(startPosition).normalize().scale(walkingCharacter.walkSpeed/50)
-            );
-            console.log(point.subtract(startPosition).normalize().scale(walkingCharacter.walkSpeed/50))
-            console.log(BABYLON.Vector3.Distance(startPosition, walkingCharacter.position))
-            console.log(BABYLON.Vector3.Distance(startPosition, point))
-
-            if (BABYLON.Vector3.Distance(startPosition, walkingCharacter.position) >= BABYLON.Vector3.Distance(startPosition, point)) {
-                clearInterval(walkLoop);
-                return;
-            }
-        }, 1)
-        
-    }
-
+export class TestDummy extends enemy_AI.Enemy {
     constructor(){
+        super(this);
+
         // [CHARACTER MODEL]
         this.material = new BABYLON.StandardMaterial('enemy' + Date.now().toString() + '_material');
         this.switchAlphaTexture(new BABYLON.Texture('/sprites/10-28-23_TestSprite.png'));
