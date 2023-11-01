@@ -128,10 +128,12 @@ export function createProjectile(camera){ //jus testing
   let spitBall = BABYLON.MeshBuilder.CreateBox('spitBall' + Date.now().toString());
   spitBall.position = projectileRay.origin;
   spitBall.lookAt(spitBall.position.add(projectileRay.direction.scale(20)));
-  //spitBall.checkCollisions = true;
 
   let loopCount = 0;
   let fly = setInterval(function(){
+    if(spitBall.intersectsMesh('enemy')){
+      spitBall.dispose()
+    }
     spitBall.position.addInPlace(projectileRay.direction.scale(0.5));
     loopCount++;
 
