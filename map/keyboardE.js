@@ -134,10 +134,10 @@ export function createProjectile(camera, collidableObjects = [], collisionCallba
     if (hitMesh) {
       if(hitMesh.enemy == true) {
         hitMesh.health -= randomInt(5, 400)
+        collisionCallbackFn();
       }
     }
     spitBall.dispose();
-    collisionCallbackFn();
   }
 
   let loopCount = 0;
@@ -281,7 +281,7 @@ export function main(){
             hit.pickedMesh.enemySpecialObject.health -= randomInt(5,40);
           }
         });
-      } else {
+      } else if (!weaponDebounce2) {
         createProjectile(camera);   
       }
 
