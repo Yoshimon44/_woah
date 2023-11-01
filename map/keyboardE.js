@@ -226,7 +226,9 @@ export function main(){
     }
 
     if (e.key=='l') {
-      map1.mapPartsReal.localEnemy.walkTo(character.position.subtract(character.position.subtract(map1.mapPartsReal.position)));
+      map1.mapPartsReal.localEnemy.walkTo(character.position.subtract(
+        character.position.subtract(map1.mapPartsReal.localEnemy.position)
+      ));
     }
 
     character.position = camera.position;
