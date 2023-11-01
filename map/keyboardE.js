@@ -122,7 +122,7 @@ export function jump(scene){ //look, i jsut wanted to make a quadratic function 
   }, 1)
 }
 
-export function createProjectile(camera, collidableObjects = []){ //jus farding
+export function createProjectile(camera, collidableObjects = [], collisionCallbackFn = function(){}){ //jus farding
   let projectileRay = camera.getForwardRay();
 
   let spitBall = BABYLON.MeshBuilder.CreateBox('spitBall' + Date.now().toString());
@@ -132,6 +132,7 @@ export function createProjectile(camera, collidableObjects = []){ //jus farding
   function onCollision(){
     clearInterval(fly);
     spitBall.dispose();
+    collisionCallbackFn();
   }
 
   let loopCount = 0;
@@ -274,7 +275,9 @@ export function main(){
       if(hit.pickedMesh.hitBox == true && weaponDebounce2 == false){
           if(pistol==true){
             if ("enemySpecialObject" in hit.pickedMesh) {
-              hit.pickedMesh.enemySpecialObject.health -= randomInt(5, 15);
+              createProjectile(camera, [hit.pickedMesh], function(){
+                hit.pickedMesh.health -= randomInt(5,40);
+              });
             } else {
               hit.pickedMesh.health -= randomInt(5,15);
             }
@@ -298,14 +301,16 @@ export function main(){
 
           if(plasmaGun == true && weaponDebounce2 == false /*&& plasmaGunOwned == true*/){
             if ("enemySpecialObject" in hit.pickedMesh) {
-              hit.pickedMesh.enemySpecialObject.health -= randomInt(5, 40);
+              createProjectile(camera, [hit.pickedMesh], function(){
+                hit.pickedMesh.health -= randomInt(5,40);
+              });
             } else {
               hit.pickedMesh.health -= randomInt(5,40);
             }
 
             weaponDebounce(700)
 
-            createProjectile(camera);
+            //createProjectile(camera);
           }
 
           if(bfg == true && weaponDebounce2 == false /*&& bfgOwned == true*/){
