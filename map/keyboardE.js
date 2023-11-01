@@ -227,7 +227,7 @@ export function main(){
 
     if (e.key=='l') {
       map1.mapPartsReal.localEnemy.walkTo(character.position.subtract(
-        character.position.subtract(map1.mapPartsReal.localEnemy.position)
+        character.position.subtract(map1.mapPartsReal.localEnemy.character.position)
       ));
     }
 
