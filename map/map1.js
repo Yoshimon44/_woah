@@ -42,6 +42,8 @@ export class TestDummy {
                 point.subtract(startPosition).scale(walkingCharacter.walkSpeed/1000)
             );
             console.log('x23')
+            console.log(BABYLON.Vector3.Distance(startPosition, walkingCharacter.position))
+            console.log(BABYLON.Vector3.Distance(startPosition, point))
 
             if (BABYLON.Vector3.Distance(startPosition, walkingCharacter.position) >= BABYLON.Vector3.Distance(startPosition, point)) {
                 clearInterval(walkLoop);
