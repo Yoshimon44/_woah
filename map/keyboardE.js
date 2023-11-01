@@ -31,7 +31,7 @@ var launcherOwned = false
 var plasmaGunOwned = false
 var bfgOwned = false
 
-//WEAPON MISC. VARIABLES
+//WEAPON AMMO VARIABLES
 
 
 var moveSpeed = 1; //percentage of the walkSpeed.
@@ -260,6 +260,7 @@ export function main(){
 
   window.addEventListener('mousedown', function(q){
     mouseIsDown = true;
+
     var mouseLoopity = setInterval(function(){
       var ray = camera.getForwardRay(999);
 
@@ -271,13 +272,15 @@ export function main(){
       }
   
       var hit = scene.pickWithRay(ray, predicate);
+
+      createProjectile(camera, [hit.pickedMesh], function(){
+        hit.pickedMesh.enemySpecialObject.health -= randomInt(5,40);
+      });
   
       if(hit.pickedMesh.hitBox == true && weaponDebounce2 == false){
           if(pistol==true){
             if ("enemySpecialObject" in hit.pickedMesh) {
-              createProjectile(camera, [hit.pickedMesh], function(){
-                hit.pickedMesh.enemySpecialObject.health -= randomInt(5,40);
-              });
+
             } else {
               hit.pickedMesh.health -= randomInt(5,15);
             }
@@ -301,9 +304,7 @@ export function main(){
 
           if(plasmaGun == true && weaponDebounce2 == false /*&& plasmaGunOwned == true*/){
             if ("enemySpecialObject" in hit.pickedMesh) {
-              createProjectile(camera, [hit.pickedMesh], function(){
-                hit.pickedMesh.enemySpecialObject.health -= randomInt(5,40);
-              });
+
             } else {
               hit.pickedMesh.health -= randomInt(5,40);
             }

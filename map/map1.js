@@ -6,7 +6,7 @@ export var hitBox;
 export var health;
 
 export class TestDummy extends enemy_AI.Enemy {
-    constructor(){
+    constructor(pos = new BABYLON.Vector3(-20, 1, 10)){
         super();
 
         // [CHARACTER MODEL]
@@ -24,7 +24,7 @@ export class TestDummy extends enemy_AI.Enemy {
         }
 
         this.character = BABYLON.MeshBuilder.CreateBox('enemy' + Date.now().toString(), {width: 5, height: 5, depth: 2, faceUV: faceMap, wrap: true});
-        this.character.position = new BABYLON.Vector3(-20, 1, -10);
+        this.character.position = pos;
         this.character.billboardMode = 2;
         this.character.material = this.material;
 
