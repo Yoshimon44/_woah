@@ -273,9 +273,13 @@ export function main(){
   
       var hit = scene.pickWithRay(ray, predicate);
 
-      createProjectile(camera, [hit.pickedMesh], function(){
-        hit.pickedMesh.enemySpecialObject.health -= randomInt(5,40);
-      });
+      if (!weaponDebounce2 && hit.pickedMesh != null) {
+        createProjectile(camera, [hit.pickedMesh], function(){
+          if ("enemySpecialObject" in hit.pickedMesh) {
+            hit.pickedMesh.enemySpecialObject.health -= randomInt(5,40);
+          }
+        });
+      }
   
       if(hit.pickedMesh.hitBox == true && weaponDebounce2 == false){
           if(pistol==true){
