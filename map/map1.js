@@ -7,7 +7,7 @@ export var health;
 
 export class TestDummy extends enemy_AI.Enemy {
     constructor(){
-        super(this);
+        super();
 
         // [CHARACTER MODEL]
         this.material = new BABYLON.StandardMaterial('enemy' + Date.now().toString() + '_material');
