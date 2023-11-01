@@ -41,9 +41,9 @@ export class TestDummy {
 
         var walkLoop = setInterval(function(){
             walkingCharacter.position.addInPlace(
-                point.subtract(startPosition).normalize().scale(walkingCharacter.walkSpeed/10)
+                point.subtract(startPosition).normalize().scale(walkingCharacter.walkSpeed/50)
             );
-            console.log(point.subtract(startPosition).normalize().scale(walkingCharacter.walkSpeed/10))
+            console.log(point.subtract(startPosition).normalize().scale(walkingCharacter.walkSpeed/50))
             console.log(BABYLON.Vector3.Distance(startPosition, walkingCharacter.position))
             console.log(BABYLON.Vector3.Distance(startPosition, point))
 
