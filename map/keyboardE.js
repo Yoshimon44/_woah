@@ -131,9 +131,9 @@ export function createProjectile(camera){ //jus testing
 
   let loopCount = 0;
   let fly = setInterval(function(){
-    if(spitBall.intersectsMesh('enemy')){
+    /*if(spitBall.intersectsMesh()){
       spitBall.dispose()
-    }
+    }*/
     spitBall.position.addInPlace(projectileRay.direction.scale(0.5));
     loopCount++;
 
