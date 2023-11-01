@@ -39,8 +39,14 @@ export class TestDummy extends enemy_AI.Enemy {
         return this;
     }
 
+    get health(){
+        console.log('testing the inheritance');
+        return this.character.health;
+    }
+
     set health(health){
         console.log('mb lol')
+        console.log(this.character.health);
         if (this.character.health > health) {
             this.switchAlphaTexture(new BABYLON.Texture('/sprites/10-28-23_TestSprite-Pain.png'));
             setTimeout(()=>{
@@ -48,7 +54,7 @@ export class TestDummy extends enemy_AI.Enemy {
             }, 500)
         }
 
-        this.character.health = health;
+        this.character.health = parseFloat(health);
     }
 
 
