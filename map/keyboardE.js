@@ -131,8 +131,10 @@ export function createProjectile(camera, collidableObjects = [], collisionCallba
 
   function onCollision(hitMesh){
     clearInterval(fly);
-    if(hitMesh.enemy == true) {
-      hitMesh.health -= randomInt(5, 40000)
+    if (hitMesh) {
+      if(hitMesh.enemy == true) {
+        hitMesh.health -= randomInt(5, 400)
+      }
     }
     spitBall.dispose();
     collisionCallbackFn();
@@ -140,15 +142,12 @@ export function createProjectile(camera, collidableObjects = [], collisionCallba
 
   let loopCount = 0;
   let fly = setInterval(function(){
-    /*if(spitBall.intersectsMesh()){
-      spitBall.dispose()
-    }*/
     spitBall.position.addInPlace(projectileRay.direction.scale(0.5));
     loopCount++;
 
     collidableObjects.forEach(function(e){
       if (spitBall.intersectsMesh(e)) {
-        onCollision();
+        onCollision(e);
       }
     });
 
@@ -283,9 +282,7 @@ export function main(){
           }
         });
       } else {
-        createProjectile(camera, [], function(){
-          //empty ahh projectile, does nothing
-        });   
+        createProjectile(camera);   
       }
 
       //hits enemy
