@@ -129,8 +129,11 @@ export function createProjectile(camera, collidableObjects = [], collisionCallba
   spitBall.position = projectileRay.origin;
   spitBall.lookAt(spitBall.position.add(projectileRay.direction.scale(20)));
 
-  function onCollision(){
+  function onCollision(hitMesh){
     clearInterval(fly);
+    if(hitMesh.enemy == true) {
+      hitMesh.health -= randomInt(5, 40000)
+    }
     spitBall.dispose();
     collisionCallbackFn();
   }
@@ -279,8 +282,15 @@ export function main(){
             hit.pickedMesh.enemySpecialObject.health -= randomInt(5,40);
           }
         });
+      } else {
+        createProjectile(camera, [], function(){
+          //empty ahh projectile, does nothing
+        });   
       }
-  
+
+      //hits enemy
+      //disposes no matter what but only take health away whern ene,my
+      
       if(hit.pickedMesh.hitBox == true && weaponDebounce2 == false){
           if(pistol==true){
             if ("enemySpecialObject" in hit.pickedMesh) {
@@ -307,15 +317,9 @@ export function main(){
           }
 
           if(plasmaGun == true && weaponDebounce2 == false /*&& plasmaGunOwned == true*/){
-            if ("enemySpecialObject" in hit.pickedMesh) {
-
-            } else {
-              hit.pickedMesh.health -= randomInt(5,40);
-            }
+            createProjectile(camera);
 
             weaponDebounce(700)
-
-            //createProjectile(camera);
           }
 
           if(bfg == true && weaponDebounce2 == false /*&& bfgOwned == true*/){
