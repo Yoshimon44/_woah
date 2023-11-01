@@ -26,7 +26,7 @@ export class TestDummy {
             console.log(this.character);
         }
 
-        const startPosition = this.character.position;
+        const startPosition = this.character.position.clone();
 
         this.playAnimation('run');
         /*
@@ -36,6 +36,8 @@ export class TestDummy {
             );
         }
         */
+
+        
 
         var walkLoop = setInterval(function(){
             walkingCharacter.position.addInPlace(
