@@ -38,7 +38,7 @@ export class TestDummy extends enemy_AI.Enemy {
 
         return this;
     }
-    
+
     set health(health){
         console.log('mb lol')
         if (this.character.health > health) {
