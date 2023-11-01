@@ -230,7 +230,7 @@ export function main(){
       console.log(character.position.subtract(character.position.subtract(map1.mapPartsReal.localEnemy.character.position)))
 
       map1.mapPartsReal.localEnemy.walkTo(character.position.add(
-        character.position.subtract(map1.mapPartsReal.localEnemy.character.position)
+        character.position.subtract(map1.mapPartsReal.localEnemy.character.position).normalize().scale(10)
       ));
     }
 
