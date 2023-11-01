@@ -4,6 +4,7 @@ export var mapParts = {}; //these are not 'map parts' 😭😭😭
 export var mapPartsReal = {};
 export var hitBox;
 export var health;
+export var enemy;
 
 export class TestDummy extends enemy_AI.Enemy {
     constructor(pos = new BABYLON.Vector3(-20, 1, 10)){
@@ -31,6 +32,7 @@ export class TestDummy extends enemy_AI.Enemy {
         this.character.checkCollisions = true;
         this.character.hitBox = true;
         this.character.health = 190000;
+        this.character.enemy = true;
 
         this.character.enemySpecialObject = this; //this way i can properly interact with the enemy and stuff
         // [CHARACTER PROPERTIES]
