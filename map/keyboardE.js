@@ -180,7 +180,7 @@ export function main(){
   const character = map1.mapPartsReal.playerCharacter;
   const scene = map1.mapParts.scene;
 
-  if (camera == undefined) {
+  if (camera == null) {
     setTimeout(function(){
       main();
       console.log('hahahahahaha ahahahhad adi asjg uiawy wiofawiofleyfo subk fAUFI asdlfi oye 0');
