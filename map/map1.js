@@ -109,6 +109,8 @@ export const createScene = (canvas, engine) => {
     mapParts.camera = camera;
     camera.attachControl(canvas, true);
 
+    console.log('i farded and it smellz');
+
     
     document.querySelector("#newCanva").addEventListener("click", function(){
         // [mouseCamera.js]
@@ -131,6 +133,8 @@ export const createScene = (canvas, engine) => {
     const light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(0, 1, 0));
     mapParts.light = light;
     light.intensity = 0.7;
+
+    console.log('and i darted to the bellllllllllllllllllllllllllllllllllllllllllllllllllllllll')
 
     // [MAP]
 
@@ -179,6 +183,8 @@ export const createScene = (canvas, engine) => {
     // [LOADIGN SCREENE]
     
     document.querySelector("#loadingScreen").setAttribute('hidden', true);
+
+    console.log('I WAS RUNNING FOR THE BATHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHROOM')
 
     return scene;
 }
