@@ -288,7 +288,8 @@ export function main(){
       //hits enemy
       //disposes no matter what but only take health away whern ene,my
       
-      if(hit.pickedMesh.hitBox == true && weaponDebounce2 == false){
+      if ("hitBox" in hit.pickedMesh) {
+        if(hit.pickedMesh.hitBox == true && weaponDebounce2 == false){
           if(pistol==true){
             if ("enemySpecialObject" in hit.pickedMesh) {
 
@@ -327,6 +328,7 @@ export function main(){
           if(hit.pickedMesh.health<=0 /*&& enemy != true*/){
             hit.pickedMesh.dispose()
         }
+      }
       }
 
       if (!mouseIsDown) {
