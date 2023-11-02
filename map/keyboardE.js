@@ -183,6 +183,7 @@ export function main(){
   if (camera == undefined) {
     setTimeout(function(){
       main();
+      console.log('hahahahahaha ahahahhad adi asjg uiawy wiofawiofleyfo subk fAUFI asdlfi oye 0');
     }, 50);
     return;
   }
