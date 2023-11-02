@@ -42,7 +42,8 @@ function filePathParser(hecknaw){
         return "/_woah/" + hecknaw;
       }
     }
-  }
+}
+
 
 async function main(){ //i wanna try out promises
     console.log('errrr!!');

@@ -180,6 +180,13 @@ export function main(){
   const character = map1.mapPartsReal.playerCharacter;
   const scene = map1.mapParts.scene;
 
+  if (camera == undefined) {
+    setTimeout(function(){
+      main();
+    }, 50);
+    return;
+  }
+
   setInterval(updateLabel, 1, 'rot', camera.rotation);
   setInterval(updateLabel, 1, 'pos', camera.position);
 
