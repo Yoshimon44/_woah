@@ -1,5 +1,6 @@
 console.log('what issues?')
 //https://yoshimon44.github.io/_woah/
+console.log(window.location.href)
 var e, p;
 
 if (window.location.href != 'https://yoshimon44.github.io/_woah/') {
