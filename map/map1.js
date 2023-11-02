@@ -1,4 +1,13 @@
-const enemy_AI = await import("/map/enemy_AI.js");
+var enemy_AI, index;
+
+
+if (window.location.href != 'https://yoshimon44.github.io/_woah/') {
+    enemy_AI = await import("/map/enemy_AI.js");
+    index = await import("/index.js");
+} else {
+    enemy_AI = await import("/_woah/map/enemy_AI.js");
+    index = await import("/_woah/index.js");
+}
 
 export var mapParts = {}; //these are not 'map parts' 😭😭😭
 export var mapPartsReal = {};
@@ -62,7 +71,7 @@ export class TestDummy extends enemy_AI.Enemy {
 
 }
 
-const index = await import("/index.js");
+
 
 //const havokInstance = await HavokPhysics();
 

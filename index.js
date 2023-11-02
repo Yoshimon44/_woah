@@ -1,23 +1,24 @@
 console.log('what issues?')
+//https://yoshimon44.github.io/_woah/
+var e, p;
 
-var e;
-
-Promise.resolve(import("/map/map1.js")).then(function(e2){
-    e = e2;
-    console.log(e2);
-    console.log(e);
-});
-
-
-console.log(e);
-
-var p;
-
-Promise.resolve(import("/map/keyboardE.js")).then(function(e2){
-    p = e2;
-})
-
-console.log(p);
+if (window.location.href != 'https://yoshimon44.github.io/_woah/') {
+    Promise.resolve(import("/map/map1.js")).then(function(e2){
+        e = e2;
+    });
+    
+    Promise.resolve(import("/map/keyboardE.js")).then(function(e2){
+        p = e2;
+    })
+} else {
+    Promise.resolve(import("/_woah/map/map1.js")).then(function(e2){
+        e = e2;
+    });
+    
+    Promise.resolve(import("/_woah/map/keyboardE.js")).then(function(e2){
+        p = e2;
+    })
+}
 
 var active = false;
 

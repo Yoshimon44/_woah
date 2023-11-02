@@ -1,5 +1,11 @@
 // [IMPORTS]
-const map1 = await import("/map/map1.js");
+var map1;
+
+if (window.location.href != 'https://yoshimon44.github.io/_woah/') {
+  map1 = await import("/map/map1.js");
+} else {
+  map1 = await import("/_woah/map/map1.js");
+}
 //const enemy_AI = await import("/map/enemy_AI.js");
 
 // [VARIABLES]
