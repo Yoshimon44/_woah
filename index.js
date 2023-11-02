@@ -12,6 +12,7 @@ if (window.location.href != 'https://yoshimon44.github.io/_woah/') {
         p = e2;
     })
 } else {
+    console.log('huh that kel tec gon make a brudda flip like gymnastics')
     Promise.resolve(import("/_woah/map/map1.js")).then(function(e2){
         e = e2;
     });
