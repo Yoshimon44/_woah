@@ -75,6 +75,15 @@ export class TestDummy extends enemy_AI.Enemy {
 
 //const havokInstance = await HavokPhysics();
 
+function filePathParser(hecknaw){
+    if (hecknaw.substring(0, 1) == '/') {
+      if (window.location.href != 'https://yoshimon44.github.io/_woah/') {
+        return hecknaw;
+      } else {
+        return "/_woah/" + hecknaw;
+      }
+    }
+  }
 
 
 export const createScene = (canvas, engine) => {

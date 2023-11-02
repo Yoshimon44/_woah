@@ -3,6 +3,15 @@ console.log('what issues?')
 console.log(window.location.href)
 var e, p;
 
+Promise.resolve(import(filePathParser("/map/map1.js"))).then(function(e2){
+    e = e2;
+});
+
+Promise.resolve(import(filePathParser("/map/keyboardE.js"))).then(function(e2){
+    p = e2;
+})
+
+/*
 if (window.location.href != 'https://yoshimon44.github.io/_woah/') {
     Promise.resolve(import("/map/map1.js")).then(function(e2){
         e = e2;
@@ -21,8 +30,19 @@ if (window.location.href != 'https://yoshimon44.github.io/_woah/') {
         p = e2;
     })
 }
+*/
 
 var active = false;
+
+function filePathParser(hecknaw){
+    if (hecknaw.substring(0, 1) == '/') {
+      if (window.location.href != 'https://yoshimon44.github.io/_woah/') {
+        return hecknaw;
+      } else {
+        return "/_woah/" + hecknaw;
+      }
+    }
+  }
 
 async function main(){ //i wanna try out promises
     console.log('errrr!!');

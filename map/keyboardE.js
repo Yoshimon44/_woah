@@ -163,6 +163,16 @@ export function createProjectile(camera, collidableObjects = [], collisionCallba
   }, 1);
 }
 
+function filePathParser(hecknaw){
+  if (hecknaw.substring(0, 1) == '/') {
+    if (window.location.href != 'https://yoshimon44.github.io/_woah/') {
+      return hecknaw;
+    } else {
+      return "/_woah/" + hecknaw;
+    }
+  }
+}
+
 // [PROGRAM]
 
 export function main(){
