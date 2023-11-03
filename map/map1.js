@@ -56,16 +56,15 @@ export class TestDummy extends enemy_AI.Enemy {
     }
 
     set health(health){
-        console.log('mb lol')
-        console.log(this.character.health);
+        console.log(this.character);
         if (this.character.health > health) {
-            this.switchAlphaTexture(new BABYLON.Texture('/sprites/10-28-23_TestSprite-Pain.png'));
+            this.switchAlphaTexture(new BABYLON.Texture(filePathParser('/sprites/10-28-23_TestSprite-Pain.png')));
             setTimeout(()=>{
-                this.switchAlphaTexture(new BABYLON.Texture('/sprites/10-28-23_TestSprite.png'));
+                this.switchAlphaTexture(new BABYLON.Texture(filePathParser('/sprites/10-28-23_TestSprite.png')));
             }, 500)
         }
 
-        this.character.health = parseFloat(health);
+        this.character.health = health;
     }
 
 
