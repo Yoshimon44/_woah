@@ -302,6 +302,7 @@ export function main(){
       var hit = scene.pickWithRay(ray, predicate);
 
       if (!weaponDebounce2 && hit.pickedMesh != null) {
+        console.log('case 1');
         createProjectile(camera, [hit.pickedMesh], function(){
           if ("enemySpecialObject" in hit.pickedMesh) {
             hit.pickedMesh.enemySpecialObject.health -= randomInt(5,40);
@@ -310,6 +311,7 @@ export function main(){
           }
         });
       } else if (!weaponDebounce2) {
+        console.log('case 2')
         createProjectile(camera);
         weaponDebounce(1000);   
       }
