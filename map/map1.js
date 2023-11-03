@@ -87,10 +87,9 @@ function filePathParser(hecknaw){
 export function makeStair(startPos, endPos, steps, stairLength) { //i dont like messy code soooooo
     var stairDistance = ((endPos.subtract(startPos)).scale(1/steps)); //js doesnt support operator overloading so sad man
 
-    console.log(stairLength);
-    console.log(stairDistance);
-
     for (var i = 0; i < steps; i++) {
+        console.log(stairLength);
+        console.log(stairDistance);
         var stairstep = BABYLON.MeshBuilder.CreateBox(("stair" + Date.now().toString()), {width: stairLength, height: stairDistance});
         stairstep.position = startPos.add(stairDistance.scale(i/steps));
 
@@ -122,8 +121,6 @@ export const createScene = (canvas, engine) => {
     mapParts.camera = camera;
     camera.attachControl(canvas, true);
 
-    console.log('i farded and it smellz');
-
     
     document.querySelector("#newCanva").addEventListener("click", function(){
         // [mouseCamera.js]
@@ -147,7 +144,6 @@ export const createScene = (canvas, engine) => {
     mapParts.light = light;
     light.intensity = 0.7;
 
-    console.log('and i darted to the bellllllllllllllllllllllllllllllllllllllllllllllllllllllll')
 
     // [MAP]
 
@@ -196,8 +192,6 @@ export const createScene = (canvas, engine) => {
     // [LOADIGN SCREENE]
     
     document.querySelector("#loadingScreen").setAttribute('hidden', true);
-
-    console.log('I WAS RUNNING FOR THE BATHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHROOM')
 
     return scene;
 }
