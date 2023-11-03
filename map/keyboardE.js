@@ -312,47 +312,49 @@ export function main(){
       //hits enemy
       //disposes no matter what but only take health away whern ene,my
       
-      if ("hitBox" in hit.pickedMesh) {
-        if(hit.pickedMesh.hitBox == true && weaponDebounce2 == false){
-          if(pistol==true){
-            if ("enemySpecialObject" in hit.pickedMesh) {
-
-            } else {
-              hit.pickedMesh.health -= randomInt(5,15);
+      if (hit.pickedMesh) {
+        if ("hitBox" in hit.pickedMesh) {
+          if(hit.pickedMesh.hitBox == true && weaponDebounce2 == false){
+            if(pistol==true){
+              if ("enemySpecialObject" in hit.pickedMesh) {
+  
+              } else {
+                hit.pickedMesh.health -= randomInt(5,15);
+              }
+              weaponDebounce(150);
             }
-            weaponDebounce(150);
-          }
-          
-          if(shotgun == true && weaponDebounce2 == false && shotgunOwned == true){
-            weaponDebounce(56.8)
-            //okay so this one is gonna be last so yea
-          }
+            
+            if(shotgun == true && weaponDebounce2 == false && shotgunOwned == true){
+              weaponDebounce(56.8)
+              //okay so this one is gonna be last so yea
+            }
+    
+            if(chaingun == true && weaponDebounce2 == false /*&& chaingunOwned == true*/){
+              hit.pickedMesh.health -= randomInt(5,15)
+              weaponDebounce(525.0)
+            }
   
-          if(chaingun == true && weaponDebounce2 == false /*&& chaingunOwned == true*/){
-            hit.pickedMesh.health -= randomInt(5,15)
-            weaponDebounce(525.0)
-          }
-
-          if(launcher == true && weaponDebounce2 == false /*&& launcherOwned == true*/){
-            console.log(hit.pickedMesh.health)
-            //this is gonna need splash somehow, i believe
-          }
-
-          if(plasmaGun == true && weaponDebounce2 == false /*&& plasmaGunOwned == true*/){
-            createProjectile(camera);
-
-            weaponDebounce(700)
-          }
-
-          if(bfg == true && weaponDebounce2 == false /*&& bfgOwned == true*/){
-            console.log("unfinished")
-          }
+            if(launcher == true && weaponDebounce2 == false /*&& launcherOwned == true*/){
+              console.log(hit.pickedMesh.health)
+              //this is gonna need splash somehow, i believe
+            }
   
-          console.log(hit.pickedMesh.enemySpecialObject.health);
-          if(hit.pickedMesh.health<=0 /*&& enemy != true*/){
-            hit.pickedMesh.dispose()
+            if(plasmaGun == true && weaponDebounce2 == false /*&& plasmaGunOwned == true*/){
+              createProjectile(camera);
+  
+              weaponDebounce(700)
+            }
+  
+            if(bfg == true && weaponDebounce2 == false /*&& bfgOwned == true*/){
+              console.log("unfinished")
+            }
+    
+            console.log(hit.pickedMesh.enemySpecialObject.health);
+            if(hit.pickedMesh.health<=0 /*&& enemy != true*/){
+              hit.pickedMesh.dispose()
+          }
         }
-      }
+        }
       }
 
       if (!mouseIsDown) {

@@ -21,7 +21,7 @@ export class TestDummy extends enemy_AI.Enemy {
 
         // [CHARACTER MODEL]
         this.material = new BABYLON.StandardMaterial('enemy' + Date.now().toString() + '_material');
-        this.switchAlphaTexture(new BABYLON.Texture('/sprites/10-28-23_TestSprite.png'));
+        this.switchAlphaTexture(new BABYLON.Texture(filePathParser('/sprites/10-28-23_TestSprite.png')));
 
         let faceMap = [];
 
