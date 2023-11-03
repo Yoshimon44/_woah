@@ -285,7 +285,9 @@ export function main(){
   })
 
   window.addEventListener('mousedown', function(q){
-    mouseIsDown = true;
+    if (!mouseIsDown) {
+      mouseIsDown = true;
+    }
 
     var mouseLoopity = setInterval(function(){
       var ray = camera.getForwardRay(999);
@@ -303,10 +305,13 @@ export function main(){
         createProjectile(camera, [hit.pickedMesh], function(){
           if ("enemySpecialObject" in hit.pickedMesh) {
             hit.pickedMesh.enemySpecialObject.health -= randomInt(5,40);
+          } else {
+            hit.pickedMesh.health -= randomInt(5, 40);
           }
         });
       } else if (!weaponDebounce2) {
-        createProjectile(camera);   
+        createProjectile(camera);
+        weaponDebounce(1000);   
       }
 
       //hits enemyee
