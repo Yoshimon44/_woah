@@ -63,3 +63,4 @@
 
 11/3/23:
     - Added the ability to fire weapons at anything, including but not limited to the sky, any enemy, and more.
+    - Stair system part 1 (cosmetic stairs)

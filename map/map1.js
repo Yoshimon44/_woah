@@ -89,16 +89,10 @@ export function makeStair(startPos, endPos, steps, stairLength) { //i dont like 
     var stairDistance = BABYLON.Vector3.Distance(endPos, startPos);
 
     for (var i = 1; i <= steps; i++) {
-        console.log(stairLength);
-        console.log(stairDistance);
         var stairstep = BABYLON.MeshBuilder.CreateBox("stair" + i.toString());
         stairstep.position = startPos.add(stairDistance2.scale(i));
 
-        //{width: stairLength, height: stairDistance}
         stairstep.scaling = new BABYLON.Vector3(stairLength, stairDistance * (i/steps), stairDistance/steps);
-
-        console.log(stairstep.position);
-        console.log(stairstep.scaling);
 
         console.log("stair" + i.toString());
     }
