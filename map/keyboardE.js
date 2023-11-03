@@ -318,14 +318,16 @@ export function main(){
             if(hit.pickedMesh.hitBox == true && weaponDebounce2 == false){
               if ("enemySpecialObject" in hit.pickedMesh) {
                 hit.pickedMesh.enemySpecialObject.health -= randomInt(5, 15);
+                weaponDebounce(150);
               } else {
                 hit.pickedMesh.health -= randomInt(5,15);
+                weaponDebounce(150);
               }
             }
           }
         }
 
-        weaponDebounce(150);
+        
       }
 
       if(shotgun == true && weaponDebounce2 == false && shotgunOwned == true){
