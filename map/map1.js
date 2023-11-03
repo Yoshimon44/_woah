@@ -95,6 +95,8 @@ export function makeStair(startPos, endPos, steps, stairLength) { //i dont like 
 
         console.log(stairstep);
     }
+
+    var doodoo_ball_9000 =  BABYLON.MeshBuilder.CreateBox("STOCK GOIN UPPPPP", {width: 9, height: 9, depth: 5});
 }
 
 
