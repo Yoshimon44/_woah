@@ -173,6 +173,17 @@ function filePathParser(hecknaw){
   }
 }
 
+export function makeStair(startPos, endPos, steps, stairLength) { //i dont like messy code soooooo
+  var stairDistance = ((endPos.add(startPos)).divide(steps)); //js doesnt support operator overloading so sad man
+
+  for (var i = 0; i < steps; i++) {
+      var stairstep = BABYLON.MeshBuilder.CreateBox(("stair" + Date.now().toString()), {length: stairLength, width: stairDistance});
+  }
+      
+
+}
+
+
 // [PROGRAM]
 
 export function main(){
