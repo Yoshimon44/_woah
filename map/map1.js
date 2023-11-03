@@ -85,14 +85,14 @@ function filePathParser(hecknaw){
 }
 
 export function makeStair(startPos, endPos, steps, stairLength) { //i dont like messy code soooooo
-    //var stairDistance = ((endPos.subtract(startPos)).scale(1/steps)); //js doesnt support operator overloading so sad man
+    var stairDistance2 = ((endPos.subtract(startPos)).scale(1/steps)); //js doesnt support operator overloading so sad man
     var stairDistance = BABYLON.Vector3.Distance(endPos, startPos)/steps;
 
     for (var i = 0; i < steps; i++) {
         console.log(stairLength);
         console.log(stairDistance);
         var stairstep = BABYLON.MeshBuilder.CreateBox("stair" + i.toString());
-        stairstep.position = startPos.add(stairDistance * i/steps);
+        stairstep.position = startPos.add(stairDistance2 * i/steps);
 
         //{width: stairLength, height: stairDistance}
         stairstep.scaling = new BABYLON.Vector3(stairLength, stairDistance, 1);
