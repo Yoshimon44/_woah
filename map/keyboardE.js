@@ -309,7 +309,7 @@ export function main(){
         createProjectile(camera);   
       }
 
-      //hits enemy
+      //hits enemyee
       //disposes no matter what but only take health away whern ene,my
 
       if(pistol==true){
