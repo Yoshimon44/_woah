@@ -95,7 +95,7 @@ export function makeStair(startPos, endPos, steps, stairLength) { //i dont like 
         stairstep.position = startPos.add(stairDistance2.scale(i));
 
         //{width: stairLength, height: stairDistance}
-        stairstep.scaling = new BABYLON.Vector3(stairLength, stairDistance, stairDistance/steps);
+        stairstep.scaling = new BABYLON.Vector3(stairLength, stairDistance * (i/steps), stairDistance/steps);
 
         console.log(stairstep.position);
         console.log(stairstep.scaling);
