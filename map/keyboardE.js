@@ -310,6 +310,7 @@ export function main(){
             hit.pickedMesh.health -= randomInt(5, 40);
           }
         });
+        weaponDebounce(1000);  
       } else if (!weaponDebounce2) {
         console.log('case 2')
         createProjectile(camera);
