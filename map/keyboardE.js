@@ -301,7 +301,9 @@ export function main(){
   
       var hit = scene.pickWithRay(ray, predicate);
 
-      if (!weaponDebounce2 && hit.pickedMesh != null) {
+
+      /*
+            if (!weaponDebounce2 && hit.pickedMesh != null) {
         console.log('case 1');
         createProjectile(camera, [hit.pickedMesh], function(){
           if ("enemySpecialObject" in hit.pickedMesh) {
@@ -316,26 +318,27 @@ export function main(){
         createProjectile(camera);
         weaponDebounce(1000);   
       }
+      */
 
       //hits enemyee
       //disposes no matter what but only take health away whern ene,my
 
       if(pistol==true){
-        if (hit.pickedMesh) {
-          if ("hitBox" in hit.pickedMesh) {
-            if(hit.pickedMesh.hitBox == true && weaponDebounce2 == false){
-              if ("enemySpecialObject" in hit.pickedMesh) {
-                hit.pickedMesh.enemySpecialObject.health -= randomInt(5, 15);
-                weaponDebounce(150);
-              } else {
-                hit.pickedMesh.health -= randomInt(5,15);
-                weaponDebounce(150);
-              }
+        if (!weaponDebounce2 && hit.pickedMesh != null) {
+          console.log('case 1');
+          createProjectile(camera, [hit.pickedMesh], function(){
+            if ("enemySpecialObject" in hit.pickedMesh) {
+              hit.pickedMesh.enemySpecialObject.health -= randomInt(5,15);
+            } else {
+              hit.pickedMesh.health -= randomInt(5, 15);
             }
-          }
+          });
+          weaponDebounce(150);  
+        } else if (!weaponDebounce2) {
+          console.log('case 2')
+          createProjectile(camera);
+          weaponDebounce(150);   
         }
-
-        
       }
 
       if(shotgun == true && weaponDebounce2 == false && shotgunOwned == true){
@@ -354,9 +357,21 @@ export function main(){
       }
 
       if(plasmaGun == true && weaponDebounce2 == false /*&& plasmaGunOwned == true*/){
-        createProjectile(camera);
-
-        weaponDebounce(700)
+        if (!weaponDebounce2 && hit.pickedMesh != null) {
+          console.log('case 1');
+          createProjectile(camera, [hit.pickedMesh], function(){
+            if ("enemySpecialObject" in hit.pickedMesh) {
+              hit.pickedMesh.enemySpecialObject.health -= randomInt(5,300);
+            } else {
+              hit.pickedMesh.health -= randomInt(5, 300);
+            }
+          });
+          weaponDebounce(700);  
+        } else if (!weaponDebounce2) {
+          console.log('case 2')
+          createProjectile(camera);
+          weaponDebounce(700);   
+        }
       }
 
       if(bfg == true && weaponDebounce2 == false /*&& bfgOwned == true*/){
