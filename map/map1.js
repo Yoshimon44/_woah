@@ -82,7 +82,18 @@ function filePathParser(hecknaw){
         return "/_woah/" + hecknaw;
       }
     }
-  }
+}
+
+export function makeStair(startPos, endPos, steps, stairLength) { //i dont like messy code soooooo
+var stairDistance = ((endPos.subtract(startPos)).divide(steps)); //js doesnt support operator overloading so sad man
+
+for (var i = 0; i < steps; i++) {
+    var stairstep = BABYLON.MeshBuilder.CreateBox(("stair" + Date.now().toString()), {length: stairLength, width: stairDistance});
+    stairstep.position = startPos.add(stairDistance.scale(i/steps));
+}
+    
+
+}
 
 
 export const createScene = (canvas, engine) => {
