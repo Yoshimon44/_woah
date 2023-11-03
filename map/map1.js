@@ -93,7 +93,7 @@ export function makeStair(startPos, endPos, steps, stairLength) { //i dont like 
         var stairstep = BABYLON.MeshBuilder.CreateBox(("stair" + Date.now().toString()), {width: stairLength, height: stairDistance});
         stairstep.position = startPos.add(stairDistance.scale(i/steps));
 
-        console.log(stairstep);
+        console.log(stairstep.scaling);
     }
 
     var doodoo_ball_9000 =  BABYLON.MeshBuilder.CreateBox("STOCK GOIN UPPPPP", {width: 9, height: 9, depth: 5});
