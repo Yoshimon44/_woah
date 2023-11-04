@@ -79,7 +79,7 @@ export class Enemy { //may not be the system we will use in the deliverable
         console.log('woah 2');
         console.log(closestObstacle);
 
-        if (closestObstacle == enemy) {
+        if (closestObstacle.pickedMesh == enemy) {
             console.log('woah 3');
             this.walkTo(enemy.position);
         } else { //the 'hard bits'. actually not hard because babylon already has enemy ai i believe
