@@ -73,6 +73,9 @@ export class Enemy { //may not be the system we will use in the deliverable
 
         var checkIfPathToPointIsBlocked = new BABYLON.Ray(this.character.position, enemy.position.subtract(this.character.position).normalize(), 50000);
         var closestObstacle = this.character.getScene().pickWithRay(checkIfPathToPointIsBlocked, (e) => {
+            if (e != this.character) {
+                return false;
+            }
             return true;
         });
 
