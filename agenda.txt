@@ -8,3 +8,5 @@
 - projectile fx on collision
 
 - enemy ai (aw heck naw)
+
+- no mo flying
