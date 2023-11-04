@@ -73,7 +73,7 @@ export class Enemy { //may not be the system we will use in the deliverable
 
         var checkIfPathToPointIsBlocked = new BABYLON.Ray(this.character.position, enemy.position.subtract(this.character.position).normalize(), 5000000);
         var closestObstacle = this.character.getScene().pickWithRay(checkIfPathToPointIsBlocked, (e) => {
-            if (e.id != this.character) {
+            if (e.id != this.character.id) {
                 return false;
             }
             return true;
@@ -85,16 +85,18 @@ export class Enemy { //may not be the system we will use in the deliverable
         if (closestObstacle.hit == false) {
             checkIfPathToPointIsBlocked = new BABYLON.Ray(this.character.position, this.character.position.subtract(enemy.position).normalize(), 5000000);
             closestObstacle = this.character.getScene().pickWithRay(checkIfPathToPointIsBlocked, (e) => {
-                console.log(e);
-            if (e.id != this.character) {
-                return false;
-            }
-            return true;
-        });
+                if (e.id != this.character.id) {
+                    return false;
+                }
+                return true;
+            });
         }
 
-        if (closestObstacle.pickedMesh == enemy) {
-            console.log('woah 3');
+        console.log('woah 3');
+        console.log(closestObstacle);
+
+        if (closestObstacle.pickedMesh.id == "player") {
+            console.log('woah 4');
             this.walkTo(enemy.position);
         } else { //the 'hard bits'. actually not hard because babylon already has enemy ai i believe
 
