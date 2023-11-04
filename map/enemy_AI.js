@@ -71,7 +71,7 @@ export class Enemy { //may not be the system we will use in the deliverable
         console.log('woah 1')
         var isPathBlocked = false;
 
-        var checkIfPathToPointIsBlocked = new BABYLON.Ray(this.character.position, enemy.position.subtract(this.character.position).normalize(), 50000);
+        var checkIfPathToPointIsBlocked = new BABYLON.Ray(this.character.position, enemy.position.subtract(this.character.position).normalize(), 5000000);
         var closestObstacle = this.character.getScene().pickWithRay(checkIfPathToPointIsBlocked, (e) => {
             if (e.id != this.character) {
                 return false;
@@ -81,6 +81,17 @@ export class Enemy { //may not be the system we will use in the deliverable
 
         console.log('woah 2');
         console.log(closestObstacle);
+
+        if (closestObstacle.hit == false) {
+            checkIfPathToPointIsBlocked = new BABYLON.Ray(this.character.position, this.character.position.subtract(enemy.position).normalize(), 5000000);
+            closestObstacle = this.character.getScene().pickWithRay(checkIfPathToPointIsBlocked, (e) => {
+                console.log(e);
+            if (e.id != this.character) {
+                return false;
+            }
+            return true;
+        });
+        }
 
         if (closestObstacle.pickedMesh == enemy) {
             console.log('woah 3');
