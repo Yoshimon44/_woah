@@ -63,6 +63,25 @@ export class Enemy { //may not be the system we will use in the deliverable
         
     }
 
+    pathfindTo(enemy) {
+        if (!this.character) {
+            return;
+        }
+
+        var isPathBlocked = false;
+
+        var checkIfPathToPointIsBlocked = new BABYLON.Ray(this.character.position, enemy.position.subtract(this.character.position).normalize(), 50000);
+        var closestObstacle = this.character.getScene().pickWithRay(checkIfPathToPointIsBlocked, (e) => {
+            return true;
+        });
+
+        if (closestObstacle == enemy) {
+            this.walkTo(enemy.position);
+        } else { //the 'hard bits'. actually not hard because babylon already has enemy ai i believe
+
+        }
+    }
+
     get health(){
         console.log('testing the inheritance');
         return this.character.health;
