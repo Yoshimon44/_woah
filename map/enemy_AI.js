@@ -68,6 +68,7 @@ export class Enemy { //may not be the system we will use in the deliverable
             return;
         }
 
+        console.log('woah 1')
         var isPathBlocked = false;
 
         var checkIfPathToPointIsBlocked = new BABYLON.Ray(this.character.position, enemy.position.subtract(this.character.position).normalize(), 50000);
@@ -75,7 +76,11 @@ export class Enemy { //may not be the system we will use in the deliverable
             return true;
         });
 
+        console.log('woah 2');
+        console.log(closestObstacle);
+
         if (closestObstacle == enemy) {
+            console.log('woah 3');
             this.walkTo(enemy.position);
         } else { //the 'hard bits'. actually not hard because babylon already has enemy ai i believe
 
