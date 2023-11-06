@@ -93,7 +93,7 @@ export function makeStair(startPos, endPos, steps, stairLength) { //i dont like 
         stairstep.position = startPos.add(stairDistance2.scale((i - 1)));
 
         stairstep.scaling = new BABYLON.Vector3(stairLength, stairDistance * (i/steps), stairDistance/steps);
-        stairstep.collisionsEnabled = true;
+        stairstep.checkCollisions = true;
 
         console.log("stair" + i.toString());
     }
