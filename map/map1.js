@@ -90,7 +90,7 @@ export function makeStair(startPos, endPos, steps, stairLength) { //i dont like 
 
     for (var i = 1; i <= steps; i++) {
         var stairstep = BABYLON.MeshBuilder.CreateBox("stair" + Date.now().toString());
-        stairstep.position = startPos.add(stairDistance2.scale(i));
+        stairstep.position = startPos.add(stairDistance2.scale((i - 1)));
 
         stairstep.scaling = new BABYLON.Vector3(stairLength, stairDistance * (i/steps), stairDistance/steps);
         stairstep.collisionsEnabled = true;
