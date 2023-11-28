@@ -3,10 +3,6 @@
 - stair system
     - most likely already implemented, needs further testing on actual stairs (ramps)
 
-- parent enemy class
-
-- projectile fx on collision
-
 - enemy ai (aw heck naw)
 
 - no mo flying
