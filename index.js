@@ -11,7 +11,7 @@ Promise.resolve(import(filePathParser("/map/keyboardE.js"))).then(function(e2){
     p = e2;
 })
 
-import recast from "recast-detour"
+import recast from "/recast-detour"
 
 /*
 if (window.location.href != 'https://yoshimon44.github.io/_woah/') {
