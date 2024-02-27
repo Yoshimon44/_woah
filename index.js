@@ -11,6 +11,8 @@ Promise.resolve(import(filePathParser("/map/keyboardE.js"))).then(function(e2){
     p = e2;
 })
 
+import recast from "recast-detour"
+
 /*
 if (window.location.href != 'https://yoshimon44.github.io/_woah/') {
     Promise.resolve(import("/map/map1.js")).then(function(e2){
@@ -67,6 +69,8 @@ async function main(){ //i wanna try out promises
     p.main();
 
     console.log('is runnings');
+
+    print(v)
 }
 
 //setTimeout(main, 1000);
