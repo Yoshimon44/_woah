@@ -11,7 +11,8 @@ Promise.resolve(import(filePathParser("/map/keyboardE.js"))).then(function(e2){
     p = e2;
 })
 
-import Recast from 'https://cdn.babylonjs.com/recast.js'
+import Recast from '/recast/recast'
+console.log(Recast)
 
 /*
 if (window.location.href != 'https://yoshimon44.github.io/_woah/') {
