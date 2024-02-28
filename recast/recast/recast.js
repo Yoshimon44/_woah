@@ -13,9 +13,4 @@ var Module=typeof Recast!=="undefined"?Recast:{};var Promise=function(){function
 }
 );
 })();
-if (typeof exports === 'object' && typeof module === 'object')
-  module.exports = Recast;
-else if (typeof define === 'function' && define['amd'])
-  define([], function() { return Recast; });
-else if (typeof exports === 'object')
-  exports["Recast"] = Recast;
+export default Recast;
