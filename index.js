@@ -12,7 +12,7 @@ Promise.resolve(import(filePathParser("/map/keyboardE.js"))).then(function(e2){
 })
 
 import Recast from '/recast/recast/recast.js'
-console.log(Recast)
+console.log(new BABYLON.RecastJSPlugin(Recast))
 
 /*
 if (window.location.href != 'https://yoshimon44.github.io/_woah/') {
