@@ -11,7 +11,8 @@ Promise.resolve(import(filePathParser("/map/keyboardE.js"))).then(function(e2){
     p = e2;
 })
 
-import Recast from '/recast/recast/recast.js'
+import recast from '/recast/recast/recast.js'
+var Recast = await recast();
 console.log(new BABYLON.RecastJSPlugin(Recast))
 
 /*
