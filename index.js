@@ -11,7 +11,7 @@ Promise.resolve(import(filePathParser("/map/keyboardE.js"))).then(function(e2){
     p = e2;
 })
 
-import Recast from '/recast/recast'
+import Recast from '/recast/recast/recast.js'
 console.log(Recast)
 
 /*
