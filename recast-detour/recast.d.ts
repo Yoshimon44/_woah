@@ -1,4 +1,4 @@
-declare module Recast{
+export namespace Recast{
   class rcConfig {
     new();
     width: number;
