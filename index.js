@@ -11,9 +11,7 @@ Promise.resolve(import(filePathParser("/map/keyboardE.js"))).then(function(e2){
     p = e2;
 })
 
-import recast from '/recast/recast/recast.js'
-var Recast = await recast();
-console.log(new BABYLON.RecastJSPlugin(Recast))
+
 
 /*
 if (window.location.href != 'https://yoshimon44.github.io/_woah/') {

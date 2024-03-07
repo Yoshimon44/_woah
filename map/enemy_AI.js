@@ -1,5 +1,8 @@
 //gonna (eventually) be the enemy ai file.
 
+import recast from '/recast/recast/recast.js'
+var Recast = await recast();
+
 function filePathParser(hecknaw){
     if (hecknaw.substring(0, 1) == '/') {
       if (window.location.href != 'https://yoshimon44.github.io/_woah/') {
@@ -10,6 +13,7 @@ function filePathParser(hecknaw){
     }
   }
 
+console.log('i had to rest my drip, yuh')
 
 export class Enemy { //may not be the system we will use in the deliverable
     switchAlphaTexture(texture) {
