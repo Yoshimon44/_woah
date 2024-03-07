@@ -69,8 +69,6 @@ async function main(){ //i wanna try out promises
     p.main();
 
     console.log('is runnings');
-
-    print(v)
 }
 
 //setTimeout(main, 1000);

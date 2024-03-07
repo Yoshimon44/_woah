@@ -2,6 +2,15 @@
 
 import recast from '/recast/recast/recast.js'
 var Recast = await recast();
+var RecastPlugin = new BABYLON.RecastJSPlugin();
+
+var map1;
+
+if (window.location.href != 'https://yoshimon44.github.io/_woah/') {
+  map1 = await import("/map/map1.js");
+} else {
+  map1 = await import("/_woah/map/map1.js");
+}
 
 function filePathParser(hecknaw){
     if (hecknaw.substring(0, 1) == '/') {
@@ -13,7 +22,6 @@ function filePathParser(hecknaw){
     }
   }
 
-console.log('i had to rest my drip, yuh')
 
 export class Enemy { //may not be the system we will use in the deliverable
     switchAlphaTexture(texture) {
@@ -103,6 +111,23 @@ export class Enemy { //may not be the system we will use in the deliverable
             console.log('woah 4');
             this.walkTo(enemy.position);
         } else { //the 'hard bits'. actually not hard because babylon already has enemy ai i believe
+            const parameters = {
+                cs: 0.2,
+                ch: 0.2,
+                walkableSlopeAngle: 35,
+                walkableHeight: 1,
+                walkableClimb: 1,
+                walkableRadius: 1,
+                maxEdgeLen: 12,
+                maxSimplificationError: 1.3,
+                minRegionArea: 8,
+                mergeRegionArea: 20,
+                maxVertsPerPoly: 6,
+                detailSampleDist: 6,
+                detailSampleMaxError: 1,
+              };
+
+              //RecastPlugin.createNavMesh(map1.mapPartsReal, parameters);
 
         }
     }
