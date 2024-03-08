@@ -1,12 +1,9 @@
 console.log('what issues?')
 //https://yoshimon44.github.io/_woah/
 console.log(window.location.href)
-var e, p;
+var p;
 
-Promise.resolve(import(filePathParser("/map/map1.js"))).then(function(e2){
-    console.log('BALMAIN JEANS FIT LIKE THIS 1')
-    e = e2;
-});
+import * as e from "/map/map1.js"
 
 Promise.resolve(import(filePathParser("/map/keyboardE.js"))).then(function(e2){
     console.log('BALMAIN JEANS FIT LIKE THIS 2')
