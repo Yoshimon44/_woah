@@ -2,7 +2,7 @@
 
 import recast from '/recast/recast/recast.js'
 var Recast = await recast();
-var RecastPlugin = new BABYLON.RecastJSPlugin(Recast);
+//var RecastPlugin = new BABYLON.RecastJSPlugin(Recast);
 
 var map1;
 
