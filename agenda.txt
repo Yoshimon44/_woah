@@ -4,5 +4,9 @@
     - most likely already implemented, needs further testing on actual stairs (ramps)
 
 - enemy ai (aw heck naw)
+    -the idea here is that for each enemy i make an agent (that isn't actually attached to the enemy)
+    everytime the enemy needs to pathfind the agent will tp to the enemy and begin pathfinding
+    the enemy will follow the agent until it can see the player again, then the agent will be neglected
+    the agent will come back once the enemy can no longer see the player 💀
 
 - no mo flying
