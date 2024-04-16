@@ -15,7 +15,7 @@ export var hitBox;
 export var health;
 export var enemy;
 
-export class TestDummy extends enemy_AI.Enemy {
+export class TestDummy extends enemy_AI.Enemy { //i'll probably move this somewhere else because
     constructor(pos = new BABYLON.Vector3(-20, 1, 10)){
         super();
 
