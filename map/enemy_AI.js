@@ -27,8 +27,14 @@ function filePathParser(hecknaw){
       } else {
         return "/_woah/" + hecknaw;
       }
+    } else {
+        if (window.location.href != 'https://yoshimon44.github.io/_woah/') {
+            return hecknaw;
+          } else {
+            return "_woah/" + hecknaw;
+          }        
     }
-  }
+}
 
 
 export class Enemy { //may not be the system we will use in the deliverable
