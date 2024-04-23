@@ -1,17 +1,11 @@
 //gonna (eventually) be the enemy ai file.
 
 //import recast from filePathParser('/recast/recast/recast.js')
-var recast;
-
-if (window.location.href != 'https://yoshimon44.github.io/_woah/') {
-    recast = await import("/recast/recast/recast.js");
-} else {
-    recast = await import("/_woah/recast/recast/recast.js")
-}
+var recast = await import("/recast/recast/recast.js");;
 
 console.log(recast);
 
-var Recast = await recast.default();
+var Recast = await recast.recast();
 var RecastPlugin = new BABYLON.RecastJSPlugin(Recast);
 
 var map1;
