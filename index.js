@@ -4,10 +4,12 @@ console.log(window.location.href)
 var e, p;
 
 Promise.resolve(import(filePathParser("/map/map1.js"))).then(function(e2){
+    console.log('xtc1')
     e = e2;
 });
 
 Promise.resolve(import(filePathParser("/map/keyboardE.js"))).then(function(e2){
+    console.log("JIOWEHTUI TWEYF HUIFGWEUIU")
     p = e2;
 })
 
