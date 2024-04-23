@@ -9,6 +9,8 @@ if (window.location.href != 'https://yoshimon44.github.io/_woah/') {
     recast = await import("/_woah/recast/recast/recast.js")
 }
 
+console.log(recast);
+
 var Recast = await recast();
 var RecastPlugin = new BABYLON.RecastJSPlugin(Recast);
 
