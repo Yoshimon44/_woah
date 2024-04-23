@@ -4,12 +4,10 @@ console.log(window.location.href)
 var e, p;
 
 Promise.resolve(import(filePathParser("/map/map1.js"))).then(function(e2){
-    console.log('BALMAIN JEANS FIT LIKE THIS 1')
     e = e2;
 });
 
 Promise.resolve(import(filePathParser("/map/keyboardE.js"))).then(function(e2){
-    console.log('BALMAIN JEANS FIT LIKE THIS 2')
     p = e2;
 })
 
@@ -45,12 +43,6 @@ function filePathParser(hecknaw){
       } else {
         return "/_woah/" + hecknaw;
       }
-    } else {
-        if (window.location.href != 'https://yoshimon44.github.io/_woah/') {
-            return '/' + hecknaw;
-          } else {
-            return "_woah/" + hecknaw;
-          }        
     }
 }
 
@@ -77,6 +69,8 @@ async function main(){ //i wanna try out promises
     p.main();
 
     console.log('is runnings');
+
+    print(v)
 }
 
 //setTimeout(main, 1000);
