@@ -6,7 +6,12 @@ import recast from "/recast/recast/recast.js";
 console.log(recast);
 
 var Recast = await recast();
+
+console.log('why my rubik cube bent left')
+
 var RecastPlugin = new BABYLON.RecastJSPlugin(Recast);
+
+console.log(RecastPlugin)
 
 var map1;
 
