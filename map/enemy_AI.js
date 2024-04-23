@@ -11,7 +11,7 @@ if (window.location.href != 'https://yoshimon44.github.io/_woah/') {
 
 console.log(recast);
 
-var Recast = await recast();
+var Recast = await recast.default();
 var RecastPlugin = new BABYLON.RecastJSPlugin(Recast);
 
 var map1;
