@@ -9,9 +9,9 @@ var Recast = await recast();
 
 console.log('why my rubik cube bent left')
 
-var RecastPlugin = new BABYLON.RecastJSPlugin(Recast);
+//var RecastPlugin = new BABYLON.RecastJSPlugin(Recast);
 
-console.log(RecastPlugin)
+//console.log(RecastPlugin)
 
 var map1;
 
