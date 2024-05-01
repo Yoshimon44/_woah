@@ -13,6 +13,7 @@ console.log('why my rubik cube bent left')
 
 //console.log(RecastPlugin)
 
+/*
 var map1;
 
 if (window.location.href != 'https://yoshimon44.github.io/_woah/') {
@@ -21,6 +22,7 @@ if (window.location.href != 'https://yoshimon44.github.io/_woah/') {
   map1 = await import("/_woah/map/map1.js");
 }
 
+*/
 function filePathParser(hecknaw){
     if (hecknaw.substring(0, 1) == '/') {
       if (window.location.href != 'https://yoshimon44.github.io/_woah/') {
