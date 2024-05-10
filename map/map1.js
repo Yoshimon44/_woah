@@ -9,6 +9,18 @@ if (window.location.href != 'https://yoshimon44.github.io/_woah/') {
     index = await import("/_woah/index.js");
 }
 
+import recast from "/recast/recast/recast.js";
+
+console.log(recast);
+
+var Recast = await recast();
+
+console.log('why my rubik cube bent left')
+
+export var RecastPlugin = new BABYLON.RecastJSPlugin(Recast);
+
+console.log(RecastPlugin)
+
 export var mapParts = {}; //these are not 'map parts' 😭😭😭
 export var mapPartsReal = {};
 export var hitBox;
